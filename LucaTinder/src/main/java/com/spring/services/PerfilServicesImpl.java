@@ -39,20 +39,6 @@ public class PerfilServicesImpl implements PerfilServices {
 	 * userDAO; }
 	 */
 	
-	
-	
-	/**
-	 * Instancia del Logger
-	 */
-	private static Logger logger;
-	static {
-		try {
-			logger = LogManager.getLogger(PerfilController.class);
-		} catch (Throwable e) {
-			System.out.println("Logger don't work");
-		}
-	}
-	
 
 	
 	/**
@@ -70,7 +56,7 @@ public class PerfilServicesImpl implements PerfilServices {
 	@Override
 	public List<Perfil> generarPerfiles() {
 
-		logger.log(Level.INFO,"Busca el perfil...");
+		logger.info("---Busca el perfil");
 		List<Perfil>perfiles;
 		int cont = 0;
 		boolean fin = false;
@@ -87,21 +73,21 @@ public class PerfilServicesImpl implements PerfilServices {
 	@Override
 	public Perfil get(int id) {
 
-		logger.log(Level.INFO,"Obtiene el perfil...");
+		logger.info("---Obtiene el perfil");
 
 		return perfilDAO.findOne(id);
 	}
 
 	@Override
 	public void update(Perfil user) {
-		logger.log(Level.INFO,"Actualiza el perfil...");
+		logger.info("---Actualizar perfil");
 		perfilDAO.save(user);
 	}
 	
 	@Override
 	public void add(Perfil user) {
 
-		logger.log(Level.INFO,"Guarda el perfil...");
+		logger.info("---Guardar perfiles");
 
 		perfilDAO.save(user);
 	}
@@ -109,7 +95,7 @@ public class PerfilServicesImpl implements PerfilServices {
 	@Override
 	public void delete(int id) {
 
-		logger.log(Level.INFO,"Borra el perfil...");
+		logger.info("---Borrar perfiles");
 		perfilDAO.deleteById(id);
 
 	}
@@ -127,7 +113,7 @@ public class PerfilServicesImpl implements PerfilServices {
 	@Override
 
 	public void guardarPerfiles() {
-		logger.log(Level.INFO,"Cargando perfil...");
+		logger.info("---Cargando perfiles");
 		for(Perfil p : generarPerfiles()) {
 			perfilDAO.save(p);
 		}
