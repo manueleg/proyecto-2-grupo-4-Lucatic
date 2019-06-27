@@ -7,103 +7,74 @@ import java.time.LocalDate;
  * Clase modelo "Perfil"
  */
 
-import java.util.ArrayList;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity 
+@Table(name="usuarios")
 public class Perfil {
 	
 	/**
 	 * Atributos
 	 */
-	 private int id;
-	 private String name;
+	 private int idusuario;
+	 private String nombre;
 	 private Genero genero;
-	 private LocalDate fechaNac;
+	 private LocalDate edad;
 	 private String poblacion;
-	 private int intereses;
+	 private int idintereses;
 	 private String descripcion;
 	 
-	 /**
-	  * constructores
-	  */
-	public Perfil() {
-		super();
+	 @Id
+	 @GeneratedValue
+	 @Column(name = "idusuario")
+	public int getIdusuario() {
+		return idusuario;
 	}
-
-	public Perfil(int id, String name, Genero genero, LocalDate fechaNac, String poblacion, int intereses,
-			String descripcion) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.genero = genero;
-		this.fechaNac = fechaNac;
-		this.poblacion = poblacion;
-		this.intereses = intereses;
-		this.descripcion = descripcion;
+	public void setIdusuario(int idusuario) {
+		this.idusuario = idusuario;
 	}
-	
-	/**
-	  * getter y setter
-	  */
-
-	public int getId() {
-		return id;
+	public String getNombre() {
+		return nombre;
 	}
-
-	public void setId(int id) {
-		this.id = id;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public Genero getGenero() {
 		return genero;
 	}
-
 	public void setGenero(Genero genero) {
 		this.genero = genero;
 	}
-
-	public LocalDate getFechaNac() {
-		return fechaNac;
+	public LocalDate getEdad() {
+		return edad;
 	}
-
-	public void setFechaNac(LocalDate fechaNac) {
-		this.fechaNac = fechaNac;
+	public void setEdad(LocalDate edad) {
+		this.edad = edad;
 	}
-
 	public String getPoblacion() {
 		return poblacion;
 	}
-
 	public void setPoblacion(String poblacion) {
 		this.poblacion = poblacion;
 	}
-
-	public int getIntereses() {
-		return intereses;
+	public int getIdintereses() {
+		return idintereses;
 	}
-
-	public void setIntereses(int intereses) {
-		this.intereses = intereses;
+	public void setIdintereses(int idintereses) {
+		this.idintereses = idintereses;
 	}
-
 	public String getDescripcion() {
 		return descripcion;
 	}
-
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
 	 
-	 
-	
-	
 	
 	 
+
 }
