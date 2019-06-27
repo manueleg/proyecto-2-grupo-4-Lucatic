@@ -38,7 +38,7 @@ public class PerfilServicesImpl implements PerfilServices {
 	 */
 
 	@Override
-	public List<Perfil> list() {
+	public List<Perfil> generarPerfiles() {
 		final Logger logger = LogManager.getLogger("Mensaje");
 		logger.log(Level.INFO,"Busca el perfil...");
 
