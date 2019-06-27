@@ -2,7 +2,7 @@ package com.spring.services;
 
 import java.util.List;
 
-import com.spring.model.User;
+import com.spring.model.Perfil;
 
 /**
  * 
@@ -11,7 +11,6 @@ import com.spring.model.User;
  * @version: v1.0
  *
  */
-
 
 
 public interface PerfilServices {
