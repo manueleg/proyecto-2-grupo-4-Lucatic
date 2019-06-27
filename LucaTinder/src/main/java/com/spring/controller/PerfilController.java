@@ -3,14 +3,17 @@ package com.spring.controller;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.spring.controller.HomeController;
 import com.spring.model.Perfil;
 import com.spring.services.PerfilServices;
 
@@ -44,10 +47,11 @@ public class PerfilController {
 	 * @return index.html
 	 * @throws Exception
 	 */
+	
 	@RequestMapping("/index")
 	public String handleRequest(ModelMap model) throws Exception{ 
 		logger.info("---HandleRequest");
-		model.addAttribute("listadoperfiles", perfilServices.list());
+		model.addAttribute("listadoperfiles", perfilServices.getPerfiles());
 		return "index";
 	}
 	
@@ -59,9 +63,19 @@ public class PerfilController {
 	 */
 	@PostMapping("/save")
 	public String registroPerfil(@ModelAttribute Perfil perfil) {
-		logger.info("-- en método registroPerfil de la clase PerfilController");
+		logger.info("-- en método registroPerfil");
 		perfilServices.add(perfil);
 		return "contactos";
+	}
+	
+	@PostMapping("/acceso")
+	public String Login(@ModelAttribute Perfil perfil) {
+		if(perfilServices.get(perfil.getIdusuario())!=null) {
+			return "contactos";
+		}else {
+			return "index";
+		}
+
 	}
 	
 }
