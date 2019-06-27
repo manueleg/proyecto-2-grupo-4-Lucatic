@@ -5,6 +5,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.spring.services.PerfilServices;
 
 /* 
 * @author grupo4
@@ -15,8 +19,8 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class PerfilController {
 
-	/*@Autowired
-	private PerfilServices perfilService;*/
+	@Autowired
+	private PerfilServices perfilService;
 	
 	/**
 	 * Instancia del Logger
@@ -28,6 +32,19 @@ public class PerfilController {
 		} catch (Throwable e) {
 			System.out.println("Logger don't work");
 		}
+	}
+	
+	/**
+	 * pasamos el listado de valores que hemos creado en la interfaz de Servicios
+	 * @param model
+	 * @return index.html
+	 * @throws Exception
+	 */
+	@RequestMapping("/index")
+	public String handleRequest(ModelMap model) throws Exception{ 
+		logger.info("---HandleRequest");
+		model.addAttribute("listadoperfiles", perfilService.list());
+		return "index";
 	}
 	
 }
