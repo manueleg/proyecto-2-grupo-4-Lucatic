@@ -1,5 +1,8 @@
 package com.spring.repository;
 
-public interface PerfilRepositoryCustom {
+import java.util.List;
+import com.spring.model.Perfil;
 
+public interface PerfilRepositoryCustom {
+	public List<Perfil> getPerfiles();
 }
