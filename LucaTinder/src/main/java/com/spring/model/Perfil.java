@@ -1,9 +1,19 @@
 package com.spring.model;
 
 import java.time.LocalDate;
+
+/**
+ * @author grupo4
+ * Clase modelo "Perfil"
+ */
+
 import java.util.ArrayList;
 
 public class Perfil {
+	
+	/**
+	 * Atributos
+	 */
 	 private String name;
 	 private String genero;
 	 private String poblacion;
@@ -11,6 +21,9 @@ public class Perfil {
 	 private String descripcion;
 	 private LocalDate fechaNac;
 	 
+	 /**
+	  * constructores
+	  */
 	public Perfil() {
 		super();
 	}
@@ -25,6 +38,10 @@ public class Perfil {
 		this.descripcion = descripcion;
 		this.fechaNac = fechaNac;
 	}
+	
+	/**
+	 * Getter y setter
+	 */
 
 	public String getName() {
 		return name;
