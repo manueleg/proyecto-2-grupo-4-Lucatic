@@ -1,6 +1,7 @@
 package com.spring.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.spring.model.Perfil;
 
@@ -17,7 +18,7 @@ public interface PerfilServices {
 
 	public List<Perfil> generarPerfiles();
 	
-	public Perfil get(int id);
+	public Optional<Perfil> get(int id);
 	public List<Perfil> getPerfiles();
 	
 	public void guardarPerfiles();
