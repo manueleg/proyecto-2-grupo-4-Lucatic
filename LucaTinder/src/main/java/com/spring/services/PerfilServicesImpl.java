@@ -72,5 +72,14 @@ public class PerfilServicesImpl implements PerfilServices {
 		logger.log(Level.INFO,"Borra el perfil...");
 		perfilDAO.delete(id);
 	}
+		
+
+	@Override
+	public void like(int id1, int id2) {
+		final Logger logger = LogManager.getLogger("Mensaje");
+		logger.log(Level.INFO,"Dar Me gusta (like)...");
+		perfilDAO.like(id);
+	}
+	
 
 }
