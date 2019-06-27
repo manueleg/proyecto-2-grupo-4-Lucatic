@@ -55,7 +55,7 @@ public class PerfilServicesImpl implements PerfilServices {
 	@Override
 	public List<Perfil> generarPerfiles() {
 		logger.log(Level.INFO,"Busca el perfil...");
-		List<PerfilMaker>perfiles;
+		List<Perfil>perfiles;
 		int cont = 0;
 		boolean fin = false;
 		do {
@@ -65,6 +65,7 @@ public class PerfilServicesImpl implements PerfilServices {
 				fin=true;
 			}
 		}while(fin);
+		return perfiles;
 	}
 
 	@Override
