@@ -6,10 +6,10 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.apache.logging.log4j.Level;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
+import org.slf4j.LoggerFactory;
 import com.spring.controller.PerfilController;
 import com.spring.dao.PerfilRepository;
 import com.spring.model.Perfil;
@@ -38,6 +38,21 @@ public class PerfilServicesImpl implements PerfilServices {
 	 * public UserServiceImpl(UserDAO userDAO) { super(); this.userDAO =
 	 * userDAO; }
 	 */
+	
+	
+	
+	/**
+	 * Instancia del Logger
+	 */
+	private static Logger logger;
+	static {
+		try {
+			logger = LogManager.getLogger(PerfilController.class);
+		} catch (Throwable e) {
+			System.out.println("Logger don't work");
+		}
+	}
+	
 
 	
 	/**
@@ -54,6 +69,7 @@ public class PerfilServicesImpl implements PerfilServices {
 	
 	@Override
 	public List<Perfil> generarPerfiles() {
+
 		logger.log(Level.INFO,"Busca el perfil...");
 		List<Perfil>perfiles;
 		int cont = 0;
@@ -70,7 +86,9 @@ public class PerfilServicesImpl implements PerfilServices {
 
 	@Override
 	public Perfil get(int id) {
+
 		logger.log(Level.INFO,"Obtiene el perfil...");
+
 		return perfilDAO.findOne(id);
 	}
 
@@ -82,26 +100,32 @@ public class PerfilServicesImpl implements PerfilServices {
 	
 	@Override
 	public void add(Perfil user) {
+
 		logger.log(Level.INFO,"Guarda el perfil...");
+
 		perfilDAO.save(user);
 	}
 
 	@Override
 	public void delete(int id) {
+
 		logger.log(Level.INFO,"Borra el perfil...");
 		perfilDAO.deleteById(id);
+
 	}
 		
 
 	@Override
 	public void like(int id1, int id2) {
-		final Logger logger = LogManager.getLogger("Mensaje");
-		logger.log(Level.INFO,"Dar Me gusta (like)...");
+		
+		logger.info("---Dar me gusta");
 		perfilDAO.like(id1, id2);
+
 	}
 	
 
 	@Override
+
 	public void guardarPerfiles() {
 		logger.log(Level.INFO,"Cargando perfil...");
 		for(Perfil p : generarPerfiles()) {
@@ -113,7 +137,12 @@ public class PerfilServicesImpl implements PerfilServices {
 	@Override
 	public List<Perfil> getPerfiles() {
 		// TODO Auto-generated method stub
-		return perfilDAO.findAll();
+		return perfilDAO.findAll();}
+
+	public void dislike(int id1, int id2) {
+		logger.info("---Dar no me gusta");
+		perfilDAO.like(id1, id2);
+
 	}
 
 }
