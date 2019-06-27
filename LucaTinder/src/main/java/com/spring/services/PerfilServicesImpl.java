@@ -89,7 +89,7 @@ public class PerfilServicesImpl implements PerfilServices {
 	@Override
 	public void delete(int id) {
 		logger.log(Level.INFO,"Borra el perfil...");
-		perfilDAO.delete(id);
+		perfilDAO.deleteById(id);
 	}
 		
 
@@ -97,7 +97,7 @@ public class PerfilServicesImpl implements PerfilServices {
 	public void like(int id1, int id2) {
 		final Logger logger = LogManager.getLogger("Mensaje");
 		logger.log(Level.INFO,"Dar Me gusta (like)...");
-		perfilDAO.like(id);
+		perfilDAO.like(id1, id2);
 	}
 	
 
@@ -108,6 +108,12 @@ public class PerfilServicesImpl implements PerfilServices {
 			perfilDAO.save(p);
 		}
 		
+	}
+
+	@Override
+	public List<Perfil> getPerfiles() {
+		// TODO Auto-generated method stub
+		return perfilDAO.findAll();
 	}
 
 }
