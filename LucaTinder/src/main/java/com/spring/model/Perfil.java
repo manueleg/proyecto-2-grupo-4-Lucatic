@@ -14,12 +14,13 @@ public class Perfil {
 	/**
 	 * Atributos
 	 */
+	 private int id;
 	 private String name;
-	 private String genero;
-	 private String poblacion;
-	 private ArrayList<String>intereses;
-	 private String descripcion;
+	 private Genero genero;
 	 private LocalDate fechaNac;
+	 private String poblacion;
+	 private int intereses;
+	 private String descripcion;
 	 
 	 /**
 	  * constructores
@@ -28,20 +29,29 @@ public class Perfil {
 		super();
 	}
 
-	public Perfil(String name, String genero, String poblacion, ArrayList<String> intereses, String descripcion,
-			LocalDate fechaNac) {
+	public Perfil(int id, String name, Genero genero, LocalDate fechaNac, String poblacion, int intereses,
+			String descripcion) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.genero = genero;
+		this.fechaNac = fechaNac;
 		this.poblacion = poblacion;
 		this.intereses = intereses;
 		this.descripcion = descripcion;
-		this.fechaNac = fechaNac;
 	}
 	
 	/**
-	 * Getter y setter
-	 */
+	  * getter y setter
+	  */
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getName() {
 		return name;
@@ -51,36 +61,12 @@ public class Perfil {
 		this.name = name;
 	}
 
-	public String getGenero() {
+	public Genero getGenero() {
 		return genero;
 	}
 
-	public void setGenero(String genero) {
+	public void setGenero(Genero genero) {
 		this.genero = genero;
-	}
-
-	public String getPoblacion() {
-		return poblacion;
-	}
-
-	public void setPoblacion(String poblacion) {
-		this.poblacion = poblacion;
-	}
-
-	public ArrayList<String> getIntereses() {
-		return intereses;
-	}
-
-	public void setIntereses(ArrayList<String> intereses) {
-		this.intereses = intereses;
-	}
-
-	public String getDescripcion() {
-		return descripcion;
-	}
-
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
 	}
 
 	public LocalDate getFechaNac() {
@@ -91,23 +77,32 @@ public class Perfil {
 		this.fechaNac = fechaNac;
 	}
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("\nPerfil \nName: ");
-		builder.append(name);
-		builder.append("\nGenero: ");
-		builder.append(genero);
-		builder.append("\nPoblacion: ");
-		builder.append(poblacion);
-		builder.append("\nIntereses: ");
-		builder.append(intereses);
-		builder.append("\nDescripcion: ");
-		builder.append(descripcion);
-		builder.append("\nFecha de nacimiento: ");
-		builder.append(fechaNac);
-		return builder.toString();
+	public String getPoblacion() {
+		return poblacion;
 	}
+
+	public void setPoblacion(String poblacion) {
+		this.poblacion = poblacion;
+	}
+
+	public int getIntereses() {
+		return intereses;
+	}
+
+	public void setIntereses(int intereses) {
+		this.intereses = intereses;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	 
+	 
+	
 	
 	
 	 
