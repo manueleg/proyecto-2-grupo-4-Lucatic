@@ -18,6 +18,7 @@ public interface PerfilServices {
 	public List<Perfil> generarPerfiles();
 	
 	public Perfil get(int id);
+	public List<Perfil> getPerfiles();
 	
 	public void guardarPerfiles();
 	
