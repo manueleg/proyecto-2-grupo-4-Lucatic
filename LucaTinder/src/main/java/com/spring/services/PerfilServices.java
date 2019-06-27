@@ -26,4 +26,5 @@ public interface PerfilServices {
 	
 	public void like(int id1, int id2);
 	
+	public void dislike(int id1, int id2);
 }
