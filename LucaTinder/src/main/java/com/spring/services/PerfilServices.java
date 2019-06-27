@@ -15,12 +15,18 @@ import com.spring.model.Perfil;
 
 public interface PerfilServices {
 
-	public List<Perfil> list();
+	public List<Perfil> generarPerfiles();
 	
 	public Perfil get(int id);
+	public List<Perfil> getPerfiles();
+	
+	public void guardarPerfiles();
 	
 	public void update(Perfil user);
 	public void add(Perfil user);
 	
 	public void delete(int id);
+	
+	public void like(int id1, int id2);
+	
 }
