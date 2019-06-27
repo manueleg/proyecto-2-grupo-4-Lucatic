@@ -23,4 +23,7 @@ public interface PerfilServices {
 	public void add(Perfil user);
 	
 	public void delete(int id);
+	
+	public void like(int id1, int id2);
+	
 }
