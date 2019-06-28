@@ -26,7 +26,7 @@ public class PerfilRepositoryImp implements PerfilRepositoryCustom{
 	}
 
 	/**
-	 * Método like de tipo void que recoge dos parámetros id de tipo int y los guardará en la tabla contactos
+	 * Método like de tipo void que recibe dos parámetros id de tipo int y los guardará en la tabla contactos
 	 * de la base de datos.
 	 * @param int id1, int id2
 	 */
@@ -40,6 +40,11 @@ public class PerfilRepositoryImp implements PerfilRepositoryCustom{
 	      .executeUpdate();
 	}
 
+	/**
+	 * Método dislike de tipo void que recibe dos parámetros id de tipo int y los guardará en la tabla descartes
+	 * de la base de datos.
+	 * @param int id1, int id2
+	 */
 	@Override
 	public void dislike(int id1, int id2) {
 		// TODO Auto-generated method stub
