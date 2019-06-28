@@ -60,25 +60,27 @@ public class PerfilController {
 	 * @return contactos
 	 */
 	@PostMapping("/save")
-	public String registroPerfil(@ModelAttribute Perfil perfil) {
+	public String registroPerfil(@ModelAttribute Perfil perfil, ModelMap model) {
 		logger.info("-- en método registroPerfil");
 		perfilServices.add(perfil);
+		model.addAttribute("perfil", perfil);
+		model.addAttribute("perfilList", perfilServices.getPerfiles());
 		return "contactos";
 	}
 	
 	/**
 	 * Método login que comprueba si el usuario existe y le deja entrar en la página o no
 	 * @param perfil
-	 * @param listPerfiles
+	 * @param model
 	 * @return contactos e index
 	 */
 	
 	@PostMapping("/acceso")
-	public String login(@ModelAttribute Perfil perfil, ModelMap listPerfiles) {
+	public String login(@ModelAttribute Perfil perfil, ModelMap model) {
 		logger.info("----COMPROBANDO IDs");
 		if(perfilServices.get(perfil.getIdusuario())!=null) {
-			listPerfiles.addAttribute(perfil);
-			listPerfiles.addAttribute("perfil", perfilServices.generarPerfiles());
+			model.addAttribute("perfil", perfil);
+			model.addAttribute("perfilList", perfilServices.getPerfiles());
 			return "contactos";
 		}else {
 			return "index";
