@@ -60,18 +60,7 @@ public class PerfilRepositoryImp implements PerfilRepositoryCustom{
 	 */
 	@Override
 	public void dislike(int id1, int id2) {
-		// TODO Auto-generated method stub
-<<<<<<< HEAD
-		logger.info("--- En método dislike de la clase PerfilRepositoryImpl");
-		entityManager.createNativeQuery("INSERT INTO lucatinder.descartes (iddescarte, fk_idusuario, fk_idusuario2) VALUES (?,?,?)")
-=======
-		logger.info("--- En método dislike de la clase PerfilRpositoryImpl");
-		em.createNativeQuery("INSERT INTO lucatinder.descartes (iddescarte, fk_idusuario, fk_idusuario2) VALUES (?,?,?)")
->>>>>>> jesus
-	      .setParameter(1, null)
-	      .setParameter(2, id1)
-	      .setParameter(3, id2)
-	      .executeUpdate();
+
 	}
 
 	@Override
