@@ -6,9 +6,11 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.spring.model.Perfil;
 import com.spring.services.PerfilServices;
@@ -82,7 +84,18 @@ public class PerfilController {
 		}
 	}
 	
-	public id like
 	
+	/**
+	 * Método que envía la información del dislike para guardarla en la base de datos
+	 * @param idPerfil
+	 * @param idDislike
+	 * @return contactos
+	 */
+	@GetMapping("/dislike")
+	public String dislike(@RequestParam("idperfil") int idPerfil, @RequestParam("iddislike") int idDislike) {
+		perfilServices.dislike(idPerfil, idDislike);
+		logger.info("-------PerfilController dislike");
+		return "contactos";
+	}
 	
 }
