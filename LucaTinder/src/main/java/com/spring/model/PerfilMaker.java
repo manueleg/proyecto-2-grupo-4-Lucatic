@@ -1,7 +1,16 @@
 package com.spring.model;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
+import java.util.Locale;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import com.github.javafaker.Faker;
+import com.github.javafaker.service.FakeValuesService;
+import com.github.javafaker.service.RandomService;
 
 /* 
 * @author grupo4
@@ -23,7 +32,5 @@ public class PerfilMaker {
 		}
 	}
 	
-	public Perfil crearPerfil() {
-		
-	}
+	
 }
