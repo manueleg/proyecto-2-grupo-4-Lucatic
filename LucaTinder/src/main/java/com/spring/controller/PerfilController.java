@@ -94,7 +94,7 @@ public class PerfilController {
 	public String like(@RequestParam("id1") int id1, @RequestParam("id2") int id2) {
 		logger.info("----RECIIENDO IDs -> /LIKE");
 		perfilServices.like(id1, id2);
-		return ":/redirect";
+		return "redirect:/contactos";
 	}
 	
 	
