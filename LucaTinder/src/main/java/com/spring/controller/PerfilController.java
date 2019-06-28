@@ -93,7 +93,7 @@ public class PerfilController {
 	 * @param id2
 	 * @return redirect
 	 */
-	@PostMapping("/contactos")
+	@PostMapping("/like")
 	public String like(@RequestParam("id1") int id1, @RequestParam("id2") int id2) {
 		logger.info("----RECIIENDO IDs -> /LIKE");
 		perfilServices.like(id1, id2);
