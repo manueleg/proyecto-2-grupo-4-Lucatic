@@ -39,5 +39,15 @@ public class PerfilRepositoryImp implements PerfilRepositoryCustom{
 	      .setParameter(3, id2)
 	      .executeUpdate();
 	}
+
+	@Override
+	public void dislike(int id1, int id2) {
+		// TODO Auto-generated method stub
+		entityManager.createNativeQuery("INSERT INTO lucatinder.descartes (iddescarte, fk_idusuario, fk_idusuario2) VALUES (?,?,?)")
+	      .setParameter(1, null)
+	      .setParameter(2, id1)
+	      .setParameter(3, id2)
+	      .executeUpdate();
+	}
 	
 }
