@@ -90,7 +90,7 @@ public class PerfilRepositoryImp implements PerfilRepositoryCustom{
 	}
 	
 	@Override
-	public void intereses(int idPerfil, String genero, int edadMin, int edadMax) {
+	public void insertarIntereses(int idPerfil, String genero, int edadMin, int edadMax) {
 		logger.info("--- En método intereses de la clase PerfilRepositoryImpl");
 		em.createNativeQuery("INSERT INTO lucatinder.intereses (idinteres, edadmax, edadmin, idgenero) VALUES (?,?,?,?)")
 	      .setParameter(1, null)
