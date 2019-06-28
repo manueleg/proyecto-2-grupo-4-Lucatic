@@ -130,7 +130,7 @@ public class PerfilServicesImpl implements PerfilServices {
 	@Override
 	public void guardarIntereses(int idPerfil, String genero, int edadMin, int edadMax) {
 		logger.info("----Guardar intereses");
-		perfilDAO.intereses(idPerfil, genero, edadMin, edadMax);
+		perfilDAO.insertarIntereses(idPerfil, genero, edadMin, edadMax);
 	}
 	
 	
