@@ -121,7 +121,7 @@ public class PerfilController {
 	 * @param edadMax
 	 * @return perfil
 	 */
-	@GetMapping("/guardarIntereses")
+	@GetMapping("/guardarintereses")
 	public String guardarIntereses(@RequestParam("idperfil") int idPerfil, @RequestParam("genero") String genero,@RequestParam("edadMin") int edadMin,@RequestParam("edadMax") int edadMax) {
 		perfilServices.guardarIntereses(idPerfil, genero, edadMin, edadMax);
 		logger.info("-------PerfilController guardarIntereses");
