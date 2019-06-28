@@ -22,8 +22,4 @@ public class PerfilMaker {
 			System.out.println("Logger don't work");
 		}
 	}
-	
-	public Perfil crearPerfil() {
-		
-	}
 }
