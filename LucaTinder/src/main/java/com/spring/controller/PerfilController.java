@@ -68,8 +68,15 @@ public class PerfilController {
 		return "contactos";
 	}
 	
+	/**
+	 * Método login que comprueba si el usuario existe y le deja entrar en la página o no
+	 * @param perfil
+	 * @param listPerfiles
+	 * @return contactos e index
+	 */
+	
 	@PostMapping("/acceso")
-	public String Login(@ModelAttribute Perfil perfil, ModelMap listPerfiles) {
+	public String login(@ModelAttribute Perfil perfil, ModelMap listPerfiles) {
 		if(perfilServices.get(perfil.getIdusuario())!=null) {
 			listPerfiles.addAttribute(perfil);
 			listPerfiles.addAttribute("perfil", perfilServices.generarPerfiles());
@@ -78,6 +85,8 @@ public class PerfilController {
 			return "index";
 		}
 	}
+	
+	public id like
 	
 	
 }
