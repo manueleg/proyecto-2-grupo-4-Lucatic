@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="Stylesheet" href="/resources/css/custom.css">
+<link rel="Stylesheet" href="/resources/css/bootstrap.css">
+<title>LucaTinder</title>
+</head>
+<body>
+	<div>
+		<h1>Contactos</h1>
+		<table>
+		<thead>
+			<tr>
+				<th>Dislike</th>
+				<th>Nombre</th>
+				<th>Edad</th>
+				<th>Género</th>
+				<th>Like</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="perfil:${perfilList}">
+				<td>
+					<a></a><!-- DISLIKE -->
+				</td>
+				<td><span th:text="${perfil.nombre}"></span></td>
+				<td><span th:text="${perfil.edad}"></span></td>
+				<td><span th:text="${perfil.genero}"></span></td>
+				<td>
+					<a></a><!-- LIKE -->
+				</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+</body>
+</html>
