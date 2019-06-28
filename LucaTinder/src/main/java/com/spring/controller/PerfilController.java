@@ -6,8 +6,11 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.spring.model.Perfil;
 import com.spring.services.PerfilServices;
 
 /* 
@@ -20,7 +23,7 @@ import com.spring.services.PerfilServices;
 public class PerfilController {
 
 	@Autowired
-	private PerfilServices perfilService;
+	private PerfilServices perfilServices;
 	
 	/**
 	 * Instancia del Logger
@@ -40,11 +43,37 @@ public class PerfilController {
 	 * @return index.html
 	 * @throws Exception
 	 */
+	
 	@RequestMapping("/index")
 	public String handleRequest(ModelMap model) throws Exception{ 
 		logger.info("---HandleRequest");
-		model.addAttribute("listadoperfiles", perfilService.list());
+		model.addAttribute("listadoperfiles", perfilServices.getPerfiles());
 		return "index";
 	}
+	
+	/**
+	 * Recibe por parámetro un objeto de tipo Perfil y lo guardará en la base de datos. 
+	 * Devuelve la ruta para ir a la página contactos.html
+	 * @param Perfil perfil
+	 * @return contactos
+	 */
+	@PostMapping("/save")
+	public String registroPerfil(@ModelAttribute Perfil perfil) {
+		logger.info("-- en método registroPerfil");
+		perfilServices.add(perfil);
+		return "contactos";
+	}
+	
+	@PostMapping("/acceso")
+	public String Login(@ModelAttribute Perfil perfil, ModelMap listPerfiles) {
+		if(perfilServices.get(perfil.getIdusuario())!=null) {
+			listPerfiles.addAttribute(perfil);
+			listPerfiles.addAttribute("perfil", perfilServices.generarPerfiles());
+			return "contactos";
+		}else {
+			return "index";
+		}
+	}
+	
 	
 }

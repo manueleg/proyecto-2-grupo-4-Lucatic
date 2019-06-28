@@ -1,6 +1,7 @@
 package com.spring.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.spring.model.Perfil;
 
@@ -15,12 +16,22 @@ import com.spring.model.Perfil;
 
 public interface PerfilServices {
 
-	public List<Perfil> list();
+	public List<Perfil> generarPerfiles();
 	
-	public Perfil get(int id);
+	//public Optional<Perfil> get(int id);
+
+	public Perfil get(int idnombre);
+	
+	public List<Perfil> getPerfiles();
+	
+	public void guardarPerfiles();
 	
 	public void update(Perfil user);
 	public void add(Perfil user);
 	
 	public void delete(int id);
+	
+	public void like(int id1, int id2);
+	
+	public void dislike(int id1, int id2);
 }
