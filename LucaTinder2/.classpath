@@ -28,8 +28,9 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="src/main/resources/lib/log4j-api-2.7.jar"/>
-	<classpathentry kind="lib" path="src/main/resources/lib/log4j-core-2.7.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="lib/log4j-api-2.7.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-core-2.7.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.15-bin.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

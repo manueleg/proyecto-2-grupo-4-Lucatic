@@ -16,7 +16,10 @@ import com.spring.model.Perfil;
 
 @Repository
 @Transactional(readOnly = true)
-public class PerfilRepositoryImp implements PerfilRepositoryCustom{
+public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
+	
+	@PersistenceContext 
+	EntityManager entityManager;
 	
 	private static Logger logger;
 	static {
@@ -27,12 +30,9 @@ public class PerfilRepositoryImp implements PerfilRepositoryCustom{
 		}
 	}
 	
-	@PersistenceContext 
-	EntityManager em;
-	
 	@Override
 	public List<Perfil> getPerfiles() {
-		Query query = em.createNativeQuery("SELECT * FROM lucatinder.usuarios.nombre " +
+		Query query = entityManager.createNativeQuery("SELECT * FROM lucatinder.usuarios.nombre " +
                 "WHERE nombre LIKE ?", Perfil.class);
 		return query.getResultList();
 	}
@@ -46,7 +46,7 @@ public class PerfilRepositoryImp implements PerfilRepositoryCustom{
 	public void like(int id1, int id2) {
 		// TODO Auto-generated method stub
 		logger.info("--- En método like de la clase PerfilRpositoryImpl");
-		em.createNativeQuery("INSERT INTO lucatinder.contactos (idcontacto, fk_idusuario, fk_idusuario2) VALUES (?,?,?)")
+		entityManager.createNativeQuery("INSERT INTO lucatinder.contactos (idcontacto, fk_idusuario, fk_idusuario2) VALUES (?,?,?)")
 	      .setParameter(1, null)
 	      .setParameter(2, id1)
 	      .setParameter(3, id2)
@@ -63,7 +63,7 @@ public class PerfilRepositoryImp implements PerfilRepositoryCustom{
 		// TODO Auto-generated method stub
 
 		logger.info("--- En método dislike de la clase PerfilRpositoryImpl");
-		em.createNativeQuery("INSERT INTO lucatinder.descartes (iddescarte, fk_idusuario, fk_idusuario2) VALUES (?,?,?)")
+		entityManager.createNativeQuery("INSERT INTO lucatinder.descartes (iddescarte, fk_idusuario, fk_idusuario2) VALUES (?,?,?)")
 	      .setParameter(1, null)
 	      .setParameter(2, id1)
 	      .setParameter(3, id2)
@@ -73,12 +73,12 @@ public class PerfilRepositoryImp implements PerfilRepositoryCustom{
 	@Override
 	public void intereses(int idPerfil, String genero, int edadMin, int edadMax) {
 		logger.info("--- En método intereses de la clase PerfilRepositoryImpl");
-		em.createNativeQuery("INSERT INTO lucatinder.intereses (idinteres, edadmax, edadmin, idgenero) VALUES (?,?,?,?)")
+		entityManager.createNativeQuery("INSERT INTO lucatinder.intereses (idinteres, edadmax, edadmin, idgenero) VALUES (?,?,?,?)")
 	      .setParameter(1, null)
 	      .setParameter(2, genero)
 	      .setParameter(3, edadMin)
 	      .setParameter(3, edadMax)
 	      .executeUpdate();
 	}
-	
+
 }

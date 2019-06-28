@@ -90,8 +90,8 @@ public class Test02_BBDD {
 			p.setGenero(Genero.H);
 			p.setIdintereses(null);
 			p.setPoblacion("Madrid");
-			//perfilDAO.save(p);
-			pImpDao.guardar(p);
+			perfilDAO.save(p);
+			//pImpDao.guardar(p);
 			
 			// Paso 01) Miro cuantos elementos hay
 			/*for(Perfil per : perfiles) {

@@ -11,8 +11,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.spring.controller.PerfilController;
-import com.spring.dao.PerfilRepository;
-import com.spring.model.Intereses;
+import com.spring.repository.PerfilRepository;
+//import com.spring.model.Intereses;
 import com.spring.model.Perfil;
 import com.spring.model.PerfilMaker;
 
