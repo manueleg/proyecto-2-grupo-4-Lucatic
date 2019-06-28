@@ -93,7 +93,7 @@ public class PerfilController {
 	 * @param id2
 	 * @return redirect
 	 */
-	@PostMapping("/contactos")
+	@PostMapping("/like")
 	public String like(@RequestParam("id1") int id1, @RequestParam("id2") int id2) {
 		logger.info("----RECIIENDO IDs -> /LIKE");
 		perfilServices.like(id1, id2);
@@ -121,7 +121,7 @@ public class PerfilController {
 	 * @param edadMax
 	 * @return perfil
 	 */
-	@GetMapping("/guardarIntereses")
+	@GetMapping("/guardarintereses")
 	public String guardarIntereses(@RequestParam("idperfil") int idPerfil, @RequestParam("genero") String genero,@RequestParam("edadMin") int edadMin,@RequestParam("edadMax") int edadMax) {
 		perfilServices.guardarIntereses(idPerfil, genero, edadMin, edadMax);
 		logger.info("-------PerfilController guardarIntereses");
