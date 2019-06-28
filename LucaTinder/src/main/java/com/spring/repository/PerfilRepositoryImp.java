@@ -6,15 +6,27 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.spring.controller.PerfilController;
 import com.spring.model.Perfil;
 
 @Repository
 @Transactional(readOnly = true)
 public class PerfilRepositoryImp implements PerfilRepositoryCustom{
-
+	
+	private static Logger logger;
+	static {
+		try {
+			logger = LogManager.getLogger(PerfilController.class);
+		} catch (Throwable e) {
+			System.out.println("Logger don't work");
+		}
+	}
+	
 	@PersistenceContext 
 	EntityManager entityManager;
 	
@@ -33,6 +45,7 @@ public class PerfilRepositoryImp implements PerfilRepositoryCustom{
 	@Override
 	public void like(int id1, int id2) {
 		// TODO Auto-generated method stub
+		logger.info("--- En método like de la clase PerfilRpositoryImpl");
 		entityManager.createNativeQuery("INSERT INTO lucatinder.contactos (idcontacto, fk_idusuario, fk_idusuario2) VALUES (?,?,?)")
 	      .setParameter(1, null)
 	      .setParameter(2, id1)
@@ -48,6 +61,7 @@ public class PerfilRepositoryImp implements PerfilRepositoryCustom{
 	@Override
 	public void dislike(int id1, int id2) {
 		// TODO Auto-generated method stub
+		logger.info("--- En método dislike de la clase PerfilRpositoryImpl");
 		entityManager.createNativeQuery("INSERT INTO lucatinder.descartes (iddescarte, fk_idusuario, fk_idusuario2) VALUES (?,?,?)")
 	      .setParameter(1, null)
 	      .setParameter(2, id1)
