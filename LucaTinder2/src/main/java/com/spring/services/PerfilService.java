@@ -19,7 +19,7 @@ public interface PerfilService {
 	
 	//public Optional<Perfil> get(int id);
 
-	public Perfil get(int idnombre);
+	public Perfil get(int id);
 	
 	public List<Perfil> getPerfiles();
 	

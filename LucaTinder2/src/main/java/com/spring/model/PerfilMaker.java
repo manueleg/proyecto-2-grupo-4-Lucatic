@@ -22,4 +22,8 @@ public class PerfilMaker {
 			System.out.println("Logger don't work");
 		}
 	}
+	
+	public static Perfil damePerfil() {
+		return null;
+	}
 }
