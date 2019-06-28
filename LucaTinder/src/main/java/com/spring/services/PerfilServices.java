@@ -25,6 +25,7 @@ public interface PerfilServices {
 	public List<Perfil> getPerfiles();
 	
 	public void guardarPerfiles();
+	public void guardarIntereses();
 	
 	public void update(Perfil user);
 	public void add(Perfil user);

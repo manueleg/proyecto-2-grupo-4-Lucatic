@@ -12,6 +12,7 @@ import org.apache.logging.log4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.spring.controller.PerfilController;
 import com.spring.dao.PerfilRepository;
+import com.spring.model.Intereses;
 import com.spring.model.Perfil;
 import com.spring.model.PerfilMaker;
 
@@ -107,15 +108,12 @@ public class PerfilServicesImpl implements PerfilServices {
 
 	}
 	
-
 	@Override
-
 	public void guardarPerfiles() {
 		logger.info("---Cargando perfiles");
 		for(Perfil p : generarPerfiles()) {
 			perfilDAO.save(p);
 		}
-		
 	}
 
 	@Override
@@ -128,5 +126,18 @@ public class PerfilServicesImpl implements PerfilServices {
 		perfilDAO.like(id1, id2);
 
 	}
+
+	@Override
+	public void guardarIntereses() {
+		logger.info("----Guardar intereses");
+		
+	}
+	
+	public List<Intereses> cargarIntereses() {
+		logger.info("---carga intereses");
+		return null;
+	}
+	
+	
 
 }
