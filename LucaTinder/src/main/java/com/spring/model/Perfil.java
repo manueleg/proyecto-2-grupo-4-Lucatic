@@ -33,7 +33,7 @@ public class Perfil {
 	private Genero genero;
 	private LocalDate edad;
 	private String poblacion;
-	private int idintereses;
+	private Integer idintereses;
 	private String descripcion;
 
 	private static Logger logger;
@@ -63,7 +63,7 @@ public class Perfil {
 	 * @param idintereses
 	 * @param descripcion
 	 */
-	public Perfil(int idusuario, String nombre, Genero genero, LocalDate edad, String poblacion, int idintereses,
+	public Perfil(int idusuario, String nombre, Genero genero, LocalDate edad, String poblacion, Integer idintereses,
 			String descripcion) {
 		super();
 		this.idusuario = idusuario;
@@ -123,7 +123,7 @@ public class Perfil {
 		return idintereses;
 	}
 
-	public void setIdintereses(int idintereses) {
+	public void setIdintereses(Integer idintereses) {
 		this.idintereses = idintereses;
 	}
 

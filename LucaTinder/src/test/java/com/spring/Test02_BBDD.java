@@ -2,6 +2,14 @@ package com.spring;
 
 import static org.junit.Assert.assertEquals;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.After;
@@ -10,9 +18,16 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.mockito.Mock;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.spring.model.Genero;
+import com.spring.model.Perfil;
 import com.spring.repository.PerfilRepository;
+import com.spring.repository.PerfilRepositoryImp;
 
 public class Test02_BBDD {
+	PerfilRepository perfilDAO;
 	private static Logger logger;
 	// Inicializo
 	static {
@@ -21,8 +36,8 @@ public class Test02_BBDD {
 		} catch (Throwable e) {
 			System.out.println("Don't work");
 		}
-    }
-	
+	}
+
 	@BeforeClass
 	public static void onceExecutedBeforeAll() {
 		logger.info("@BeforeClass: Al inicio de las pruebas");
@@ -53,40 +68,61 @@ public class Test02_BBDD {
 	// --------
 	// TEST
 	// --------
-	
+
 	@Test
 	public void testAddPerfil() {
 
-		PerfilRepository pDao;
+		PerfilRepositoryImp pImpDao = new PerfilRepositoryImp();
 		logger.info("Prueba para comprobar que se ha agregado un perfil");
 
-		int cantidadInicial;
-		int cantidadFinal;
-		boolean existe = true;
-		int idALocalizar;
+		int cantidadInicial=0;
+		int cantidadFinal=0;
 
+		//Resultados test David: 16. Fallos porcentaje total de los dos test: 50,8%
+		
 		try {
-			pDao.
+			Perfil p = new Perfil();
+			p.setNombre("nombre1");
+			DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			LocalDate fechaNac = LocalDate.parse("15/08/1993", fmt);
+			p.setEdad(fechaNac);
+			p.setDescripcion("descripcion1");
+			p.setGenero(Genero.H);
+			p.setIdintereses(null);
+			p.setPoblacion("Madrid");
+			//perfilDAO.save(p);
+			pImpDao.guardar(p);
+			
 			// Paso 01) Miro cuantos elementos hay
-			cantidadInicial = conex.numPeliculas();
-			logger.info("Num peliculas iniciales: "+cantidadInicial);
-			// Paso 02) Borro uno de ellos
-			idALocalizar = conex.indicePeliculaAzar();
-			logger.info("Pelicula a borrar de ID: "+idALocalizar);
-			logger.info(conex.findById(idALocalizar));			
-			conex.deleteById(idALocalizar);
-			// Paso 03) compruebo que hay uno menos
-			cantidadFinal = conex.numPeliculas();
-			logger.info("Num peliculas finales: "+cantidadFinal);			
-			// Paso 04) Compruebo que no existe ese elemento
-			existe = conex.isExistPelicula(idALocalizar);
-			logger.info("Pelicula borrada con ID: "+idALocalizar);			
+			/*for(Perfil per : perfiles) {
+				cantidadInicial++;
+			}*/
+			
+			/*Iterator<Perfil> it = perfilDAO.getPerfiles().iterator();
+			while (it.hasNext()) {
+				if (it.next() == null){
+					logger.info("No hay objetos en el List de perfiles recogido de la BBDD.");
+				} else {
+					cantidadInicial++;
+				}
+			}*/
+			logger.info("Número perfiles iniciales: " + cantidadInicial);
+
+			// Paso 02) Guardo un nuevo elemento
+			//perfilDAO.save(p);
+			
+			// Paso 03) Compruebo otra vez cuántos elementos hay
+			/*Iterator<Perfil> it2 = perfilDAO.getPerfiles().iterator();
+			while (it2.hasNext()) {
+				cantidadFinal++;
+			}*/
+			logger.info("Número perfiles finales: " + cantidadFinal);
 
 			// Comprobaciones
-			assertEquals(cantidadInicial, cantidadFinal + 1);
-			assertEquals(existe, false);
+			assertEquals(cantidadInicial, cantidadFinal - 1);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+
 }
