@@ -111,4 +111,19 @@ public class PerfilController {
 		return "contactos";
 	}
 	
+	/**
+	 * Método que envía la información de los intereses para guardarlos en la base de datos
+	 * @param idPerfil
+	 * @param genero
+	 * @param edadMin
+	 * @param edadMax
+	 * @return perfil
+	 */
+	@GetMapping("/guardarIntereses")
+	public String guardarIntereses(@RequestParam("idperfil") int idPerfil, @RequestParam("genero") String genero,@RequestParam("edadMin") int edadMin,@RequestParam("edadMax") int edadMax) {
+		perfilServices.guardarIntereses(idPerfil, genero, edadMin, edadMax);
+		logger.info("-------PerfilController guardarIntereses");
+		return "perfil";
+	}
+	
 }
