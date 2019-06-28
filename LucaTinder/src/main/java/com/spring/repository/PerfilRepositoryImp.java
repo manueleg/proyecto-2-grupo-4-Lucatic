@@ -28,11 +28,11 @@ public class PerfilRepositoryImp implements PerfilRepositoryCustom{
 	}
 	
 	@PersistenceContext 
-	EntityManager entityManager;
+	EntityManager em;
 	
 	@Override
 	public List<Perfil> getPerfiles() {
-		Query query = entityManager.createNativeQuery("SELECT * FROM lucatinder.usuarios.nombre " +
+		Query query = em.createNativeQuery("SELECT * FROM lucatinder.usuarios.nombre " +
                 "WHERE nombre LIKE ?", Perfil.class);
 		return query.getResultList();
 	}
@@ -46,7 +46,7 @@ public class PerfilRepositoryImp implements PerfilRepositoryCustom{
 	public void like(int id1, int id2) {
 		// TODO Auto-generated method stub
 		logger.info("--- En método like de la clase PerfilRpositoryImpl");
-		entityManager.createNativeQuery("INSERT INTO lucatinder.contactos (idcontacto, fk_idusuario, fk_idusuario2) VALUES (?,?,?)")
+		em.createNativeQuery("INSERT INTO lucatinder.contactos (idcontacto, fk_idusuario, fk_idusuario2) VALUES (?,?,?)")
 	      .setParameter(1, null)
 	      .setParameter(2, id1)
 	      .setParameter(3, id2)
@@ -62,10 +62,31 @@ public class PerfilRepositoryImp implements PerfilRepositoryCustom{
 	public void dislike(int id1, int id2) {
 		// TODO Auto-generated method stub
 		logger.info("--- En método dislike de la clase PerfilRpositoryImpl");
-		entityManager.createNativeQuery("INSERT INTO lucatinder.descartes (iddescarte, fk_idusuario, fk_idusuario2) VALUES (?,?,?)")
+		em.createNativeQuery("INSERT INTO lucatinder.descartes (iddescarte, fk_idusuario, fk_idusuario2) VALUES (?,?,?)")
 	      .setParameter(1, null)
 	      .setParameter(2, id1)
 	      .setParameter(3, id2)
+	      .executeUpdate();
+	}
+
+	@Override
+	public void guardar(Perfil perfil) {
+		// TODO Auto-generated method stub
+		logger.info("--- En método guardar de la clase PerfilRpositoryImpl");
+		/*String query = "insert into usuarios values(null,?)";
+
+		em.createNativeQuery(query)
+		   .setParameter(1, "Tom")
+		   .executeUpdate();*/
+
+		em.createNativeQuery("INSERT INTO lucatinder.usuarios (idusuario, nombre, genero, edad, poblacion, idintereses, descripcion) VALUES (null,?,?,?,?,?,?)")
+		  .setParameter(1, null)
+	      .setParameter(2, perfil.getNombre())
+	      .setParameter(3, perfil.getGenero())
+	      .setParameter(4, perfil.getEdad())
+	      .setParameter(5, perfil.getPoblacion())
+	      .setParameter(6, perfil.getIdintereses())
+	      .setParameter(7, perfil.getDescripcion())
 	      .executeUpdate();
 	}
 	
