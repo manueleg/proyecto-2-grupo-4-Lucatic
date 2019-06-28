@@ -72,9 +72,7 @@ public class PerfilServicesImpl implements PerfilServices {
 
 	@Override
 	public Perfil get(int id) {
-
 		logger.info("---Obtiene el perfil");
-
 		return perfilDAO.findOne(id);
 	}
 
