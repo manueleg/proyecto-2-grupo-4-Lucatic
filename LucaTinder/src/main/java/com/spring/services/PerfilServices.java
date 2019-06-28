@@ -18,11 +18,10 @@ public interface PerfilServices {
 
 	public List<Perfil> generarPerfiles();
 	
-<<<<<<< HEAD
-	public Optional<Perfil> get(int id);
-=======
+	//public Optional<Perfil> get(int id);
+
 	public Perfil get(int idnombre);
->>>>>>> cristina
+	
 	public List<Perfil> getPerfiles();
 	
 	public void guardarPerfiles();

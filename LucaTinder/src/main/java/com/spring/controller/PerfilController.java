@@ -69,13 +69,15 @@ public class PerfilController {
 	}
 	
 	@PostMapping("/acceso")
-	public String Login(@ModelAttribute Perfil perfil) {
+	public String Login(@ModelAttribute Perfil perfil, ModelMap listPerfiles) {
 		if(perfilServices.get(perfil.getIdusuario())!=null) {
+			listPerfiles.addAttribute(perfil);
+			listPerfiles.addAttribute("perfil", perfilServices.generarPerfiles());
 			return "contactos";
 		}else {
 			return "index";
 		}
-
 	}
+	
 	
 }
