@@ -1,61 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<<<<<<< HEAD
-<head>
-<meta charset="UTF-8">
-<link rel="Stylesheet" href="/resources/css/custom.css">
-<link rel="Stylesheet" href="/resources/css/bootstrap.css">
-<title>LucaTinder</title>
-</head>
-<body>
-	<div>
-		<h1>Contactos</h1>
-		<h2>Mi perfil</h2>
-		<table>
-		<thead>
-			<tr>
-				<th>Nombre</th>
-				<th>Edad</th>
-				<th>Género</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td><span th:text="${perfil.nombre}"></span></td>
-				<td><span th:text="${perfil.edad}"></span></td>
-				<td><span th:text="${perfil.genero}"></span></td>
-			</tr>
-		</tbody>
-		<hr>
-		</table>
-		<h2>Contactos</h2>
-		<table>
-		<thead>
-			<tr>
-				<th>Dislike</th>
-				<th>Nombre</th>
-				<th>Edad</th>
-				<th>Género</th>
-				<th>Like</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="perfiles:${perfilList}">
-				<td>
-					<a th:href="@{/dislike(id1=${perfil.id},id2=${perfiles.id})}">Dislike</a><!-- DISLIKE -->
-				</td>
-				<td><span th:text="${perfiles.nombre}"></span></td>
-				<td><span th:text="${perfiles.edad}"></span></td>
-				<td><span th:text="${perfiles.genero}"></span></td>
-				<td>
-					<a th:href="@{/like(id1=${perfil.id},id2=${perfiles.id})}">Like</a><!-- LIKE -->
-				</td>
-			</tr>
-		</tbody>
-		</table>
-	</div>
-</body>
-=======
+<html lang="en">
   <head>
     <title>Stated &mdash; Website by Colorlib</title>
     <meta charset="utf-8">
@@ -137,29 +81,34 @@
         <div class="row align-items-center justify-content-center">
           <div class="col-md-12  text-center">
               <div id="boxperfil">
-                <h2>Tu id es: <input type="number" th:field="*{idusuario}"></h2>
+                <br>
+                <h2>Mi perfil</h2>
                 <hr>
                 <br>
-                <!--<h4><a href="#"><img src="images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto1&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="images/checked.png"></a></h4>
-                <h4><a href="#"><img src="images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto2&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="images/checked.png"></a></h4>
-                <h4><a href="#"><img src="images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto3&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="images/checked.png"></a></h4>
-                <h4><a href="#"><img src="images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto4&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="images/checked.png"></a></h4>
-                <h4><a href="#"><img src="images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto5&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="images/checked.png"></a></h4>-->
-                <table>
-                    <tbody>
-                        <tr th:each="perfiles:${perfilList}">
-                            <td>
-                                <a th:href="@{/dislike(id1=${perfil.id},id2=${perfiles.id})}"><img src="images/close.png"></a><!-- DISLIKE -->
-                            </td>
-                            <td><span th:text="${perfiles.nombre}"></span></td>
-                            <td><span th:text="${perfiles.edad}"></span></td>
-                            <td><span th:text="${perfiles.genero}"></span></td>
-                            <td>
-                                <a th:href="@{/like(id1=${perfil.id},id2=${perfiles.id})}"><img src="images/checked.png"></a><!-- LIKE -->
-                            </td>
-                        </tr>
-                    </tbody> 
-                </table>
+                <h4>Nombre: </h4>
+                <h4>Email: </h4>
+                <h4>Edad: </h4>
+                <h4>Género: </h4>
+                <br>
+              </div>
+              <br>
+              <h2>Mis intereses</h2>
+              <hr>
+              <h4>Género: <input type="radio" name="genero" value="Hombre">Hombre 
+                               <input type="radio" name="genero" value="Mujer">Mujer</h4>
+              <h4>Edad Mínima: <input type="number"></h4>
+              <h4>Edad Máxima: <input type="number"></h4>
+              <h4>Materias: </h4><input type="checkbox" name="materia1" value="Java" class="checkbox">Java
+                                 <input type="checkbox" name="materia2" value="JavaScript">JavaScript
+                                 <input type="checkbox" name="materia3" value="C">C
+                                 <input type="checkbox" name="materia4" value="C#">C#
+                                 <input type="checkbox" name="materia5" value="C++">C++
+                                 <input type="checkbox" name="materia6" value="Python">Python
+                                 <input type="checkbox" name="materia7" value="Spring">Spring
+                                 <input type="checkbox" name="materia8" value="Angular">Angular
+                                 <input type="checkbox" name="materia8" value="Thymeleaf">Thymeleaf
+            <br><br>
+             <input type="button" value="Guardar">
           </div>
         </div>
       </div>
@@ -244,6 +193,6 @@
 
   
   <script src="../static/js/main.js"></script>
+    
   </body>
->>>>>>> cristina
 </html>
