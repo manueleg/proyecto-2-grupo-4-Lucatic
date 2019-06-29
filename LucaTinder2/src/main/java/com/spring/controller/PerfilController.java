@@ -33,17 +33,31 @@ public class PerfilController {
 	
 
 	/**
-	 * pasamos el listado de valores que hemos creado en la interfaz de Servicios
+	 * Metodo para acceder a la pagina index pasandole un objeto perfil
 	 * @param model
 	 * @return index.html
 	 * @throws Exception
 	 */
 	
-	@RequestMapping("/index")
+	@RequestMapping("/")
 	public String handleRequest(ModelMap model) throws Exception{ 
 		logger.info("---HandleRequest");
-		model.addAttribute("listadoperfiles", perfilService.getPerfiles());
+		model.addAttribute("perfil", new Perfil());
 		return "index";
+	}
+	
+	/**
+	 * Método para acceder a la página registro pasandole un objeto perfil
+	 * @param model
+	 * @return index.html
+	 * @throws Exception
+	 */
+	
+	@RequestMapping("/registro")
+	public String handleRequest1(ModelMap model) throws Exception{ 
+		logger.info("---HandleRequest");
+		model.addAttribute("perfil", new Perfil());
+		return "registro";
 	}
 	
 	/**
@@ -69,13 +83,14 @@ public class PerfilController {
 	 */
 	
 	@PostMapping("/acceso")
-	public String login(@ModelAttribute Perfil perfil, ModelMap model) {
+	public String login(@RequestParam("perfil") Perfil perfil, ModelMap model) {
 		logger.info("----COMPROBANDO IDs");
 		if(perfilService.get(perfil.getIdusuario())!=null) {
 			model.addAttribute("perfil", perfil);
 			model.addAttribute("perfilList", perfilService.getPerfiles());
 			return "contactos";
 		}else {
+			model.addAttribute("perfil", perfil);
 			return "index";
 		}
 	}
