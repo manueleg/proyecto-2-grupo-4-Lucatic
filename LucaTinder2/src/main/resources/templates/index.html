@@ -1,45 +1,5 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<<<<<<< HEAD
-<head>
-<meta charset="UTF-8">
-<!-- Comprobar ruta CSS cuando esté añadido -->
-<link rel="stylesheet" href="/resources/css/estilos.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<!-- Agregar Bootstrap -->
-
-<title>LucaTinder - Iniciar sesión</title>
-</head>
-
-<body>
-	<div id="contenedor">
-		<!-- Banner LucaTinder -->
-		<div id="banner">
-			<img alt="Logo" src="" />
-			<span id="lucatinder">LucaTinder</span>
-		</div>
-		
-		<!-- Título login -->
-		<h2>LOGIN</h2>
-		
-		<!-- ID: inputID -->
-		<form method="post"
-			th:object="${perfil}"
-			th:action="@{/acceso}">
-			<label for="idusuario">ID</label>
-			<input type="text" th:field="*{idusuario}" />
-			
-			<br />
-			<input type="submit" value="Entrar" />
-			<br />
-			
-			<!-- Enlace a página de registro. "Regístrate aquí" -->
-			<p>Si no estás registrado, <a th:href="@{/registro}">regístrate aquí</a>.</p>
-		</form>
-
-	</div>
-</body>
-=======
   <head>
     <title>Stated &mdash; Website by Colorlib</title>
     <meta charset="utf-8">

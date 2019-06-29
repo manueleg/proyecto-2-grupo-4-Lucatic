@@ -1,61 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<<<<<<< HEAD
+
 <head>
 <meta charset="UTF-8">
 <link rel="Stylesheet" href="/resources/css/custom.css">
 <link rel="Stylesheet" href="/resources/css/bootstrap.css">
 <title>LucaTinder</title>
 </head>
-<body>
-	<div>
-		<h1>Contactos</h1>
-		<h2>Mi perfil</h2>
-		<table>
-		<thead>
-			<tr>
-				<th>Nombre</th>
-				<th>Edad</th>
-				<th>Género</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td><span th:text="${perfil.nombre}"></span></td>
-				<td><span th:text="${perfil.edad}"></span></td>
-				<td><span th:text="${perfil.genero}"></span></td>
-			</tr>
-		</tbody>
-		<hr>
-		</table>
-		<h2>Contactos</h2>
-		<table>
-		<thead>
-			<tr>
-				<th>Dislike</th>
-				<th>Nombre</th>
-				<th>Edad</th>
-				<th>Género</th>
-				<th>Like</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="perfiles:${perfilList}">
-				<td>
-					<a th:href="@{/dislike(id1=${perfil.id},id2=${perfiles.id})}">Dislike</a><!-- DISLIKE -->
-				</td>
-				<td><span th:text="${perfiles.nombre}"></span></td>
-				<td><span th:text="${perfiles.edad}"></span></td>
-				<td><span th:text="${perfiles.genero}"></span></td>
-				<td>
-					<a th:href="@{/like(id1=${perfil.id},id2=${perfiles.id})}">Like</a><!-- LIKE -->
-				</td>
-			</tr>
-		</tbody>
-		</table>
-	</div>
-</body>
-=======
   <head>
     <title>Stated &mdash; Website by Colorlib</title>
     <meta charset="utf-8">
@@ -140,26 +91,26 @@
                 <h2>Tu id es: <input type="number" th:field="*{idusuario}"></h2>
                 <hr>
                 <br>
-                <!--<h4><a href="#"><img src="images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto1&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="images/checked.png"></a></h4>
-                <h4><a href="#"><img src="images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto2&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="images/checked.png"></a></h4>
-                <h4><a href="#"><img src="images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto3&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="images/checked.png"></a></h4>
-                <h4><a href="#"><img src="images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto4&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="images/checked.png"></a></h4>
-                <h4><a href="#"><img src="images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto5&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="images/checked.png"></a></h4>-->
-                <table>
+                <h4><a href="#"><img src="../static/images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto1&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="../static/images/checked.png"></a></h4>
+                <h4><a href="#"><img src="../static/images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto2&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="../static/images/checked.png"></a></h4>
+                <h4><a href="#"><img src="../static/images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto3&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="../static/images/checked.png"></a></h4>
+                <h4><a href="#"><img src="../static/images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto4&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="../static/images/checked.png"></a></h4>
+                <h4><a href="#"><img src="../static/images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto5&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="../static/images/checked.png"></a></h4>
+                <!--  <table>
                     <tbody>
                         <tr th:each="perfiles:${perfilList}">
                             <td>
-                                <a th:href="@{/dislike(id1=${perfil.id},id2=${perfiles.id})}"><img src="images/close.png"></a><!-- DISLIKE -->
-                            </td>
+                                <a th:href="@{/dislike(id1=${perfil.id},id2=${perfiles.id})}"><img src="../static/images/close.png"></a><!-- DISLIKE -->
+                            <!--</td>
                             <td><span th:text="${perfiles.nombre}"></span></td>
                             <td><span th:text="${perfiles.edad}"></span></td>
                             <td><span th:text="${perfiles.genero}"></span></td>
                             <td>
-                                <a th:href="@{/like(id1=${perfil.id},id2=${perfiles.id})}"><img src="images/checked.png"></a><!-- LIKE -->
-                            </td>
+                                <a th:href="@{/like(id1=${perfil.id},id2=${perfiles.id})}"><img src="../static/images/checked.png"></a><!-- LIKE -->
+                            <!-- </td>
                         </tr>
                     </tbody> 
-                </table>
+                </table>-->
           </div>
         </div>
       </div>
