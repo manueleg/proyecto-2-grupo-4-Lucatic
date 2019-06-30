@@ -66,6 +66,7 @@ public class PerfilServiceImpl implements PerfilService{
 		Optional<Perfil> perfilOptional = perfilDAO.findById(id);
 		if (perfilOptional.isPresent()){
 			Perfil p = perfilOptional.get();
+			System.out.println(p);
 			return p;
 		}
 		else{

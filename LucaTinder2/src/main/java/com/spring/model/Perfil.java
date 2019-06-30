@@ -86,12 +86,16 @@ public class Perfil {
 		this.nombre = nombre;
 	}
 
-	public Genero getGenero() {
-		return genero;
+	public Character getGenero() {
+		return (char) genero.getCharGenero();
 	}
 
-	public void setGenero(Genero genero) {
-		this.genero = genero;
+	public void setGenero(Character genero) {
+		if(genero.equals('h')) {
+			this.genero = Genero.H;
+		}else {
+			this.genero = Genero.M;
+		}
 	}
 
 	public LocalDate getEdad() {
@@ -110,7 +114,7 @@ public class Perfil {
 		this.poblacion = poblacion;
 	}
 
-	public int getIdintereses() {
+	public Integer getIdintereses() {
 		return idintereses;
 	}
 
