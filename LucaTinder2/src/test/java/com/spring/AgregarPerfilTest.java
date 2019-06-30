@@ -1,12 +1,12 @@
 package com.spring;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.junit.Assert.assertEquals;
+
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 
 import com.spring.model.Genero;
 import com.spring.model.Perfil;
@@ -21,21 +21,19 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class AgregarUsuarioTest {
+public class AgregarPerfilTest {
 
 	private static Logger logger;
 
 	// Inicializo
 	static {
 		try {
-			logger = LogManager.getLogger(AgregarUsuarioTest.class);
+			logger = LogManager.getLogger(AgregarPerfilTest.class);
 		} catch (Throwable e) {
 			System.out.println("Logger don't work");
 		}
@@ -62,8 +60,6 @@ public class AgregarUsuarioTest {
 	}
 
 	@Ignore
-	// Puedes usarlo en vez de comentar el mÃ©todo para que no se ejecute
-	// http://junit.sourceforge.net/javadoc/org/junit/Ignore.html
 	public void executionIgnored() {
 		logger.info("@Ignore: This execution is ignored");
 	}
@@ -76,16 +72,27 @@ public class AgregarUsuarioTest {
 	private PerfilRepository perfilRepo;
 	
 	@Test
-	public void AgregarUsuarioTest() {
+	public void AgregarPerfilTest() {
 
 		logger.info("Prueba para comprobar que se ha agregado un elemento");
 
-		int cantidadInicial;
-		int cantidadFinal;
-		boolean existe = true;
-		int idALocalizar;
+		int cantidadInicial=0;
+		int cantidadFinal=0;
 
 		try {
+			// Paso 01) Calculo cuántos perfiles hay en la base de datos inicialmente
+			List<Perfil> perfilesInicial= perfilRepo.getPerfiles();
+			if(perfilesInicial.isEmpty()){
+				System.out.println("--Número de perfiles iniciales= "+cantidadInicial);
+				logger.info("--Número de perfiles iniciales= "+cantidadInicial);
+			}else {
+				for(Perfil p : perfilesInicial) {
+					cantidadInicial++;
+				}
+				System.out.println("--Número de perfiles iniciales= "+cantidadInicial);
+				logger.info("--Número de perfiles iniciales= "+cantidadInicial);
+			}
+			// Paso 02) Agrego un perfil
 			DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 			LocalDate fechaNac = LocalDate.parse("15/08/1993", fmt);
 			Perfil p1 = new Perfil();
@@ -95,28 +102,27 @@ public class AgregarUsuarioTest {
 			p1.setNombre("nombre1");
 			p1.setIdintereses(null);
 			p1.setPoblacion("Madrid");
+			System.out.println("--Objeto creado, procedemos a guardarlo...");
 			logger.info("--Objeto creado, procedemos a guardarlo...");
 			perfilRepo.save(p1);
+			System.out.println("--¡Objeto guardado!");
 			logger.info("--¡Objeto guardado!");
-			/*// Paso 01) Miro cuantos elementos hay
-			perfilRepo.findAll();
-			cantidadInicial = conex.numPeliculas();
-			logger.info("Num peliculas iniciales: "+cantidadInicial);
-			// Paso 02) Borro uno de ellos
-			idALocalizar = conex.indicePeliculaAzar();
-			logger.info("Pelicula a borrar de ID: "+idALocalizar);
-			logger.info(conex.findById(idALocalizar));			
-			conex.deleteById(idALocalizar);
-			// Paso 03) compruebo que hay uno menos
-			cantidadFinal = conex.numPeliculas();
-			logger.info("Num peliculas finales: "+cantidadFinal);			
-			// Paso 04) Compruebo que no existe ese elemento
-			existe = conex.isExistPelicula(idALocalizar);
-			logger.info("Pelicula borrada con ID: "+idALocalizar);			
+			
+			// Paso 03) Claculo de nuevo los perfiles de la base de datos
+			List<Perfil> perfilesFinal= perfilRepo.getPerfiles();
+			if(perfilesFinal.isEmpty()){
+				System.out.println("--Número de perfiles finales= "+cantidadFinal);
+				logger.info("--Número de perfiles finales= "+cantidadFinal);
+			}else {
+				for(Perfil p : perfilesFinal) {
+					cantidadFinal++;
+				}
+				System.out.println("--Número de perfiles finales= "+cantidadFinal);
+				logger.info("--Número de perfiles finales= "+cantidadFinal);
+			}
 
-			// Comprobaciones
-			assertEquals(cantidadInicial, cantidadFinal + 1);
-			assertEquals(existe, false);*/
+			assertEquals(cantidadInicial, cantidadFinal-1);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

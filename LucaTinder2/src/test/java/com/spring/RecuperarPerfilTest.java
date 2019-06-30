@@ -1,5 +1,7 @@
 package com.spring;
 
+import static org.junit.Assert.assertEquals;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.After;
@@ -15,16 +17,17 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.spring.repository.PerfilRepository;
 
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class RecuperarUsuarioTest {
+public class RecuperarPerfilTest {
 
 		private static Logger logger;
 
 		// Inicializo
 		static {
 			try {
-				logger = LogManager.getLogger(AgregarUsuarioTest.class);
+				logger = LogManager.getLogger(RecuperarPerfilTest.class);
 			} catch (Throwable e) {
 				System.out.println("Logger don't work");
 			}
@@ -51,8 +54,6 @@ public class RecuperarUsuarioTest {
 		}
 
 		@Ignore
-		// Puedes usarlo en vez de comentar el mÃ©todo para que no se ejecute
-		// http://junit.sourceforge.net/javadoc/org/junit/Ignore.html
 		public void executionIgnored() {
 			logger.info("@Ignore: This execution is ignored");
 		}
@@ -65,38 +66,18 @@ public class RecuperarUsuarioTest {
 		private PerfilRepository perfilRepo;
 		
 		@Test
-		public void AgregarUsuarioTest() {
+		public void RecuperarPerfilTest() {
 
-			logger.info("Prueba para comprobar que se ha agregado un elemento");
-
-			int cantidadInicial;
-			int cantidadFinal;
-			boolean existe = true;
-			int idALocalizar;
+			boolean existe = false;
 
 			try {
 				logger.info("--Recuperando elemento de la base de datos");
-				System.out.println(perfilRepo.findById(5));
-				logger.info("--Elemento recuperado");
-				/*// Paso 01) Miro cuantos elementos hay
-				perfilRepo.findAll();
-				cantidadInicial = conex.numPeliculas();
-				logger.info("Num peliculas iniciales: "+cantidadInicial);
-				// Paso 02) Borro uno de ellos
-				idALocalizar = conex.indicePeliculaAzar();
-				logger.info("Pelicula a borrar de ID: "+idALocalizar);
-				logger.info(conex.findById(idALocalizar));			
-				conex.deleteById(idALocalizar);
-				// Paso 03) compruebo que hay uno menos
-				cantidadFinal = conex.numPeliculas();
-				logger.info("Num peliculas finales: "+cantidadFinal);			
-				// Paso 04) Compruebo que no existe ese elemento
-				existe = conex.isExistPelicula(idALocalizar);
-				logger.info("Pelicula borrada con ID: "+idALocalizar);			
+				if(perfilRepo.findById(5)!=null) {
+					existe=true;
+					logger.info("--Elemento recuperado");
+				};
 
-				// Comprobaciones
-				assertEquals(cantidadInicial, cantidadFinal + 1);
-				assertEquals(existe, false);*/
+				assertEquals(existe, true);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

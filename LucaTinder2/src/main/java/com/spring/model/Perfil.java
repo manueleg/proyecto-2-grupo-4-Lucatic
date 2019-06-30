@@ -98,6 +98,10 @@ public class Perfil {
 		}
 	}
 
+	/*public void setGenero(Genero genero) {
+	this.genero = genero;
+    }*/
+	
 	public LocalDate getEdad() {
 		return edad;
 	}
