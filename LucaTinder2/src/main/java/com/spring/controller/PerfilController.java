@@ -83,7 +83,7 @@ public class PerfilController {
 	 */
 	
 	@PostMapping("/acceso")
-	public String login(@RequestParam("perfil") Perfil perfil, ModelMap model) {
+	public String login(@ModelAttribute Perfil perfil, ModelMap model) {
 		logger.info("----COMPROBANDO IDs");
 		if(perfilService.get(perfil.getIdusuario())!=null) {
 			model.addAttribute("perfil", perfil);
