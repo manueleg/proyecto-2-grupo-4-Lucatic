@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>Stated &mdash; Website by Colorlib</title>
     <meta charset="utf-8">
@@ -69,22 +69,23 @@
 
       <div class="container box">
         <div class="row align-items-center justify-content-center">
+          <form method="post" th:object="${perfil}" th:action="@{/save}">
           <div class="col-md-12  text-center">
               <div id="boxregisto">
                 <h2>Página de registro</h2>
                 <hr>
                 <br>
-                <h4>Nombre: <input type="text"></h4>
-                <h4>Email: <input type="text"></h4>
-                <h4>Edad: <input type="number"></h4>
-                <h4>Género: 
-                    <input type="radio" name="genero" value="Hombre">Hombre
-                    <input type="radio" name="genero" value="Mujer">Mujer
+                <h4 for="nombre">Nombre: <input type="text" th:field="*{nombre}"></h4>
+                <h4 for="edad">Edad: <input type="number" th:field="*{edad}"></h4>
+                <h4 for="genero">Género: 
+                    <input type="radio" name="genero" value="h" th:field="*{genero}">Hombre
+                    <input type="radio" name="genero" value="m" th:field="*{genero}">Mujer
                 </h4>
                 <br>
               </div>
             <input type="button" value="Guardar">            
           </div>
+          </form>
         </div>
       </div>
     </div>  
