@@ -32,8 +32,7 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 	
 	@Override
 	public List<Perfil> getPerfiles() {
-		Query query = entityManager.createNativeQuery("SELECT * FROM lucatinder.usuarios.nombre " +
-                "WHERE nombre LIKE ?", Perfil.class);
+		Query query = entityManager.createNativeQuery("SELECT * FROM lucatinder.usuarios", Perfil.class);
 		return query.getResultList();
 	}
 
