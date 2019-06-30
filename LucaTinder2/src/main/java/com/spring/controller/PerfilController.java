@@ -72,7 +72,7 @@ public class PerfilController {
 		perfilService.add(perfil);
 		model.addAttribute("perfil", perfil);
 		model.addAttribute("perfilList", perfilService.getPerfiles());
-		return "contactos";
+		return "index";
 	}
 	
 	/**
