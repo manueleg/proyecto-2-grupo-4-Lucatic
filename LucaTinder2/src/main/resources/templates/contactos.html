@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
-<meta charset="UTF-8">
-<link rel="Stylesheet" href="/resources/css/custom.css">
-<link rel="Stylesheet" href="/resources/css/bootstrap.css">
-<title>LucaTinder</title>
-</head>
   <head>
-    <title>Stated &mdash; Website by Colorlib</title>
+    <title>LucaTinder</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -88,14 +82,14 @@
         <div class="row align-items-center justify-content-center">
           <div class="col-md-12  text-center">
               <div id="boxperfil">
-                <h2>Tu id es: <input type="number" th:field="*{idusuario}"></h2>
+                <h2>Tu id es: <input type="number" th:field="${perfil.idusuario}"></h2>
                 <hr>
                 <br>
-                <h4><a href="#"><img src="/resources/images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto1&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="../static/images/checked.png"></a></h4>
-                <h4><a href="#"><img src="/resources/images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto2&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="../static/images/checked.png"></a></h4>
-                <h4><a href="#"><img src="/resources/images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto3&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="../static/images/checked.png"></a></h4>
-                <h4><a href="#"><img src="/resources/images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto4&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="../static/images/checked.png"></a></h4>
-                <h4><a href="#"><img src="/resources/images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto5&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="../static/images/checked.png"></a></h4>
+                <h4><a href="#"><img src="/resources/images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto1&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="/resources/images/checked.png"></a></h4>
+                <h4><a href="#"><img src="/resources/images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto2&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="/resources/images/checked.png"></a></h4>
+                <h4><a href="#"><img src="/resources/images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto3&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="/resources/images/checked.png"></a></h4>
+                <h4><a href="#"><img src="/resources/images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto4&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="/resources/images/checked.png"></a></h4>
+                <h4><a href="#"><img src="/resources/images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto5&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="/resources/images/checked.png"></a></h4>
                <!--   <table>
                     <tbody>
                         <tr th:each="perfiles:${perfilList}">
