@@ -101,11 +101,13 @@ public class PerfilController {
 	 * @param id2
 	 * @return redirect
 	 */
-	@PostMapping("/like")
-	public String like(@RequestParam("id1") int id1, @RequestParam("id2") int id2) {
+	@GetMapping("/like")
+	public String like(@RequestParam("id1") int id1, @RequestParam("id2") int id2, ModelMap model) {
 		logger.info("----RECIIENDO IDs -> /LIKE");
 		perfilService.like(id1, id2);
-		return "redirect:/contactos";
+		model.addAttribute("perfil", perfilService.get(id1));
+		model.addAttribute("perfilList", perfilService.getPerfiles());
+		return "contactos";
 	}
 	
 	/**
@@ -115,9 +117,11 @@ public class PerfilController {
 	 * @return contactos
 	 */
 	@GetMapping("/dislike")
-	public String dislike(@RequestParam("idperfil") int idPerfil, @RequestParam("iddislike") int idDislike) {
-		perfilService.dislike(idPerfil, idDislike);
+	public String dislike(@RequestParam("id1") int id1, @RequestParam("id2") int id2, ModelMap model) {
 		logger.info("-------PerfilController dislike");
+		perfilService.dislike(id1, id2);
+		model.addAttribute("perfil", perfilService.get(id1));
+		model.addAttribute("perfilList", perfilService.getPerfiles());
 		return "contactos";
 	}
 	

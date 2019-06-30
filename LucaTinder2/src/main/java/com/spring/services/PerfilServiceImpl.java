@@ -128,7 +128,7 @@ public class PerfilServiceImpl implements PerfilService{
 	public void dislike(int id1, int id2) {
 		// TODO Auto-generated method stub
 		logger.info("---Dar no me gusta");
-		perfilDAO.like(id1, id2);
+		perfilDAO.dislike(id1, id2);
 	}
 
 	
