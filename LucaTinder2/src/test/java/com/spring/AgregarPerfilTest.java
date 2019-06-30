@@ -98,7 +98,8 @@ public class AgregarPerfilTest {
 			Perfil p1 = new Perfil();
 			p1.setDescripcion("descripcion1");
 			p1.setEdad(fechaNac);
-			p1.setGenero('h');
+			p1.setGenero("h");
+			//p1.setGenero(Genero.H);
 			p1.setNombre("nombre1");
 			p1.setIdintereses(null);
 			p1.setPoblacion("Madrid");

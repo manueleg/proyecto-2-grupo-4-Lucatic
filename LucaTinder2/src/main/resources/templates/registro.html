@@ -69,21 +69,25 @@
 
       <div class="container box">
         <div class="row align-items-center justify-content-center">
-          <form method="post" th:object="${perfil}" th:action="@{/save}">
+         <form method="post" th:object="${perfil}" th:action="@{/save}">
           <div class="col-md-12  text-center">
               <div id="boxregisto">
                 <h2>Página de registro</h2>
                 <hr>
                 <br>
                 <h4 for="nombre">Nombre: <input type="text" th:field="*{nombre}"></h4>
-                <h4 for="edad">Edad: <input type="number" th:field="*{edad}"></h4>
-                <h4 for="genero">Género: 
+                <!--<h4 for="edad">Edad: <input type="number" th:field="*{edad}"></h4>-->
+                 <h4 for="edad">Fecha de nacimiento: <input type="date" value="15/10/2016" id="edad"
+              th:value="${#dates.format(edad,'dd/MM/yyyy')}" th:name="edad" /></h4>
+                 <h4 for="genero">Género: 
+                   
                     <input type="radio" name="genero" value="h" th:field="*{genero}">Hombre
                     <input type="radio" name="genero" value="m" th:field="*{genero}">Mujer
-                </h4>
+                 </h4>
+                
                 <br>
               </div>
-            <input type="button" value="Guardar">            
+            <input type="submit" value="Guardar">            
           </div>
           </form>
         </div>

@@ -10,6 +10,7 @@ import javax.persistence.Table;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.format.annotation.DateTimeFormat;
 
 //import com.github.javafaker.Faker;
 
@@ -21,7 +22,9 @@ public class Perfil {
 	 */
 	private int idusuario;
 	private String nombre;
-	private Genero genero;
+	private String genero;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate edad;
 	private String poblacion;
 	private Integer idintereses;
@@ -54,7 +57,7 @@ public class Perfil {
 	 * @param idintereses
 	 * @param descripcion
 	 */
-	public Perfil(int idusuario, String nombre, Genero genero, LocalDate edad, String poblacion, Integer idintereses,
+	public Perfil(int idusuario, String nombre, String genero, LocalDate edad, String poblacion, Integer idintereses,
 			String descripcion) {
 		super();
 		this.idusuario = idusuario;
@@ -86,22 +89,27 @@ public class Perfil {
 		this.nombre = nombre;
 	}
 
-	public Character getGenero() {
-		return (char) genero.getCharGenero();
+	public String getGenero() {
+		return genero;
 	}
-
-	public void setGenero(Character genero) {
-		if(genero.equals('h')) {
+	/*
+	public Genero getGenero() {
+		return genero;
+	}*/
+	
+	public void setGenero(String genero) {
+		this.genero=genero;
+		/*if(genero.equals('h')) {
 			this.genero = Genero.H;
 		}else {
 			this.genero = Genero.M;
-		}
+		}*/
 	}
-
-	/*public void setGenero(Genero genero) {
+/*
+	public void setGenero(Genero genero) {
 	this.genero = genero;
-    }*/
-	
+    }
+*/
 	public LocalDate getEdad() {
 		return edad;
 	}
@@ -109,7 +117,7 @@ public class Perfil {
 	public void setEdad(LocalDate edad) {
 		this.edad = edad;
 	}
-
+	
 	public String getPoblacion() {
 		return poblacion;
 	}
