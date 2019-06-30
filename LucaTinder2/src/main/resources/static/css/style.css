@@ -67,6 +67,9 @@ hr {
   padding: 0.5em;
   margin-right: 2em;
 }
+.box-matches, .box-perfil{
+  margin-top: 8em;
+}
 
 /* Base */
 body {
