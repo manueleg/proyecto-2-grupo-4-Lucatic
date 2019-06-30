@@ -67,7 +67,7 @@ public class PerfilController {
 	 * @return contactos
 	 */
 	@PostMapping("/save")
-	public String registroPerfil(@ModelAttribute Perfil perfil, ModelMap model) {
+	public String registroPerfil(@ModelAttribute("perfil") Perfil perfil, ModelMap model) {
 		logger.info("-- en método registroPerfil");
 		perfilService.add(perfil);
 		model.addAttribute("perfil", perfil);
@@ -83,7 +83,7 @@ public class PerfilController {
 	 */
 	
 	@PostMapping("/acceso")
-	public String login(@RequestParam("perfil") Perfil perfil, ModelMap model) {
+	public String login(@ModelAttribute("perfil") Perfil perfil, ModelMap model) {
 		logger.info("----COMPROBANDO IDs");
 		if(perfilService.get(perfil.getIdusuario())!=null) {
 			model.addAttribute("perfil", perfil);
