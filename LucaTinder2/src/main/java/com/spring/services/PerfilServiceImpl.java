@@ -95,7 +95,7 @@ public class PerfilServiceImpl implements PerfilService{
 	public void guardarIntereses(int idPerfil, String genero, int edadMin, int edadMax) {
 		// TODO Auto-generated method stub
 		logger.info("----Guardar intereses");
-		//perfilDAO.insertarIntereses(idPerfil, genero, edadMin, edadMax);
+		perfilDAO.insertarIntereses(idPerfil, genero, edadMin, edadMax);
 	}
 
 	@Override

@@ -10,5 +10,5 @@ public interface PerfilRepositoryCustom {
 	List<Perfil> getPerfiles();
 	void like(int id1, int id2);
 	void dislike(int id1, int id2);
-	void intereses(int idPerfil, String genero, int edadMin, int edadMax);
+	void insertarIntereses(int idPerfil, String genero, int edadMin, int edadMax);
 }
