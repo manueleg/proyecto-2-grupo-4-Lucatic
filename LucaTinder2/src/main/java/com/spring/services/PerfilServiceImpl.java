@@ -112,8 +112,7 @@ public class PerfilServiceImpl implements PerfilService{
 
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
-		logger.info("---Borrar perfiles");
+		logger.info("---Borrar perfil");
 		perfilDAO.deleteById(id);
 	}
 
@@ -130,6 +129,8 @@ public class PerfilServiceImpl implements PerfilService{
 		logger.info("---Dar no me gusta");
 		perfilDAO.dislike(id1, id2);
 	}
+	
+	
 
 	
 	

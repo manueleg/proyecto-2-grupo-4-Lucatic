@@ -140,4 +140,16 @@ public class PerfilController {
 		return "perfil";
 	}
 	
+	/**
+	 * Método que da de baja a un usuario cuando le proporciona un id
+	 * @param idPerfil
+	 * @return index
+	 */
+	@GetMapping("/baja")
+	public String bajaPerfil(@RequestParam("idperfil") int idPerfil) {
+		perfilService.delete(idPerfil);
+		logger.info("--------PerfilController baja");
+		return "index";
+	}
+	
 }
