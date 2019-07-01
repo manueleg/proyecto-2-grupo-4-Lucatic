@@ -71,8 +71,8 @@ public class PerfilController {
 		logger.info("-- en método registroPerfil");
 		perfilService.add(perfil);
 		model.addAttribute("perfil", perfil);
-		model.addAttribute("perfilList", perfilService.getPerfiles());
-		return "index";
+		model.addAttribute("perfilList", perfilService.getPerfiles(perfil));
+		return "contactos";
 	}
 	
 	/**
@@ -86,8 +86,9 @@ public class PerfilController {
 	public String login(@ModelAttribute("perfil") Perfil perfil, ModelMap model) {
 		logger.info("----COMPROBANDO IDs");
 		if(perfilService.get(perfil.getIdusuario())!=null) {
+			perfil=perfilService.get(perfil.getIdusuario());
 			model.addAttribute("perfil", perfil);
-			model.addAttribute("perfilList", perfilService.getPerfiles());
+			model.addAttribute("perfilList", perfilService.getPerfiles(perfil));
 			return "contactos";
 		}else {
 			model.addAttribute("perfil", perfil);
@@ -106,7 +107,7 @@ public class PerfilController {
 		logger.info("----RECIIENDO IDs -> /LIKE");
 		perfilService.like(id1, id2);
 		model.addAttribute("perfil", perfilService.get(id1));
-		model.addAttribute("perfilList", perfilService.getPerfiles());
+		model.addAttribute("perfilList", perfilService.getPerfiles(perfilService.get(id1)));
 		return "contactos";
 	}
 	
@@ -121,7 +122,7 @@ public class PerfilController {
 		logger.info("-------PerfilController dislike");
 		perfilService.dislike(id1, id2);
 		model.addAttribute("perfil", perfilService.get(id1));
-		model.addAttribute("perfilList", perfilService.getPerfiles());
+		model.addAttribute("perfilList", perfilService.getPerfiles(perfilService.get(id1)));
 		return "contactos";
 	}
 	
