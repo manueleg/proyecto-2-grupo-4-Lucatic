@@ -75,9 +75,11 @@ public class PerfilServiceImpl implements PerfilService{
 	}
 
 	@Override
-	public List<Perfil> getPerfiles() {
-		// TODO Auto-generated method stub
-		return perfilDAO.findAll();
+	public List<Perfil> getPerfiles(Perfil perfil) {
+		List<Perfil> perfilesList=new ArrayList<Perfil>();
+		perfilesList=perfilDAO.getPerfiles();
+		perfilesList.remove(perfil);
+		return perfilesList;
 	}
 
 	@Override
