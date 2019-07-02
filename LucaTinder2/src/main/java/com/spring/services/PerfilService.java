@@ -22,7 +22,7 @@ public interface PerfilService {
 	
 	public List<Perfil> getPerfiles(Perfil perfil);
 	
-	public List<Perfil> getinsertarIntereses(Perfil perfil);
+	public List<Perfil> getPerfilesIntereses(Perfil perfil);
 	
 	public void guardarPerfiles();
 	public void guardarIntereses(int idPerfil, String genero, int edadMin, int edadMax);

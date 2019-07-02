@@ -79,7 +79,7 @@ public class PerfilController {
 	 * @param Perfil perfil
 	 * @return contactos
 	 */
-	@PostMapping("/save")
+	@PostMapping("/update")
 	public String updatePerfil(@ModelAttribute("perfil") Perfil perfil, ModelMap model) {
 		logger.info("-- en método registroPerfil");
 		perfilService.update(perfil);

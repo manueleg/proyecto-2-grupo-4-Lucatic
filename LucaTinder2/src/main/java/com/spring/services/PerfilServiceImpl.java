@@ -89,9 +89,9 @@ public class PerfilServiceImpl implements PerfilService {
 	}
 	
 	@Override
-	public List<Perfil> getinsertarIntereses(Perfil perfil) {
+	public List<Perfil> getPerfilesIntereses(Perfil perfil) {
 		logger.info("---Obtiene los intereses");
-		List<Perfil> perfilesIntereses = perfilDAO.getinsertarIntereses();
+		List<Perfil> perfilesIntereses = perfilDAO.getPerfilesIntereses(perfil);
 				
 		return perfilesIntereses;
 	}
