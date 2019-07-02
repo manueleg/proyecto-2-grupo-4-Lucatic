@@ -12,7 +12,7 @@ public interface PerfilRepositoryCustom {
 	public void like(int id1, int id2);
 	public void dislike(int id1, int id2);
 	public void match(int id1, int id2);
-	
+
 	List<Perfil> getPerfilesIntereses(Perfil perfil);
 	
 	public List<Perfil> getLikes(Perfil perfil);
@@ -22,4 +22,5 @@ public interface PerfilRepositoryCustom {
 	List<Perfil> getPerfilesMatch(Perfil perfil);
 
 	void insertarIntereses(int idPerfil, String genero, int edadMin, int edadMax);
+
 }
