@@ -143,5 +143,19 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 	      .setParameter(3, edadMax)
 	      .executeUpdate();
 	}
+	
+	
+	/**
+	 * @author David
+	 * @param int
+	 * @return List<Perfil>
+	 */
+	@Override
+	public List<Perfil> getinsertarIntereses(int idPerfil, String genero, int edadMin, int edadMax) {
+		// Esto es un relleno temporal, tengo que crear el algoritmo
+		List<Perfil> perfilesIntereses = new ArrayList<Perfil>();
+		return perfilesIntereses;
+	}
+	
 
 }

@@ -87,6 +87,17 @@ public class PerfilServiceImpl implements PerfilService {
 		}
 		return perfilesList;
 	}
+	
+	@Override
+	public List<Perfil> getinsertarIntereses(Perfil perfil) {
+		List<Perfil> perfilesIntereses = perfilDAO.getPerfiles();
+		
+		
+		return perfilesIntereses;
+	}
+
+	
+	
 
 	@Override
 	public void guardarPerfiles() {
@@ -142,5 +153,6 @@ public class PerfilServiceImpl implements PerfilService {
 		logger.info("---Dar no me gusta");
 		perfilDAO.dislike(id1, id2);
 	}
+
 
 }
