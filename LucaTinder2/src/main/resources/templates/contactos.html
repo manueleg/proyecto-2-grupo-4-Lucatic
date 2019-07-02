@@ -50,7 +50,7 @@
             <div class="row align-items-center">
                 
                 <div class="col-6 col-xl-2">
-                <h1 class="mb-0 site-logo m-0 p-0"><a href="index.html" class="mb-0">LUCATINDER</a></h1>
+                <h1 class="mb-0 site-logo m-0 p-0"><a th:href="@{/}" class="mb-0">LUCATINDER</a></h1>
                 </div>
     
                 <div class="col-12 col-md-10 d-none d-xl-block">
@@ -82,16 +82,10 @@
         <div class="row align-items-center justify-content-center">
           <div class="col-md-12  text-center">
               <div id="boxperfil">
-                <h2>Tu id es: <input type="number" th:field="${perfil.idusuario}"></h2>
+                <h2>Tu id es: <span th:text="${perfil.idusuario}"></h2>
                 <hr>
                 <br>
-<!-- 
-                <h4><a href="#"><img src="/resources/images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto1&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="/resources/images/checked.png"></a></h4>
-                <h4><a href="#"><img src="/resources/images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto2&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="/resources/images/checked.png"></a></h4>
-                <h4><a href="#"><img src="/resources/images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto3&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="/resources/images/checked.png"></a></h4>
-                <h4><a href="#"><img src="/resources/images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto4&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="/resources/images/checked.png"></a></h4>
-                <h4><a href="#"><img src="/resources/images/close.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;Contacto5&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="/resources/images/checked.png"></a></h4>
--->
+
                 <table>
                     <tbody>
                         <tr th:each="perfiles : ${perfilList}">
