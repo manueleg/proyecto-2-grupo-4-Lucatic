@@ -64,7 +64,6 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 	 */
 	@Override
 	public void match(int id1, int id2) {
-		// TODO Auto-generated method stub
 		logger.info("--- En método match de la clase PerfilRpositoryImpl");
 		entityManager.createNativeQuery("INSERT INTO lucatinder.match (idmatch, idusuario, idusuario2) VALUES (?,?,?)")
 	      .setParameter(1, null)
@@ -103,6 +102,18 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 			perfilesDislike.add((Perfil)p);
 		}
 		return perfilesDislike;
+	}
+	
+	/**
+	 * dsd
+	 * @param int
+	 * @return List<Perfil>
+	 */
+	@Override
+	public List<Perfil> getPerfilesMatch(int id) {
+		// Esto es un relleno temporal, tengo que crear el algoritmo
+		List<Perfil> perfilesMatch = new ArrayList<Perfil>();
+		return perfilesMatch;
 	}
 
 	/**
