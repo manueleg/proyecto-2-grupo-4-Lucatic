@@ -100,7 +100,7 @@
                                 <a th:href="@{/dislike(id1=${perfil.idusuario},id2=${perfiles.idusuario})}"><img src="/resources/images/close.png"></a>
                           </td>
                             <td><span th:text="${perfiles.nombre}"></span></td>
-                            <td><span th:text="${perfiles.fecha_nac}"></span></td>
+                            <td><span th:text="${perfiles.dameEdad()}"></span></td>
                             <td><span th:text="${perfiles.genero}"></span></td>
                             <td>
                                 <a th:href="@{/like(id1=${perfil.idusuario},id2=${perfiles.idusuario})}"><img src="/resources/images/checked.png"></a>
