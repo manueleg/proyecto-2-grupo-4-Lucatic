@@ -30,7 +30,6 @@ public class PerfilController {
 			System.out.println("Logger don't work");
 		}
 	}
-	
 
 	/**
 	 * Metodo para acceder a la pagina index pasandole un objeto perfil
