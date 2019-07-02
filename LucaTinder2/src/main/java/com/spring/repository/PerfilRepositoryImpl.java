@@ -58,6 +58,22 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 	}
 	
 	/**
+	 * Método match de tipo void que recibe dos parámetros id de tipo int y los guardará en la tabla match
+	 * de la base de datos.
+	 * @param int id1, int id2
+	 */
+	@Override
+	public void match(int id1, int id2) {
+		// TODO Auto-generated method stub
+		logger.info("--- En método match de la clase PerfilRpositoryImpl");
+		entityManager.createNativeQuery("INSERT INTO lucatinder.match (idmatch, idusuario, idusuario2) VALUES (?,?,?)")
+	      .setParameter(1, null)
+	      .setParameter(2, id1)
+	      .setParameter(3, id2)
+	      .executeUpdate();
+	}
+	
+	/**
 	 * Método de recupera los likes marcados por un perfil
 	 * @param Perfil
 	 * @return List<Perfil>

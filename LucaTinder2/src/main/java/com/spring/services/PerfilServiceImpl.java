@@ -142,6 +142,11 @@ public class PerfilServiceImpl implements PerfilService {
 		// TODO Auto-generated method stub
 		logger.info("---Dar me gusta");
 		perfilDAO.like(id1, id2);
+		for(Perfil p:perfilDAO.getLikes(get(id2))) {
+			if(p.equals(get(id1))) {
+				perfilDAO.match(id1, id2);
+			}
+		}
 	}
 
 	@Override
