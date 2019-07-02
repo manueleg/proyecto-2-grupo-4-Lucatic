@@ -74,6 +74,20 @@ public class PerfilController {
 	}
 	
 	/**
+	 * Recibe por parámetro un objeto de tipo Perfil y lo modifica en la base de datos. 
+	 * Devuelve la ruta para ir a la página contactos.html
+	 * @param Perfil perfil
+	 * @return contactos
+	 */
+	@PostMapping("/update")
+	public String updatePerfil(@ModelAttribute("perfil") Perfil perfil, ModelMap model) {
+		logger.info("-- en método registroPerfil");
+		perfilService.update(perfil);
+		model.addAttribute("perfil", perfil);
+		return "perfil";
+	}
+	
+	/**
 	 * Método login que comprueba si el usuario existe y le deja entrar en la página o no
 	 * @param perfil
 	 * @param model
@@ -150,5 +164,6 @@ public class PerfilController {
 		logger.info("--------PerfilController baja");
 		return "index";
 	}
+	
 	
 }

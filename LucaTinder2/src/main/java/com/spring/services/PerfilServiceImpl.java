@@ -87,6 +87,25 @@ public class PerfilServiceImpl implements PerfilService {
 		}
 		return perfilesList;
 	}
+	
+	@Override
+	public List<Perfil> getPerfilesIntereses(Perfil perfil) {
+		logger.info("---Obtiene los intereses");
+		List<Perfil> perfilesIntereses = perfilDAO.getPerfilesIntereses(perfil);
+				
+		return perfilesIntereses;
+	}
+	
+	@Override
+	public List<Perfil> getPerfilesMatch(Perfil perfil) {
+		logger.info("---Obtiene los intereses");
+		List<Perfil> perfilesMatch = perfilDAO.getPerfilesMatch(perfil);
+				
+		return perfilesMatch;
+	}
+
+	
+	
 
 	@Override
 	public void guardarPerfiles() {
@@ -128,9 +147,10 @@ public class PerfilServiceImpl implements PerfilService {
 	public void like(int id1, int id2) {
 		// TODO Auto-generated method stub
 		logger.info("---Dar me gusta");
+		Iterator<Perfil> it=perfilDAO.getLikes(get(id2)).iterator();
 		perfilDAO.like(id1, id2);
-		for(Perfil p:perfilDAO.getLikes(get(id2))) {
-			if(p.equals(get(id1))) {
+		while (it.hasNext()) {
+			if(it.next().equals(get(id1))) {
 				perfilDAO.match(id1, id2);
 			}
 		}
@@ -142,5 +162,6 @@ public class PerfilServiceImpl implements PerfilService {
 		logger.info("---Dar no me gusta");
 		perfilDAO.dislike(id1, id2);
 	}
+
 
 }
