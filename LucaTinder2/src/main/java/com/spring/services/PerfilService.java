@@ -35,5 +35,7 @@ public interface PerfilService {
 	public void like(int id1, int id2);
 	
 	public void dislike(int id1, int id2);
+
+	public List<Perfil> getPerfilesMatch(Perfil perfil);
 	
 }
