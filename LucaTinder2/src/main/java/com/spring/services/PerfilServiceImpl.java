@@ -99,7 +99,7 @@ public class PerfilServiceImpl implements PerfilService {
 	@Override
 	public List<Perfil> getPerfilesMatch(Perfil perfil) {
 		logger.info("---Obtiene los intereses");
-		List<Perfil> perfilesMatch = perfilDAO.getPerfilesMatch(0);
+		List<Perfil> perfilesMatch = perfilDAO.getPerfilesMatch(perfil);
 				
 		return perfilesMatch;
 	}
