@@ -45,7 +45,7 @@
     
     <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
 
-      <div class="container">
+      <div class="containerheader">
         <div class="row align-items-center">
           
           <div class="col-6 col-xl-2">
@@ -56,7 +56,7 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li><a href="#home-section" class="nav-link">Inicio</a></li>
+                <li><a th:href="@{/}" class="mb-0">Inicio</a></li>
                 <li><a href="#compromisos" class="nav-link">Nuestro compromiso</a></li>
                 <li><a href="#properties-section" class="nav-link">Casos Reales</a></li>
                 <li><a href="#contact-section" class="nav-link">Contacto</a></li>
@@ -261,7 +261,7 @@
               <div class="col-md-6 ml-auto">
                   <h2 class="footer-heading mb-4">Acceso rápido</h2>
                   <ul class="list-unstyled">
-                      <li><a href="index.html" class="nav-link">Inicio</a></li>
+                      <li><a th:href="@{/}" class="nav-link">Inicio</a></li>
                       <li><a href="#compromisos" class="nav-link">Nuestro compromiso</a></li>
                       <li><a href="#properties-section" class="nav-link">Casos Reales</a></li>
                       <li><a href="index.html#contact-section"class="nav-link">Contacto</a></li>
@@ -290,7 +290,6 @@
                 <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
                 <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
             </div>
-
 
           </div>
         </div>

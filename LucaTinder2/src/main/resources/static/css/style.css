@@ -33,6 +33,9 @@ div p{
   width: 25%;
   border-radius: 70px;
 }
+input[type=submit]{
+	cursor: 
+}
 .pagina-registro{
   background-color: white;
   color: black;
@@ -275,8 +278,8 @@ h1, h3, h4, h5,
       width: 100%;
       background: rgba(0, 0, 0, 0.5); }
   .bg-image > .container {
-    /*position: relative;
-    z-index: 1;*/ }
+    position: relative;
+    z-index: 1; }
 
 @media (max-width: 991.98px) {
   .img-md-fluid {
@@ -356,6 +359,7 @@ h1, h3, h4, h5,
   position: absolute;
   width: 100%; }
   .site-navbar .site-logo {
+    text-align: center;
     position: relative;
     left: 0;
     font-size: 1.7rem;
@@ -667,8 +671,8 @@ h1, h3, h4, h5,
     bottom: -250px;
     width: 100%; }
   .site-blocks-cover, .site-blocks-cover > .container > .row {
-    /*min-height: 600px;
-    height: calc(100vh);*/ }
+    min-height: 600px;
+    height: calc(100vh); }
   .site-blocks-cover.inner-page-cover, .site-blocks-cover.inner-page-cover > .container > .row {
     min-height: 400px;
     height: calc(20vh); }
