@@ -94,6 +94,7 @@ public class PerfilServiceImpl implements PerfilService{
 		for(Perfil p:perfilesDislike) {
 			perfilesList.remove(p);
 		}
+		//System.out.println(perfilesList.toString());
 		return perfilesList;
 	}
 

@@ -67,10 +67,12 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 		logger.info("-------PerfilRepositoryImp getLikes");
 		List<Perfil> perfilesLike=new ArrayList<Perfil>();
 		Query query=entityManager.createNativeQuery("SELECT * FROM lucatinder.usuarios WHERE idusuario=ALL(SELECT fk_idusuario2 FROM lucatinder.contactos WHERE fk_idusuario="+perfil.getIdusuario()+")", Perfil.class);
+		System.out.println("asdpofuihaopshgpoauhjgopaihjgfoipajdg");
 		System.out.println(query.getResultList().toString());
 		for(Object p:query.getResultList()) {
 			perfilesLike.add((Perfil)p);
 		}
+		System.out.println("perfileslike"+perfilesLike.toString());
 		return perfilesLike;
 	}
 	
