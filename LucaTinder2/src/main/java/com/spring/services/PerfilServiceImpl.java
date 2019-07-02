@@ -73,19 +73,6 @@ public class PerfilServiceImpl implements PerfilService {
 		}
 	}
 
-	/*
-	 * @Override public List<Perfil> getPerfiles(Perfil perfil) { List<Perfil>
-	 * perfilesList=new ArrayList<Perfil>(); List<Perfil> perfilesLike=new
-	 * ArrayList<Perfil>(); List<Perfil> perfilesDislike=new ArrayList<Perfil>();
-	 * System.out.println(perfilDAO.getLikes(perfil).toString());
-	 * perfilesList=perfilDAO.getPerfiles();
-	 * perfilesLike=perfilDAO.getLikes(perfil);
-	 * perfilesDislike=perfilDAO.getDislikes(perfil); perfilesList.remove(perfil);
-	 * for(Perfil p:perfilesLike) { perfilesList.remove(p); } for(Perfil
-	 * p:perfilesDislike) { perfilesList.remove(p); }
-	 * //System.out.println(perfilesList.toString()); return perfilesList; }
-	 */
-
 	@Override
 	public List<Perfil> getPerfiles(Perfil perfil) {
 		List<Perfil> perfilesList = perfilDAO.getPerfiles();
