@@ -104,17 +104,6 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 		return perfilesDislike;
 	}
 	
-	/**
-	 * dsd
-	 * @param int
-	 * @return List<Perfil>
-	 */
-	@Override
-	public List<Perfil> getPerfilesMatch(int id) {
-		// Esto es un relleno temporal, tengo que crear el algoritmo
-		List<Perfil> perfilesMatch = new ArrayList<Perfil>();
-		return perfilesMatch;
-	}
 
 	/**
 	 * Método dislike de tipo void que recibe dos parámetros id de tipo int y los guardará en la tabla descartes
@@ -157,5 +146,17 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 		return perfilesIntereses;
 	}
 	
+
+	@Override
+	public List<Perfil> getPerfilesMatch(Perfil perfil) {
+		logger.info("-------PerfilRepositoryImp getPerfilesMatch");
+		List<Perfil>perfilesMatch=new ArrayList<Perfil>();
+		Query query=entityManager.createNativeQuery("SELECT * FROM lucatinder.matches us, (SELECT idusuario2 FROM lucatinder.matches WHERE idusuario="+perfil.getIdusuario()+") likes WHERE idusuario=idusuario2", Perfil.class);
+		for(Object m : query.getResultList()) {
+			perfilesMatch.add((Perfil) m);
+		}
+		return perfilesMatch;
+		
+	}
 
 }
