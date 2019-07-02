@@ -24,6 +24,8 @@ public class PerfilMaker {
 	}
 	
 	public static Perfil damePerfil() {
-		return null;
+		Perfil p = new Perfil();
+		p.crearPerfilFaker();
+		return p;
 	}
 }

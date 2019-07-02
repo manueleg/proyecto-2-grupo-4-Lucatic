@@ -1,6 +1,8 @@
 package com.spring.model;
 
 import java.time.LocalDate;
+import java.time.Period;
+import java.util.Locale;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,7 +14,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.format.annotation.DateTimeFormat;
 
-//import com.github.javafaker.Faker;
+import com.github.javafaker.Faker;
+
 
 @Entity
 @Table(name = "usuarios")
@@ -227,19 +230,30 @@ public class Perfil {
 	 * Metodo para generar objetos de la clase perfil mediante la librería JavaFaker
 	 * @return Perfil
 	 */
-	/*public Perfil crearPerfilFaker() {
+	public Perfil crearPerfilFaker() {
 
-		int id;
+		/*int id;
 		String name;
 		Genero genero;
 		Date fechaNac;
 		LocalDate fecha;
 		String poblacion;
 		int intereses;
-		String descripcion;
+		String descripcion;*/
 		Faker faker = new Faker(new Locale("es-ES"));
 		Perfil p;
 
+		String streetName = faker.address().streetName();
+		String number = faker.address().buildingNumber();
+		String city = faker.address().city();
+		String country = faker.address().country();
+		 
+		System.out.println(String.format("%s\n%s\n%s\n%s",
+		  number,
+		  streetName,
+		  city,
+		  country));
+		
 		id = faker.number().randomDigitNotZero();
 		name = faker.harryPotter().character();
 		if (faker.number().numberBetween(0, 1) == 0) {
@@ -257,9 +271,13 @@ public class Perfil {
 		
 		logger.info("-------Perfil crearPerfilFaker");
 
-		return p;
-	}*/
+		return faker;
+	}
 	
-	
+	public int dameEdad() {
+		LocalDate ahora = LocalDate.now();
+		Period periodo = Period.between(this.fecha_nac, ahora);
+		return periodo.getYears();
+	}
 }
 
