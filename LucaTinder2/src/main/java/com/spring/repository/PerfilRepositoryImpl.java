@@ -133,4 +133,16 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 	      .executeUpdate();
 	}
 
+	@Override
+	public List<Perfil> getPerfilesMatch(Perfil perfil) {
+		logger.info("-------PerfilRepositoryImp getPerfilesMatch");
+		List<Perfil>perfilesMatch=new ArrayList<Perfil>();
+		Query query=entityManager.createNativeQuery("SELECT * FROM lucatinder.matches us, (SELECT idusuario2 FROM lucatinder.matches WHERE idusuario="+perfil.getIdusuario()+") likes WHERE idusuario=idusuario2", Perfil.class);
+		for(Object m : query.getResultList()) {
+			perfilesMatch.add((Perfil) m);
+		}
+		return perfilesMatch;
+		
+	}
+
 }

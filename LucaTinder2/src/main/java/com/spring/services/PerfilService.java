@@ -34,4 +34,6 @@ public interface PerfilService {
 	
 	public void dislike(int id1, int id2);
 	
+	
+	
 }
