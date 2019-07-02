@@ -66,7 +66,7 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 	public void match(int id1, int id2) {
 		// TODO Auto-generated method stub
 		logger.info("--- En método match de la clase PerfilRpositoryImpl");
-		entityManager.createNativeQuery("INSERT INTO lucatinder.match (idmatch, idusuario, idusuario2) VALUES (?,?,?)")
+		entityManager.createNativeQuery("INSERT INTO lucatinder.matches (idmatch, idusuario, idusuario2) VALUES (?,?,?)")
 	      .setParameter(1, null)
 	      .setParameter(2, id1)
 	      .setParameter(3, id2)
