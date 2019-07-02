@@ -1,6 +1,8 @@
 package com.spring.repository;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -8,11 +10,16 @@ import javax.persistence.Query;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.spring.controller.PerfilController;
 import com.spring.model.Perfil;
+import com.spring.services.PerfilServiceImpl;
 
 @Repository
 @Transactional(readOnly = true)
@@ -32,8 +39,12 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 	
 	@Override
 	public List<Perfil> getPerfiles() {
+		List<Perfil> perfilesList=new ArrayList<Perfil>();
 		Query query = entityManager.createNativeQuery("SELECT * FROM lucatinder.usuarios", Perfil.class);
-		return query.getResultList();
+		for(Object p:query.getResultList()) {
+			perfilesList.add((Perfil)p);
+		}
+		return perfilesList;
 	}
 
 	/**
@@ -50,6 +61,40 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 	      .setParameter(2, id1)
 	      .setParameter(3, id2)
 	      .executeUpdate();
+	}
+	
+	/**
+	 * Método de recupera los likes marcados por un perfil
+	 * @param Perfil
+	 * @return List<Perfil>
+	 */
+	@Override
+	public List<Perfil> getLikes(Perfil perfil) {
+		logger.info("-------PerfilRepositoryImp getLikes");
+		List<Perfil> perfilesLike=new ArrayList<Perfil>();
+		Query query=entityManager.createNativeQuery("SELECT * FROM lucatinder.usuarios WHERE idusuario=ALL(SELECT fk_idusuario2 FROM lucatinder.contactos WHERE fk_idusuario="+perfil.getIdusuario()+")", Perfil.class);
+		System.out.println(query.getResultList().toString());
+		for(Object p:query.getResultList()) {
+			perfilesLike.add((Perfil)p);
+		}
+		return perfilesLike;
+	}
+	
+	/**
+	 * Método de recupera los dislikes marcados por un perfil
+	 * @param Perfil
+	 * @return List<Perfil>
+	 */
+	@Override
+	public List<Perfil> getDislikes(Perfil perfil) {
+		logger.info("-------PerfilRepositoryImp getDislikes");
+		List<Perfil> perfilesDislike=new ArrayList<Perfil>();
+		Query query=entityManager.createNativeQuery("SELECT * FROM lucatinder.usuarios WHERE idusuario=ALL(SELECT fk_idusuario2 FROM lucatinder.descartes WHERE fk_idusuario="+perfil.getIdusuario()+")", Perfil.class);
+		System.out.println(query.getResultList().toString());
+		for(Object p:query.getResultList()) {
+			perfilesDislike.add((Perfil)p);
+		}
+		return perfilesDislike;
 	}
 
 	/**

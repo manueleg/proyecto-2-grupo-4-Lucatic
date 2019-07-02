@@ -63,8 +63,12 @@ public class PerfilServiceImpl implements PerfilService{
 	public Perfil get(int id) {
 		// TODO Auto-generated method stub
 		logger.info("---Obtiene el perfil");
+		System.out.println("getttttt");
+		System.out.println(perfilDAO.findById(id));
 		Optional<Perfil> perfilOptional = perfilDAO.findById(id);
+		System.out.println("get2222222");
 		if (perfilOptional.isPresent()){
+			System.out.println("get333333");
 			Perfil p = perfilOptional.get();
 			System.out.println(p);
 			return p;
@@ -77,8 +81,19 @@ public class PerfilServiceImpl implements PerfilService{
 	@Override
 	public List<Perfil> getPerfiles(Perfil perfil) {
 		List<Perfil> perfilesList=new ArrayList<Perfil>();
+		List<Perfil> perfilesLike=new ArrayList<Perfil>();
+		List<Perfil> perfilesDislike=new ArrayList<Perfil>();
+		System.out.println(perfilDAO.getLikes(perfil).toString());
 		perfilesList=perfilDAO.getPerfiles();
+		perfilesLike=perfilDAO.getLikes(perfil);
+		perfilesDislike=perfilDAO.getDislikes(perfil);
 		perfilesList.remove(perfil);
+		for(Perfil p:perfilesLike) {
+			perfilesList.remove(p);
+		}
+		for(Perfil p:perfilesDislike) {
+			perfilesList.remove(p);
+		}
 		return perfilesList;
 	}
 
