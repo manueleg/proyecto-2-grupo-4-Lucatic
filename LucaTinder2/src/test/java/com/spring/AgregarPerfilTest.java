@@ -97,7 +97,7 @@ public class AgregarPerfilTest {
 			LocalDate fechaNac = LocalDate.parse("15/08/1993", fmt);
 			Perfil p1 = new Perfil();
 			p1.setDescripcion("descripcion1");
-			p1.setEdad(fechaNac);
+			p1.setFecha_nac(fechaNac);
 			p1.setGenero("h");
 			//p1.setGenero(Genero.H);
 			p1.setNombre("nombre1");

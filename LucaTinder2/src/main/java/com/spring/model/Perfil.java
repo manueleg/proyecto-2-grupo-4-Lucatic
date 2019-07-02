@@ -25,7 +25,7 @@ public class Perfil {
 	private String genero;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private LocalDate edad;
+	private LocalDate fecha_nac;
 	private String poblacion;
 	private Integer idintereses;
 	private String descripcion;
@@ -57,13 +57,13 @@ public class Perfil {
 	 * @param idintereses
 	 * @param descripcion
 	 */
-	public Perfil(int idusuario, String nombre, String genero, LocalDate edad, String poblacion, Integer idintereses,
+	public Perfil(int idusuario, String nombre, String genero, LocalDate fecha_nac, String poblacion, Integer idintereses,
 			String descripcion) {
 		super();
 		this.idusuario = idusuario;
 		this.nombre = nombre;
 		this.genero = genero;
-		this.edad = edad;
+		this.fecha_nac = fecha_nac;
 		this.poblacion = poblacion;
 		this.idintereses = idintereses;
 		this.descripcion = descripcion;
@@ -110,12 +110,12 @@ public class Perfil {
 	this.genero = genero;
     }
 */
-	public LocalDate getEdad() {
-		return edad;
+	public LocalDate getFecha_nac() {
+		return fecha_nac;
 	}
 
-	public void setEdad(LocalDate edad) {
-		this.edad = edad;
+	public void setFecha_nac(LocalDate fecha_nac) {
+		this.fecha_nac = fecha_nac;
 	}
 	
 	public String getPoblacion() {
@@ -151,8 +151,8 @@ public class Perfil {
 		builder.append(nombre);
 		builder.append(", genero=");
 		builder.append(genero);
-		builder.append(", edad=");
-		builder.append(edad);
+		builder.append(", fecha_nac=");
+		builder.append(fecha_nac);
 		builder.append(", poblacion=");
 		builder.append(poblacion);
 		builder.append(", idintereses=");
@@ -168,7 +168,7 @@ public class Perfil {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((descripcion == null) ? 0 : descripcion.hashCode());
-		result = prime * result + ((edad == null) ? 0 : edad.hashCode());
+		result = prime * result + ((fecha_nac == null) ? 0 : fecha_nac.hashCode());
 		result = prime * result + ((genero == null) ? 0 : genero.hashCode());
 		result = prime * result + ((idintereses == null) ? 0 : idintereses.hashCode());
 		result = prime * result + idusuario;
@@ -191,10 +191,10 @@ public class Perfil {
 				return false;
 		} else if (!descripcion.equals(other.descripcion))
 			return false;
-		if (edad == null) {
-			if (other.edad != null)
+		if (fecha_nac == null) {
+			if (other.fecha_nac != null)
 				return false;
-		} else if (!edad.equals(other.edad))
+		} else if (!fecha_nac.equals(other.fecha_nac))
 			return false;
 		if (genero == null) {
 			if (other.genero != null)
