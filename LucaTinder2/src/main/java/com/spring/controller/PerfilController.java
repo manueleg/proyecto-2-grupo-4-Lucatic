@@ -165,5 +165,12 @@ public class PerfilController {
 		return "index";
 	}
 	
+	@GetMapping("/perfilesintereses")
+	public String getPerfilesIntereses(@ModelAttribute("perfil") Perfil perfil, ModelMap model) {
+		logger.info("--------PerfilController getPerfilesIntereses");
+		model.addAttribute("perfilList", perfilService.getPerfilesIntereses(perfil));
+		return "contactos";
+	}
+	
 	
 }
