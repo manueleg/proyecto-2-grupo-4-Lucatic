@@ -84,8 +84,6 @@
                 <h2>Tu id es: <span th:text="${perfil.idusuario}"></span></h2>
                 <hr>
                 <br>
-
->>>>>>> cristina
                 <table>
                     <tbody>
                         <tr th:each="perfiles : ${perfilList}">
@@ -102,6 +100,7 @@
                                 <a th:href="@{/like(id1=${perfil.idusuario},id2=${perfiles.idusuario})}"><img src="/resources/images/checked.png"></a>
                              </td>
                         </tr>
+                        <br>
                     </tbody> 
                 </table>
           </div>
