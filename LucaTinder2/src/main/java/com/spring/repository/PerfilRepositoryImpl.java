@@ -159,4 +159,10 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 		
 	}
 
+	@Override
+	public List<Perfil> getPerfilesMatch(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

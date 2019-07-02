@@ -19,7 +19,9 @@ public interface PerfilRepositoryCustom {
 	public List<Perfil> getLikes(Perfil perfil);
 	public List<Perfil> getDislikes(Perfil perfil);
 
-	List<Perfil> getPerfiles();
+	
 
-	public List<Perfil>getPerfilesMatch(Perfil perfil);
+	public List<Perfil>getPerfilesMatch(int i);
+
+	List<Perfil> getPerfilesMatch(Perfil perfil);
 }
