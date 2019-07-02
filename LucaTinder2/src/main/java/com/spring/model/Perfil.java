@@ -1,5 +1,6 @@
 package com.spring.model;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Locale;
@@ -241,18 +242,34 @@ public class Perfil {
 		int intereses;
 		String descripcion;*/
 		Faker faker = new Faker(new Locale("es-ES"));
-		Perfil p;
 
+		this.nombre=faker.lordOfTheRings().character();
+		if(faker.random().nextBoolean()) {
+			this.genero="h";
+		}else {
+			this.genero="m";
+		}
+        /*
+		this.fecha_nac = faker.date(pattern="%Y-%m-%d", end_datetime=None);
+		faker.random()
+		Instant instant = faker.date().toInstant();
 		String streetName = faker.address().streetName();
 		String number = faker.address().buildingNumber();
 		String city = faker.address().city();
 		String country = faker.address().country();
-		 
+
+		Hopefully thi
+		@DateTimeFormat(pattern = "yyyy-MM-dd")
+		private LocalDate fecha_nac;
+		private String poblacion;
+		private Integer idintereses;
+		private String descripcion;
+		
 		System.out.println(String.format("%s\n%s\n%s\n%s",
 		  number,
 		  streetName,
 		  city,
-		  country));
+		  country));*/
 		/*
 		id = faker.number().randomDigitNotZero();
 		name = faker.harryPotter().character();
