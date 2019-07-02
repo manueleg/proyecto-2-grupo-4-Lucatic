@@ -66,13 +66,10 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 	public List<Perfil> getLikes(Perfil perfil) {
 		logger.info("-------PerfilRepositoryImp getLikes");
 		List<Perfil> perfilesLike=new ArrayList<Perfil>();
-		Query query=entityManager.createNativeQuery("SELECT * FROM lucatinder.usuarios WHERE idusuario=ALL(SELECT fk_idusuario2 FROM lucatinder.contactos WHERE fk_idusuario="+perfil.getIdusuario()+")", Perfil.class);
-		System.out.println("asdpofuihaopshgpoauhjgopaihjgfoipajdg");
-		System.out.println(query.getResultList().toString());
+		Query query=entityManager.createNativeQuery("SELECT * FROM lucatinder.usuarios us, (SELECT fk_idusuario2 FROM lucatinder.contactos WHERE fk_idusuario="+perfil.getIdusuario()+") likes WHERE idusuario=fk_idusuario2", Perfil.class);
 		for(Object p:query.getResultList()) {
 			perfilesLike.add((Perfil)p);
 		}
-		System.out.println("perfileslike"+perfilesLike.toString());
 		return perfilesLike;
 	}
 	
@@ -85,8 +82,7 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 	public List<Perfil> getDislikes(Perfil perfil) {
 		logger.info("-------PerfilRepositoryImp getDislikes");
 		List<Perfil> perfilesDislike=new ArrayList<Perfil>();
-		Query query=entityManager.createNativeQuery("SELECT * FROM lucatinder.usuarios WHERE idusuario=ALL(SELECT fk_idusuario2 FROM lucatinder.descartes WHERE fk_idusuario="+perfil.getIdusuario()+")", Perfil.class);
-		System.out.println(query.getResultList().toString());
+		Query query=entityManager.createNativeQuery("SELECT * FROM lucatinder.usuarios us, (SELECT fk_idusuario2 FROM lucatinder.descartes WHERE fk_idusuario="+perfil.getIdusuario()+") likes WHERE idusuario=fk_idusuario2", Perfil.class);
 		for(Object p:query.getResultList()) {
 			perfilesDislike.add((Perfil)p);
 		}
