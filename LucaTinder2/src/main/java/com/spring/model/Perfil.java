@@ -230,7 +230,7 @@ public class Perfil {
 	 * Metodo para generar objetos de la clase perfil mediante la librería JavaFaker
 	 * @return Perfil
 	 */
-	public Perfil crearPerfilFaker() {
+	public void crearPerfilFaker() {
 
 		/*int id;
 		String name;
@@ -253,7 +253,7 @@ public class Perfil {
 		  streetName,
 		  city,
 		  country));
-		
+		/*
 		id = faker.number().randomDigitNotZero();
 		name = faker.harryPotter().character();
 		if (faker.number().numberBetween(0, 1) == 0) {
@@ -270,8 +270,7 @@ public class Perfil {
 		p = new Perfil(id, name, genero, fecha, poblacion, intereses, descripcion);
 		
 		logger.info("-------Perfil crearPerfilFaker");
-
-		return faker;
+*/
 	}
 	
 	public int dameEdad() {

@@ -1,6 +1,7 @@
 package com.spring.services;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,15 +18,15 @@ import com.spring.repository.PerfilRepository;
 
 /**
  * 
- * @author David Nombre de clase: PerfilServices Descripcion: Metodos en
- * clase getters en clase PerfilServicesImpl  Fecha: 27/06/2019
+ * @author David Nombre de clase: PerfilServices Descripcion: Metodos en clase
+ *         getters en clase PerfilServicesImpl Fecha: 27/06/2019
  * @version: v1.0
  *
  */
 
 @Service
 @Transactional
-public class PerfilServiceImpl implements PerfilService{
+public class PerfilServiceImpl implements PerfilService {
 
 	@Autowired
 	private PerfilRepository perfilDAO;
@@ -41,21 +42,21 @@ public class PerfilServiceImpl implements PerfilService{
 			System.out.println("Logger don't work");
 		}
 	}
-	
+
 	@Override
 	public List<Perfil> generarPerfiles() {
 		// TODO Auto-generated method stub
 		logger.info("---Busca el perfil");
-		List<Perfil>perfiles = new ArrayList<>();
+		List<Perfil> perfiles = new ArrayList<>();
 		int cont = 0;
 		boolean fin = false;
 		do {
 			perfiles.add(PerfilMaker.damePerfil());
 			cont++;
-			if(cont<=10) {
-				fin=true;
+			if (cont <= 10) {
+				fin = true;
 			}
-		}while(fin);
+		} while (fin);
 		return perfiles;
 	}
 
@@ -64,32 +65,39 @@ public class PerfilServiceImpl implements PerfilService{
 		// TODO Auto-generated method stub
 		logger.info("---Obtiene el perfil");
 		Optional<Perfil> perfilOptional = perfilDAO.findById(id);
-		if (perfilOptional.isPresent()){
+		if (perfilOptional.isPresent()) {
 			Perfil p = perfilOptional.get();
 			return p;
-		}
-		else{
-		   return null;
+		} else {
+			return null;
 		}
 	}
 
+	/*
+	 * @Override public List<Perfil> getPerfiles(Perfil perfil) { List<Perfil>
+	 * perfilesList=new ArrayList<Perfil>(); List<Perfil> perfilesLike=new
+	 * ArrayList<Perfil>(); List<Perfil> perfilesDislike=new ArrayList<Perfil>();
+	 * System.out.println(perfilDAO.getLikes(perfil).toString());
+	 * perfilesList=perfilDAO.getPerfiles();
+	 * perfilesLike=perfilDAO.getLikes(perfil);
+	 * perfilesDislike=perfilDAO.getDislikes(perfil); perfilesList.remove(perfil);
+	 * for(Perfil p:perfilesLike) { perfilesList.remove(p); } for(Perfil
+	 * p:perfilesDislike) { perfilesList.remove(p); }
+	 * //System.out.println(perfilesList.toString()); return perfilesList; }
+	 */
+
 	@Override
 	public List<Perfil> getPerfiles(Perfil perfil) {
-		List<Perfil> perfilesList=new ArrayList<Perfil>();
-		List<Perfil> perfilesLike=new ArrayList<Perfil>();
-		List<Perfil> perfilesDislike=new ArrayList<Perfil>();
-		System.out.println(perfilDAO.getLikes(perfil).toString());
-		perfilesList=perfilDAO.getPerfiles();
-		perfilesLike=perfilDAO.getLikes(perfil);
-		perfilesDislike=perfilDAO.getDislikes(perfil);
+		List<Perfil> perfilesList = perfilDAO.getPerfiles();
 		perfilesList.remove(perfil);
-		for(Perfil p:perfilesLike) {
-			perfilesList.remove(p);
+		Iterator<Perfil> it = perfilDAO.getLikes(perfil).iterator();
+		while (it.hasNext()) {
+			perfilesList.remove(it.next());
 		}
-		for(Perfil p:perfilesDislike) {
-			perfilesList.remove(p);
+		Iterator<Perfil> it2 = perfilDAO.getDislikes(perfil).iterator();
+		while (it2.hasNext()) {
+			perfilesList.remove(it2.next());
 		}
-		//System.out.println(perfilesList.toString());
 		return perfilesList;
 	}
 
@@ -97,7 +105,7 @@ public class PerfilServiceImpl implements PerfilService{
 	public void guardarPerfiles() {
 		// TODO Auto-generated method stub
 		logger.info("---Cargando perfiles");
-		for(Perfil p : generarPerfiles()) {
+		for (Perfil p : generarPerfiles()) {
 			perfilDAO.save(p);
 		}
 	}
@@ -142,9 +150,5 @@ public class PerfilServiceImpl implements PerfilService{
 		logger.info("---Dar no me gusta");
 		perfilDAO.dislike(id1, id2);
 	}
-	
-	
 
-	
-	
 }
