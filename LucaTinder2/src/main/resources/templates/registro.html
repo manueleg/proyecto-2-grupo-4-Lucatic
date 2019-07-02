@@ -77,8 +77,8 @@
                 <br>
                 <h4 for="nombre">Nombre: <input type="text" th:field="*{nombre}"></h4>
                 <!--<h4 for="edad">Edad: <input type="number" th:field="*{edad}"></h4>-->
-                 <h4 for="edad">Fecha de nacimiento: <input type="date" value="15/10/2016" id="edad"
-              th:value="${#dates.format(edad,'dd/MM/yyyy')}" th:name="edad" /></h4>
+                 <h4 for="fecha_nac">Fecha de nacimiento: <input type="date" value="15/10/2016" id="fecha_nac"
+              th:value="${#dates.format(fecha_nac,'dd/MM/yyyy')}" th:name="fecha_nac" /></h4>
                  <h4 for="genero">Género: 
                    
                     <input type="radio" name="genero" value="h" th:field="*{genero}">Hombre
