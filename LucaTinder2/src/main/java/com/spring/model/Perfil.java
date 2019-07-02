@@ -3,6 +3,7 @@ package com.spring.model;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.ZoneId;
 import java.util.Locale;
 
 import javax.persistence.Column;
@@ -249,27 +250,11 @@ public class Perfil {
 		}else {
 			this.genero="m";
 		}
-        /*
-		this.fecha_nac = faker.date(pattern="%Y-%m-%d", end_datetime=None);
-		faker.random()
-		Instant instant = faker.date().toInstant();
-		String streetName = faker.address().streetName();
-		String number = faker.address().buildingNumber();
-		String city = faker.address().city();
-		String country = faker.address().country();
+        
+		this.fecha_nac = faker.date().birthday().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+		this.poblacion = faker.lordOfTheRings().location();
+		this.descripcion = faker.lorem().paragraph(4);
 
-		Hopefully thi
-		@DateTimeFormat(pattern = "yyyy-MM-dd")
-		private LocalDate fecha_nac;
-		private String poblacion;
-		private Integer idintereses;
-		private String descripcion;
-		
-		System.out.println(String.format("%s\n%s\n%s\n%s",
-		  number,
-		  streetName,
-		  city,
-		  country));*/
 		/*
 		id = faker.number().randomDigitNotZero();
 		name = faker.harryPotter().character();
@@ -287,7 +272,7 @@ public class Perfil {
 		p = new Perfil(id, name, genero, fecha, poblacion, intereses, descripcion);
 		
 		logger.info("-------Perfil crearPerfilFaker");
-*/
+        */
 	}
 	
 	public int dameEdad() {
