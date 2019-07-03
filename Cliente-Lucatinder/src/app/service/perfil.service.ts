@@ -15,4 +15,8 @@ export class PerfilService {
   constructor(private http:HttpClient) { }
 
   private perfilUrl = 'http://localhost:8080/indexrest';
+
+  public createPerfil(perfil) {
+    return this.http.post<Perfil>(this.perfilUrl, perfil);
+  }
 }
