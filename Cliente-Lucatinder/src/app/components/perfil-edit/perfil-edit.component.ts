@@ -12,11 +12,12 @@ import { PerfilService } from '../../service/perfil.service';
 export class PerfilEditComponent implements OnInit {
 
   perfil: Perfil=new Perfil();
+  perfilList: Array<Perfil>;
 
   constructor(private router: Router, private perfilService: PerfilService) { }
 
-  modificarPerfil(): List<Perfil>{
-    
+  modificarPerfil(): Array<Perfil>{
+
   }
 
   ngOnInit() {
