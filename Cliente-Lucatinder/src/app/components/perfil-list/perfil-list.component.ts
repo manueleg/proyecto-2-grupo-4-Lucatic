@@ -17,10 +17,10 @@ export class PerfilListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.perfilService.listarPerfiles()
+    /*this.perfilService.listarPerfiles()
       .subscribe( data => {
         this.perfiles = data;
-      })
+      })*/
   }
 
 }
