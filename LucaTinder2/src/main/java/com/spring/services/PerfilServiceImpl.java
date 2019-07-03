@@ -87,6 +87,11 @@ public class PerfilServiceImpl implements PerfilService {
 		return perfilesList;
 	}
 	
+	/**
+	 * Método que devuelve una lista de perfiles filtrada por los intereses del perfil introducido
+	 * @param Perfil, ModelMap
+	 * @return contactos
+	 */
 	@Override
 	public List<Perfil> getPerfilesIntereses(Perfil perfil) {
 		logger.info("---Obtiene los intereses");

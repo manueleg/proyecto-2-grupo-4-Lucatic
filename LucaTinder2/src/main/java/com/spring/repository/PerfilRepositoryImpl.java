@@ -70,6 +70,11 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 	      .setParameter(2, id1)
 	      .setParameter(3, id2)
 	      .executeUpdate();
+		entityManager.createNativeQuery("INSERT INTO lucatinder.matches (idmatch, idusuario, idusuario2) VALUES (?,?,?)")
+	      .setParameter(1, null)
+	      .setParameter(2, id2)
+	      .setParameter(3, id1)
+	      .executeUpdate();
 	}
 	
 	/**
@@ -135,14 +140,43 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 	
 	
 	/**
-	 * @author David
-	 * @param int
+	 * Método que devuelve una lista de perfiles filtrada por los intereses del perfil introducido
+	 * @param Perfil
 	 * @return List<Perfil>
 	 */
 	@Override
 	public List<Perfil> getPerfilesIntereses(Perfil perfil) {
-		// Esto es un relleno temporal, tengo que crear el algoritmo
 		List<Perfil> perfilesIntereses = new ArrayList<Perfil>();
+		Query query=entityManager.createNativeQuery("SELECT \n" + 
+				"    u.idusuario,\n" + 
+				"    u.nombre,\n" + 
+				"    u.genero,\n" + 
+				"    u.fecha_nac,\n" + 
+				"    u.poblacion,\n" + 
+				"    u.idintereses,\n" + 
+				"    u.descripcion\n" + 
+				"FROM\n" + 
+				"    usuarios AS u,\n" + 
+				"    (SELECT \n" + 
+				"        i.edadmin, i.edadmax, g.nombre\n" + 
+				"    FROM\n" + 
+				"        intereses AS i\n" + 
+				"    LEFT JOIN generos AS g ON i.idgenero = g.idgenero UNION SELECT \n" + 
+				"        i.edadmin, i.edadmax, g.nombre\n" + 
+				"    FROM\n" + 
+				"        intereses AS i\n" + 
+				"    RIGHT JOIN generos AS g ON i.idgenero = g.idgenero\n" + 
+				"    WHERE\n" + 
+				"        i.idinteres=1) AS s\n" + 
+				"WHERE\n" + 
+				"    (((YEAR(CURDATE()) - YEAR(u.fecha_nac)) BETWEEN s.edadmin AND s.edadmax))\n" + 
+				"        AND (CASE s.nombre\n" + 
+				"        WHEN 'a' THEN u.genero = ('h' OR 'm')\n" + 
+				"        ELSE u.genero = s.nombre\n" + 
+				"    END);", Perfil.class);
+		for(Object m : query.getResultList()) {
+			perfilesIntereses.add((Perfil) m);
+		}
 		return perfilesIntereses;
 	}
 	
@@ -158,8 +192,6 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 			perfilesMatch.add((Perfil) m);
 		}
 		return perfilesMatch;
-		
 	}
-
 
 }

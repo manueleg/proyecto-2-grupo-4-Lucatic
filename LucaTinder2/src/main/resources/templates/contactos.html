@@ -61,7 +61,8 @@
                     <li><a href="#" class="nav-link">Nuestro compromiso</a></li>
                     <li><a href="#" class="nav-link">Casos Reales</a></li>
                     <li><a href="#" class="nav-link">Contacto</a></li>
-                    <li><a href="@{/}" class="mb-0">Cerrar sesión</a></li>
+                    <li><a th:href="@{/listMatches(id1=${perfil.idusuario})}" class="nav-link">Mis matches</a></li>
+                    <li><a th:href="@{/}" class="nav-link">Cerrar sesión</a></li>
                     </ul>
                 </nav>
                 </div>

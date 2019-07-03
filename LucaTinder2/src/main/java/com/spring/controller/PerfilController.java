@@ -165,6 +165,11 @@ public class PerfilController {
 		return "index";
 	}
 	
+	/**
+	 * Método que devuelve una lista de perfiles filtrada por los intereses del perfil introducido
+	 * @param Perfil, ModelMap
+	 * @return contactos
+	 */
 	@GetMapping("/perfilesintereses")
 	public String getPerfilesIntereses(@ModelAttribute("perfil") Perfil perfil, ModelMap model) {
 		logger.info("--------PerfilController getPerfilesIntereses");
@@ -172,5 +177,19 @@ public class PerfilController {
 		return "contactos";
 	}
 	
+	@GetMapping("/listMatches")
+	public String matches(@RequestParam("id1") int id1, ModelMap model) {
+		logger.info("----Recogiendo listado de matches y enviando a matches.html");
+		model.addAttribute("perfil", perfilService.get(id1));
+		model.addAttribute("perfilList", perfilService.getPerfilesMatch(perfilService.get(id1)));
+		return "matches";
+	}
 	
+	@GetMapping("/listContactos")
+	public String listContactos(@RequestParam("id1") int id1, ModelMap model) {
+		logger.info("----Recogiendo listado de perfiles y enviando a contactos.html\"");
+		model.addAttribute("perfil", perfilService.get(id1));
+		model.addAttribute("perfilList", perfilService.getPerfiles(perfilService.get(id1)));
+		return "contactos";
+	}
 }
