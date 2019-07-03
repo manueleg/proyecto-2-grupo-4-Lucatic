@@ -10,7 +10,7 @@ import { PerfilEditComponent } from './components/perfil-edit/perfil-edit.compon
 import { PerfilAddComponent } from './components/perfil-add/perfil-add.component';
 import { ModelComponent } from './components/model/model.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
-
+import { PerfilListComponent } from './components/perfil-list/perfil-list.component';
 
 
 
@@ -22,6 +22,8 @@ import { PerfilComponent } from './components/perfil/perfil.component';
     PerfilAddComponent,
     ModelComponent,
     PerfilComponent
+    PerfilListComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -29,5 +31,6 @@ import { PerfilComponent } from './components/perfil/perfil.component';
   ],
   providers: [],
   bootstrap: [AppComponent]
-})
+  })
+
 export class AppModule { }
