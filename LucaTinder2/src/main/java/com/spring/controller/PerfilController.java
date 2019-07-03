@@ -177,6 +177,12 @@ public class PerfilController {
 		return "contactos";
 	}
 	
+	/**
+	 * Método que recibe por método get un parámetro que será el id del usuario que se ha logueado
+	 * y enviará a la página matches.html con un objeto Perfil y el listado de los perfiles con los que ha tenido match.
+	 * @param int id1, ModelMap model
+	 * @return matches
+	 */
 	@GetMapping("/listMatches")
 	public String matches(@RequestParam("id1") int id1, ModelMap model) {
 		logger.info("----Recogiendo listado de matches y enviando a matches.html");
@@ -185,6 +191,13 @@ public class PerfilController {
 		return "matches";
 	}
 	
+	/**
+	 * Método que recibe por método get un parámetro que será el id del usuario que se ha logueado
+	 * y enviará a la página contactos.html con un objeto Perfil y un listado de perfiles recogidos
+	 * de la base de datos.
+	 * @param int id1, ModelMap model
+	 * @return matches
+	 */
 	@GetMapping("/listContactos")
 	public String listContactos(@RequestParam("id1") int id1, ModelMap model) {
 		logger.info("----Recogiendo listado de perfiles y enviando a contactos.html\"");
