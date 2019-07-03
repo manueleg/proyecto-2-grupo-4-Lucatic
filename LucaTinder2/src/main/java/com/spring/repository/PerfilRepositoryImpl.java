@@ -156,8 +156,6 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 			perfilesMatch.add((Perfil) m);
 		}
 		return perfilesMatch;
-		
 	}
-
 
 }
