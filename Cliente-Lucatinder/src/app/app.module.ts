@@ -10,11 +10,18 @@ import { PerfilEditComponent } from './components/perfil-edit/perfil-edit.compon
 import { PerfilAddComponent } from './components/perfil-add/perfil-add.component';
 <<<<<<< HEAD
 import { PerfilListComponent } from './components/perfil-list/perfil-list.component';
+<<<<<<< HEAD
 import { PerfilDeleteComponent } from './components/perfil-delete/perfil-delete.component';
 =======
 import { PerfilDeleteComponent } from './components/perfil-delete/perfil-delete.component';
 
 >>>>>>> 845d3c68d9ddb4d1ec52b55322c977b2ff5402e8
+=======
+=======
+import { PerfilDeleteComponent } from './components/perfil-delete/perfil-delete.component';
+
+>>>>>>> david
+>>>>>>> test
 
 
 
@@ -26,13 +33,20 @@ import { PerfilDeleteComponent } from './components/perfil-delete/perfil-delete.
     PerfilAddComponent,
 <<<<<<< HEAD
     PerfilListComponent,
+<<<<<<< HEAD
     PerfilDeleteComponent,
+=======
+>>>>>>> test
 =======
     PerfilDeleteComponent,
 
 
 
+<<<<<<< HEAD
 >>>>>>> 845d3c68d9ddb4d1ec52b55322c977b2ff5402e8
+=======
+>>>>>>> david
+>>>>>>> test
 
   ],
   imports: [

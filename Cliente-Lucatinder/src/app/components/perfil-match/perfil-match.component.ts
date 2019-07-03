@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PerfilService } from '../services/perfil.service';
+import { PerfilService } from '../../service/perfil.service';
 
 @Component({
   selector: 'app-perfil-match',
@@ -14,26 +14,16 @@ export class PerfilMatchComponent implements OnInit {
   constructor(private perfilService: PerfilService) {}
 
   ngOnInit() {
-  }
-
-}
-
-
-  ngOnInit() {
     //Se implementa un patron Observer
-    //El metodo getAll está definido en beer.service.ts
-    this.beerService.getAll().subscribe(
+    //El metodo getAll está definido en perfil.service.ts
+    /*this.perfilService.listarMatches(perfil).subscribe(
       data => {
-        this.beers = data;
+        this.matches = data;
         //Con lo anterior bastaría. 
-        //   Ya se podrían ver las cervezas en el Front
-        //   Si quiero añadir una iamgen a cada nombre uso un nuevo servicio
-        //   Con este bucle añado una imagen a cada cerveza
-        for (const beer of this.beers) {
-          this.giphyService.get(beer.name).subscribe(url => beer.giphyUrl = url);
-        }
+        //   Ya se podrían ver los perfiles en el Front
       },
       error => console.log(error)
-    )
+    )*/
   }
 }
+
