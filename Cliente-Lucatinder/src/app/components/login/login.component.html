@@ -1,1 +1,7 @@
-<p>login works!</p>
+<div class="box-index">
+        <form method="post" th:object="${perfil}" th:action="@{/acceso}">
+          <h1>Introduce tu ID:</h1><input type="number" th:field="*{idusuario}"><br>
+          <input type="submit" value="Entrar">
+          <p class="mb-5">Si todavía no estás registrado, <a href="#">regístrate aquí.</a></p>
+      </form>
+</div>
