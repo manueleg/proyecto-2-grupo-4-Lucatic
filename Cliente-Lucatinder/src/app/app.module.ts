@@ -8,8 +8,6 @@ import { PerfilMatchComponent } from './components/perfil-match/perfil-match.com
 import { PerfilEditComponent } from './components/perfil-edit/perfil-edit.component';
 
 import { PerfilAddComponent } from './components/perfil-add/perfil-add.component';
-import { ModelComponent } from './components/model/model.component';
-import { PerfilComponent } from './components/perfil/perfil.component';
 import { PerfilListComponent } from './components/perfil-list/perfil-list.component';
 
 
@@ -20,8 +18,6 @@ import { PerfilListComponent } from './components/perfil-list/perfil-list.compon
     PerfilMatchComponent,
     PerfilEditComponent,
     PerfilAddComponent,
-    ModelComponent,
-    PerfilComponent
     PerfilListComponent,
 
   ],
