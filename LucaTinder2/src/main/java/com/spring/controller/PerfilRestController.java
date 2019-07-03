@@ -6,7 +6,6 @@ import java.util.Collection;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,12 +14,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.spring.model.Perfil;
 import com.spring.repository.PerfilRepository;
 import com.spring.services.PerfilService;
-import com.spring.model.Perfil;
-
+import org.springframework.web.bind.annotation.PutMapping;
+import antlr.collections.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)//he puesto esta notacion porque cuando usemos angular es obligatoria
 @RestController
@@ -85,16 +85,23 @@ public class PerfilRestController {
 	 * Método que añade like
 	 * @param id
 	 */
-	
 	@GetMapping(path = { "/{id1}/{id2}" })
 	public void add(@PathVariable("id1") int id1,@PathVariable("id2") int id2 ) {
 		this.service.like(id1, id2);
 	}
 	
+	/**
+	 * Recibe por parámetro el id del perfil que se ha logueado y devuelve un list de los perfiles con los que
+	 * el perfil logueado ha tenido match.
+	 * @param int id1
+	 * @return list de objetos tipo Perfil
+	 */
 	@GetMapping("/listMatches/{id1}")
-	public void matches(@RequestParam("id1") int id1, ModelMap model) {
-		logger.info("----Recogiendo listado de matches y enviando a matches.html");;
-		this.service.getPerfilesMatch(service.get(id1));
+	public Collection<Perfil> matches(@PathVariable("id1") int id1) {
+		logger.info("----Recogiendo listado de matches y enviando a matches.html");
+		return this.service.getPerfilesMatch(service.get(id1)) ;
 	}
+	
+
 
 }
