@@ -135,13 +135,12 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 	
 	
 	/**
-	 * @author David
-	 * @param int
+	 * Método que devuelve una lista de perfiles filtrada por los intereses del perfil introducido
+	 * @param Perfil
 	 * @return List<Perfil>
 	 */
 	@Override
 	public List<Perfil> getPerfilesIntereses(Perfil perfil) {
-		// Esto es un relleno temporal, tengo que crear el algoritmo
 		List<Perfil> perfilesIntereses = new ArrayList<Perfil>();
 		return perfilesIntereses;
 	}
