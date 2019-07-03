@@ -70,6 +70,11 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 	      .setParameter(2, id1)
 	      .setParameter(3, id2)
 	      .executeUpdate();
+		entityManager.createNativeQuery("INSERT INTO lucatinder.matches (idmatch, idusuario, idusuario2) VALUES (?,?,?)")
+	      .setParameter(1, null)
+	      .setParameter(2, id2)
+	      .setParameter(3, id1)
+	      .executeUpdate();
 	}
 	
 	/**
