@@ -56,7 +56,7 @@ public class PerfilRestController {
 	 * metodo para añadir un perfil. se consigue por su id concreto
 	 * @param perfil
 	 */
-	@PostMapping("/{id}")
+	@PostMapping
 	public void addPerfil(@RequestBody Perfil perfil) {
 		this.service.add(perfil);
 	}
