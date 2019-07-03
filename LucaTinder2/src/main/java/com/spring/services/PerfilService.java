@@ -27,7 +27,7 @@ public interface PerfilService {
 	public void guardarPerfiles();
 	public void guardarIntereses(int idPerfil, String genero, int edadMin, int edadMax);
 	
-	public void update(Perfil user);
+	public void update(Perfil perfil);
 	public void add(Perfil user);
 	
 	public void delete(int id);
