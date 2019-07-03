@@ -49,14 +49,10 @@ public class PerfilServiceImpl implements PerfilService {
 		logger.info("---Busca el perfil");
 		List<Perfil> perfiles = new ArrayList<>();
 		int cont = 0;
-		boolean fin = false;
 		do {
 			perfiles.add(PerfilMaker.damePerfil());
 			cont++;
-			if (cont <= 10) {
-				fin = true;
-			}
-		} while (fin);
+		} while (cont<10);
 		return perfiles;
 	}
 
@@ -75,6 +71,9 @@ public class PerfilServiceImpl implements PerfilService {
 
 	@Override
 	public List<Perfil> getPerfiles(Perfil perfil) {
+		if(perfilDAO.findAll().size()<10) {
+			guardarPerfiles();
+		}
 		List<Perfil> perfilesList = perfilDAO.getPerfiles();
 		perfilesList.remove(perfil);
 		Iterator<Perfil> it = perfilDAO.getLikes(perfil).iterator();
@@ -116,8 +115,9 @@ public class PerfilServiceImpl implements PerfilService {
 	public void guardarPerfiles() {
 		// TODO Auto-generated method stub
 		logger.info("---Cargando perfiles");
-		for (Perfil p : generarPerfiles()) {
-			perfilDAO.save(p);
+		Iterator<Perfil> it = generarPerfiles().iterator();
+		while (it.hasNext()) {
+			perfilDAO.save(it.next());
 		}
 	}
 

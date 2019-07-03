@@ -233,15 +233,7 @@ public class Perfil {
 	 * @return Perfil
 	 */
 	public void crearPerfilFaker() {
-
-		/*int id;
-		String name;
-		Genero genero;
-		Date fechaNac;
-		LocalDate fecha;
-		String poblacion;
-		int intereses;
-		String descripcion;*/
+		
 		Faker faker = new Faker(new Locale("es-ES"));
 
 		this.nombre=faker.lordOfTheRings().character();
@@ -255,24 +247,6 @@ public class Perfil {
 		this.poblacion = faker.lordOfTheRings().location();
 		this.descripcion = faker.lorem().paragraph(4);
 
-		/*
-		id = faker.number().randomDigitNotZero();
-		name = faker.harryPotter().character();
-		if (faker.number().numberBetween(0, 1) == 0) {
-			genero = Genero.H;
-		} else {
-			genero = Genero.M;
-		}
-		fechaNac = faker.date().birthday();
-		fecha = fechaNac.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-		poblacion = faker.address().cityName();
-		intereses = faker.number().randomDigitNotZero();
-		descripcion = faker.lorem().paragraph(4);
-
-		p = new Perfil(id, name, genero, fecha, poblacion, intereses, descripcion);
-		
-		logger.info("-------Perfil crearPerfilFaker");
-        */
 	}
 	
 	public int dameEdad() {
