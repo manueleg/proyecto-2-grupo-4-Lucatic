@@ -9,6 +9,7 @@ import { PerfilEditComponent } from './components/perfil-edit/perfil-edit.compon
 
 import { PerfilAddComponent } from './components/perfil-add/perfil-add.component';
 import { PerfilListComponent } from './components/perfil-list/perfil-list.component';
+import { PerfilDeleteComponent } from './components/perfil-delete/perfil-delete.component';
 
 
 
@@ -19,6 +20,7 @@ import { PerfilListComponent } from './components/perfil-list/perfil-list.compon
     PerfilEditComponent,
     PerfilAddComponent,
     PerfilListComponent,
+    PerfilDeleteComponent,
 
   ],
   imports: [
