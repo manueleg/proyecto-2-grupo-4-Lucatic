@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PerfilService } from '../../service/perfil.service';
+import { Perfil } from 'app/models/perfil';
 
 @Component({
   selector: 'app-perfil-match',
@@ -9,6 +10,7 @@ import { PerfilService } from '../../service/perfil.service';
 })
 export class PerfilMatchComponent implements OnInit {
 
+  @Input() perfilLogin: Perfil;
   matches: Array<any>;
 
   constructor(private perfilService: PerfilService) {}
@@ -26,4 +28,3 @@ export class PerfilMatchComponent implements OnInit {
     )*/
   }
 }
-
