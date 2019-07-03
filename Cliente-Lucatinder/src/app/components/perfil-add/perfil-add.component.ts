@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Perfil } from 'src/app/models/perfil';
-import { PerfilService } from 'src/app/service/perfil.service';
+import { Perfil } from '../../models/perfil';
+import { PerfilService } from '../../service/perfil.service';
 import { Router } from '@angular/router';
 
 @Component({

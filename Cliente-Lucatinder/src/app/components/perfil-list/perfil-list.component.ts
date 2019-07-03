@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Perfil } from '../../models/perfil';
+import { PerfilService } from '../../service/perfil.service';
 
 @Component({
   selector: 'app-perfil-list',
