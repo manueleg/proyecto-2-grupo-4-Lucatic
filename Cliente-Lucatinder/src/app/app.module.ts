@@ -8,12 +8,11 @@ import { PerfilMatchComponent } from './components/perfil-match/perfil-match.com
 import { PerfilEditComponent } from './components/perfil-edit/perfil-edit.component';
 
 import { PerfilAddComponent } from './components/perfil-add/perfil-add.component';
-<<<<<<< HEAD
+
 import { PerfilListComponent } from './components/perfil-list/perfil-list.component';
-=======
+
 import { PerfilDeleteComponent } from './components/perfil-delete/perfil-delete.component';
 
->>>>>>> david
 
 
 
@@ -23,15 +22,8 @@ import { PerfilDeleteComponent } from './components/perfil-delete/perfil-delete.
     PerfilMatchComponent,
     PerfilEditComponent,
     PerfilAddComponent,
-<<<<<<< HEAD
     PerfilListComponent,
-=======
     PerfilDeleteComponent,
-
-
-
->>>>>>> david
-
   ],
   imports: [
     BrowserModule,

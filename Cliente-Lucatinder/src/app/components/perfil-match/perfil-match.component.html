@@ -1,1 +1,8 @@
-<p>perfil-match works!</p>
+<h2>Listado de matches</h2>
+
+  <div *ngFor="let perfil of matches; let i = index" class="col-md-6">
+    
+    <p>{{perfil.nombre}}&nbsp;{{perfil.fecha_nac}}&nbsp;{{perfil.genero}}</p>
+  </div>
+
+</div>
