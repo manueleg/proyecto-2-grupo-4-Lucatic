@@ -37,7 +37,7 @@ public class PerfilRestController {
 	 * @param perfil
 	 * @return lista de todos los perfiles
 	 */
-	@GetMapping
+	@GetMapping("/readperfiles")
 	Collection<Perfil> readPerfiles(Perfil perfil){
 		return this.service.getPerfiles(perfil);
 	}
