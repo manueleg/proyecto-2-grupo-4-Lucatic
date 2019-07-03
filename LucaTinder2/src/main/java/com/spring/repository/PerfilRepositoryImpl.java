@@ -142,6 +142,36 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 	@Override
 	public List<Perfil> getPerfilesIntereses(Perfil perfil) {
 		List<Perfil> perfilesIntereses = new ArrayList<Perfil>();
+		Query query=entityManager.createNativeQuery("SELECT \n" + 
+				"    u.idusuario,\n" + 
+				"    u.nombre,\n" + 
+				"    u.genero,\n" + 
+				"    u.fecha_nac,\n" + 
+				"    u.poblacion,\n" + 
+				"    u.idintereses,\n" + 
+				"    u.descripcion\n" + 
+				"FROM\n" + 
+				"    usuarios AS u,\n" + 
+				"    (SELECT \n" + 
+				"        i.edadmin, i.edadmax, g.nombre\n" + 
+				"    FROM\n" + 
+				"        intereses AS i\n" + 
+				"    LEFT JOIN generos AS g ON i.idgenero = g.idgenero UNION SELECT \n" + 
+				"        i.edadmin, i.edadmax, g.nombre\n" + 
+				"    FROM\n" + 
+				"        intereses AS i\n" + 
+				"    RIGHT JOIN generos AS g ON i.idgenero = g.idgenero\n" + 
+				"    WHERE\n" + 
+				"        i.idinteres=1) AS s\n" + 
+				"WHERE\n" + 
+				"    (((YEAR(CURDATE()) - YEAR(u.fecha_nac)) BETWEEN s.edadmin AND s.edadmax))\n" + 
+				"        AND (CASE s.nombre\n" + 
+				"        WHEN 'a' THEN u.genero = ('h' OR 'm')\n" + 
+				"        ELSE u.genero = s.nombre\n" + 
+				"    END);", Perfil.class);
+		for(Object m : query.getResultList()) {
+			perfilesIntereses.add((Perfil) m);
+		}
 		return perfilesIntereses;
 	}
 	
