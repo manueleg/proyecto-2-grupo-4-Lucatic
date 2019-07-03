@@ -12,6 +12,7 @@ import { PerfilAddComponent } from './components/perfil-add/perfil-add.component
 import { PerfilListComponent } from './components/perfil-list/perfil-list.component';
 
 import { PerfilDeleteComponent } from './components/perfil-delete/perfil-delete.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -24,6 +25,7 @@ import { PerfilDeleteComponent } from './components/perfil-delete/perfil-delete.
     PerfilAddComponent,
     PerfilListComponent,
     PerfilDeleteComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

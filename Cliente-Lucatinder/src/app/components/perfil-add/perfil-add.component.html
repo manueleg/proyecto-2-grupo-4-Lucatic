@@ -1,1 +1,15 @@
-<p>perfil-add works!</p>
+   
+    <h2>Página de registro</h2>
+    <hr>
+    <br>
+    <form method="post" th:object="${perfil}" th:action="@{/save}">
+        <h4 for="nombre">Nombre: <input type="text" th:field="*{nombre}"></h4>
+            <h4 for="fecha_nac">Fecha de nacimiento: <input type="date" value="15/10/2016" id="fecha_nac" th:value="${#dates.format(fecha_nac,'dd/MM/yyyy')}" th:name="fecha_nac" /></h4>
+            <h4 for="genero">Género: 
+                <input type="radio" name="genero" value="h" th:field="*{genero}">Hombre
+                <input type="radio" name="genero" value="m" th:field="*{genero}">Mujer
+        </h4>
+        <br>
+    <input type="submit" value="Guardar">            
+    </form>
+ 
