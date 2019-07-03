@@ -70,5 +70,17 @@ public class PerfilRestController {
 	public void deletePerfil(@PathVariable int id) {
 		this.service.delete(id);
 	}
+	
+	/**
+	 * Método que añade like
+	 * @param id
+	 */
+	
+	@GetMapping(path = { "/{id1}&{id2}" })
+	public void add(@PathVariable("id1") int id1,@PathVariable("id2") int id2 ) {
+		this.service.like(id1, id2);
+	}
+	
+	
 
 }
