@@ -61,6 +61,4 @@ public class PerfilRestController {
 		this.service.add(perfil);
 	}
 
-	
-	
 }
