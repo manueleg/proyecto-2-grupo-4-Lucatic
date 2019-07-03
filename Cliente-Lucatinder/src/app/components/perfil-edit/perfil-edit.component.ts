@@ -16,8 +16,8 @@ export class PerfilEditComponent implements OnInit {
 
   constructor(private router: Router, private perfilService: PerfilService) { }
 
-  modificarPerfil(): Array<Perfil>{
-
+  modificarPerfil(): void{
+    this.perfilService.modificarPerfil(this.perfil).subscribe(data => {alert("Perfil modificado correctamente.");});
   }
 
   ngOnInit() {

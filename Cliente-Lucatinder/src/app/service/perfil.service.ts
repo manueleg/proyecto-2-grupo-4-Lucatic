@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Perfil } from '../models/perfil';
+import { Observable } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -19,4 +20,9 @@ export class PerfilService {
   public createPerfil(perfil) {
     return this.http.post<Perfil>(this.perfilUrl, perfil);
   }
+
+  public modificarPerfil(perfil){
+   return this.http.put<Perfil>(this.perfilUrl, perfil);
+  } 
+
 }
