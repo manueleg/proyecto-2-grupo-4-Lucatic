@@ -8,8 +8,13 @@ import { PerfilMatchComponent } from './components/perfil-match/perfil-match.com
 import { PerfilEditComponent } from './components/perfil-edit/perfil-edit.component';
 
 import { PerfilAddComponent } from './components/perfil-add/perfil-add.component';
+<<<<<<< HEAD
 import { PerfilListComponent } from './components/perfil-list/perfil-list.component';
 import { PerfilDeleteComponent } from './components/perfil-delete/perfil-delete.component';
+=======
+import { PerfilDeleteComponent } from './components/perfil-delete/perfil-delete.component';
+
+>>>>>>> 845d3c68d9ddb4d1ec52b55322c977b2ff5402e8
 
 
 
@@ -19,8 +24,15 @@ import { PerfilDeleteComponent } from './components/perfil-delete/perfil-delete.
     PerfilMatchComponent,
     PerfilEditComponent,
     PerfilAddComponent,
+<<<<<<< HEAD
     PerfilListComponent,
     PerfilDeleteComponent,
+=======
+    PerfilDeleteComponent,
+
+
+
+>>>>>>> 845d3c68d9ddb4d1ec52b55322c977b2ff5402e8
 
   ],
   imports: [
