@@ -25,6 +25,10 @@ export class PerfilService {
    return this.http.put<Perfil>(this.perfilUrl, perfil);
   } 
 
+  listarPerfiles(): Observable<any> {
+    return this.http.get(this.perfilUrl + "/readperfiles");
+  }
+  
   public listarMatches(perfil){
     return this.http.get<Perfil>(this.perfilUrl+ '/listMatches/'+ perfil.idusuario);
   }
