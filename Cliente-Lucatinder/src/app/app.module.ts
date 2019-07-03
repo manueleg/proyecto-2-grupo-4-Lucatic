@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PerfilMatchComponent } from './components/perfil-match/perfil-match.component';
+import { PerfilAddComponent } from './perfil-add/perfil-add.component';
 
 
 
@@ -11,6 +12,7 @@ import { PerfilMatchComponent } from './components/perfil-match/perfil-match.com
   declarations: [
     AppComponent,
     PerfilMatchComponent,
+    PerfilAddComponent,
 
 
 
