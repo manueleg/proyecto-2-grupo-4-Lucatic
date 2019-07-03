@@ -165,6 +165,11 @@ public class PerfilController {
 		return "index";
 	}
 	
+	/**
+	 * Método que devuelve una lista de perfiles filtrada por los intereses del perfil introducido
+	 * @param Perfil, ModelMap
+	 * @return contactos
+	 */
 	@GetMapping("/perfilesintereses")
 	public String getPerfilesIntereses(@ModelAttribute("perfil") Perfil perfil, ModelMap model) {
 		logger.info("--------PerfilController getPerfilesIntereses");
