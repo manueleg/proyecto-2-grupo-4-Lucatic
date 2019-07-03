@@ -151,7 +151,9 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 	public List<Perfil> getPerfilesMatch(Perfil perfil) {
 		logger.info("-------PerfilRepositoryImp getPerfilesMatch");
 		List<Perfil>perfilesMatch=new ArrayList<Perfil>();
-		Query query=entityManager.createNativeQuery("SELECT * FROM lucatinder.matches us, (SELECT idusuario2 FROM lucatinder.matches WHERE idusuario="+perfil.getIdusuario()+") likes WHERE idusuario=idusuario2", Perfil.class);
+		Query query=entityManager.createNativeQuery("SELECT * FROM lucatinder.usuarios " + 
+				"WHERE usuarios.idusuario IN (SELECT matches.idusuario2 FROM lucatinder.matches " + 
+				"WHERE matches.idusuario=" + perfil.getIdusuario() + ");", Perfil.class);
 		for(Object m : query.getResultList()) {
 			perfilesMatch.add((Perfil) m);
 		}

@@ -147,6 +147,7 @@ public class PerfilServiceImpl implements PerfilService {
 	public void like(int id1, int id2) {
 		// TODO Auto-generated method stub
 		logger.info("---Dar me gusta");
+		// Devuelve un iterador con los perfiles a los que el usuario id2 ha dado like
 		Iterator<Perfil> it=perfilDAO.getLikes(get(id2)).iterator();
 		perfilDAO.like(id1, id2);
 		while (it.hasNext()) {
