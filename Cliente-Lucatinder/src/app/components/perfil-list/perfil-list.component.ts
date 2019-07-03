@@ -6,7 +6,8 @@ import { PerfilService } from '../../service/perfil.service';
 @Component({
   selector: 'app-perfil-list',
   templateUrl: './perfil-list.component.html',
-  styleUrls: ['./perfil-list.component.scss']
+  styleUrls: ['./perfil-list.component.scss'],
+  providers: [PerfilService]
 })
 export class PerfilListComponent implements OnInit {
 
@@ -17,10 +18,10 @@ export class PerfilListComponent implements OnInit {
   }
 
   ngOnInit() {
-    /*this.perfilService.listarPerfiles()
-      .subscribe( data => {
-        this.perfiles = data;
-      })*/
+    this.perfilService.listarPerfiles().subscribe(
+      (data) => this.perfiles = data,
+      (error) => console.log(error)
+    );
   }
 
 }
