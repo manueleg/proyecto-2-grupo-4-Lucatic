@@ -30,8 +30,7 @@
             "styles": [
               "src/styles.scss",
               "src/assets/css/styles.css",
-              "src/assets/css/responsive.css",
-              "src/assets/css/reset.css"
+              "src/assets/css/responsive.css"
             ],
             "scripts": []
           },
