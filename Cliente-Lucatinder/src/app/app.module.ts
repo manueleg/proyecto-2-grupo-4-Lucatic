@@ -9,6 +9,7 @@ import { PerfilEditComponent } from './components/perfil-edit/perfil-edit.compon
 
 import { PerfilAddComponent } from './components/perfil-add/perfil-add.component';
 import { ModelComponent } from './components/model/model.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 
 
@@ -19,7 +20,8 @@ import { ModelComponent } from './components/model/model.component';
     PerfilMatchComponent,
     PerfilEditComponent,
     PerfilAddComponent,
-    ModelComponent
+    ModelComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
