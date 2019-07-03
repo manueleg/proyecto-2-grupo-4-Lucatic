@@ -12,6 +12,15 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+
+/**
+ * 
+ * @author David Nombre de clase: rutaHTML_Test Descripcion: Testing con Junit de la ruta HTML  Fecha: 03/07/2019
+ * @version: v1.0
+ *
+ */
+
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
