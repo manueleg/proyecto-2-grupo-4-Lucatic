@@ -25,4 +25,8 @@ export class PerfilService {
    return this.http.put<Perfil>(this.perfilUrl, perfil);
   } 
 
+  public listarMatches(perfil){
+    return this.http.get<Perfil>(this.perfilUrl+ '/listMatches/'+ perfil.idusuario);
+  }
+
 }
