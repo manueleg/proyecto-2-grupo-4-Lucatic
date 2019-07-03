@@ -1,0 +1,19 @@
+/* Media Queries */
+
+/* versión iPad */
+@media screen and (max-width:768px) {
+    body{
+        background-attachment: fixed;
+        background-position: center center;
+        background-size: cover;
+    }
+}
+
+/* versión móviles */
+@media screen and (max-width:640px) {
+    body{
+        background-attachment: fixed;
+        background-position: center center;
+        background-size: cover;
+    }
+}
