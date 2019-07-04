@@ -14,6 +14,8 @@
           <div class="mb-1 text-muted">Nov {{i+13}}</div>
           <h3 class="card-text mb-auto">
               Aquí va el botón dislike
+
+              <button type= 'submit' (click)='addDislike(perfilSesion.idusuario, perfil.idusuario)' id='login-button'>Like</button>
               Género: {{perfil.genero}}, fecha nacimiento: {{perfil.fecha_nac}} 
             <button type= 'submit' (click)='addLike(perfilSesion.idusuario, perfil.idusuario)' id='login-button'>Like</button>
           </h3>

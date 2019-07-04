@@ -37,13 +37,16 @@ export class PerfilListComponent implements OnInit {
         });
 
   };
-  
-  
    
   addLike(id1:number, id2:number):void{
     this.perfilService.addLike(id1, id2).subscribe( data => {
       
     });
   }
+
+  addDisike(id1:number, id2:number):void{
+    this.perfilService.addDislike(id1, id2)
+  }
+ 
 
 }
