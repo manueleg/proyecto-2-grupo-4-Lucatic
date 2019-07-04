@@ -24,7 +24,7 @@ input[type="text"], input[type="number"]{
 }
 input[type="submit"]{
     padding: 0.7em;
-    width: 15%;
+    width: 80px;
     border-radius: 50px;
     border-color: rgb(255, 72, 69);
     cursor: pointer;
