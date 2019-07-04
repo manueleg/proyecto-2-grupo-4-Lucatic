@@ -6,7 +6,10 @@ import { PerfilService } from '../../service/perfil.service';
 @Component({
   selector: 'app-perfil-list',
   templateUrl: './perfil-list.component.html',
-  styleUrls: ['./perfil-list.component.scss'],
+  styleUrls: ['../../../assets/css/bootstrap.min.css',
+  '../../../assets/css/grid.css',
+  '../../../assets/css/styles_contactos_temp.css',
+  './perfil-list.component.scss'],
   providers: [PerfilService]
 })
 export class PerfilListComponent implements OnInit {

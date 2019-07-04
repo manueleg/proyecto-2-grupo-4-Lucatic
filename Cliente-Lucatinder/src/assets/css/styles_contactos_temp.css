@@ -103,7 +103,7 @@ a {
 
 h2{
 	font-family: "Playfair Display", serif;
-	padding-top: 6em;}
+	padding-top: 6em;
 }
 
 h1, h3, h4, h5,
@@ -1562,6 +1562,7 @@ h1, h3, h4, h5,
     -o-transition: .3s all ease;
     transition: .3s all ease;
     background:  rgb(255, 72, 69);
+  }
     .team-member .social li {
       list-style: none; }
       .team-member .social li a {
