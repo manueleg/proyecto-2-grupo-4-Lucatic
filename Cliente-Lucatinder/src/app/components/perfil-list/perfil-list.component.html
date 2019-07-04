@@ -1,109 +1,14 @@
-<!--
 
-<div class="listperfil">
-<h2>Lista de perfiles</h2>
-
-<div class="row mb-2">
-    <div *ngFor="let perfil of perfiles; let i = index" class="col-md-6">
-      <div class="card flex-md-row mb-4 box-shadow h-md-250">
-        <div class="card-body d-flex flex-column align-items-start">
-          <strong class="d-inline-block mb-2 text-primary">Perfil {{i+1}}</strong>
-          <h3 class="mb-0">
-            <a class="text-dark" href="#">{{perfil.nombre}}</a>
-          </h3>
-          <div class="mb-1 text-muted">Nov {{i+13}}</div>
-          <h3 class="card-text mb-auto">
-              Aquí va el botón dislike
-
-              <button type= 'submit' (click)='addDislike(perfilSesion.idusuario, perfil.idusuario)' id='login-button'>Like</button>
-              Género: {{perfil.genero}}, fecha nacimiento: {{perfil.fecha_nac}} 
-            <button type= 'submit' (click)='addLike(perfilSesion.idusuario, perfil.idusuario)' id='login-button'>Like</button>
-          </h3>
-            <a [routerLink]="['/perfil-list', perfil.idusuario]">Enlace con routerLink</a>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-
--->
-
-
-  <!-- Listado con estilos -->
-
-
-<!--  <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-
-  <head>
-    <title>LucaTinder</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900|Playfair+Display:400,700,900 " rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
-
-    <link rel="stylesheet" href="/resources/fonts/icomoon/style.css">
-    <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../assets/css/style.css">
-    <link rel="stylesheet" href="../../../assets/css/grid.css">
-  </head>
-
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" class="pagina-perfil">
-  
-        <div class="site-wrap">
-
-        <div class="site-mobile-menu site-navbar-target">
-            <div class="site-mobile-menu-header">
-            <div class="site-mobile-menu-close mt-3">
-                <span class="icon-close2 js-menu-toggle"></span>
-            </div>
-            </div>
-            <div class="site-mobile-menu-body"></div>
-        </div>
-        
-        
-        <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
-    
-            <div class="container">
-            <div class="row align-items-center">
-                
-                <div class="col-6 col-xl-2">
-                <h1 class="mb-0 site-logo m-0 p-0"><a th:href="@{/}" class="mb-0">LUCATINDER</a></h1>
-                </div>
-    
-                <div class="col-12 col-md-10 d-none d-xl-block">
-                <nav class="site-navigation position-relative text-right" role="navigation">
-    
-                    <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                    <li><a href="#" class="nav-link">Inicio</a></li>
-                    <li><a href="#" class="nav-link">Nuestro compromiso</a></li>
-                    <li><a href="#" class="nav-link">Casos Reales</a></li>
-                    <li><a href="#" class="nav-link">Contacto</a></li>
-                    <li><a th:href="@{/listMatches(id1=${perfil.idusuario})}" class="nav-link">Mis matches</a></li>
-                    <li><a th:href="@{/}" class="nav-link">Cerrar sesión</a></li>
-                    </ul>
-                </nav>
-                </div>
-    
-    
-                <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a></div>
-    
-            </div>
-            </div>
-            
-        </header>
-</div>
-
- En  Angular solo se pone la parte de la página que cambia -->
- 
  <div class="site-blocks-cover overlay"  data-aos="fade">
 
   <div class="container box">
+    
     <div class="row align-items-center justify-content-center">
+        
       <div class="col-md-12  text-center">
+
           <div id="boxperfil">
+              
             <h2 id="text-id">Tu id es: <span>{{perfilService.getPerfilLoggedIn().idusuario}}</span></h2>
             <hr>
             <br>
