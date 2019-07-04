@@ -8,23 +8,25 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-perfil-edit',
   templateUrl: './perfil-edit.component.html',
-  styleUrls: ['./perfil-edit.component.css']
+  styleUrls: ['./perfil-edit.component.css'],
+  providers: [PerfilService]
 })
 export class PerfilEditComponent implements OnInit {
 
-  perfil: Perfil=new Perfil();
-  angForm: FormGroup
+  perfil: Perfil=this.perfilService.getPerfilLoggedIn();
+ // angForm: FormGroup
 
-  constructor(private fb: FormBuilder, private router: Router, private perfilService: PerfilService) {
-    this.createForm();
+  constructor(/*private fb: FormBuilder,*/ private router: Router, private perfilService: PerfilService) {
+   // this.createForm();
    }
 
+   /*
   createForm(){
     this.angForm=this.fb.group({
 
     });
   }
-
+*/
   modificarPerfil(): void{
     this.perfilService.modificarPerfil(this.perfil).subscribe(data => {alert("Perfil modificado correctamente.");});
   }
