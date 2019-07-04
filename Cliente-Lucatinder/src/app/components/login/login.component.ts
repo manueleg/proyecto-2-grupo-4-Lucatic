@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { PerfilService } from '../../service/perfil.service';
-import { Perfil } from 'app/models/perfil';
+import { Perfil } from '../../models/perfil';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  template: `
+  /*template: `
   <app-child [perfilLogin]="perfilLogin"></app-child>
-  `,
+  `,*/
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
@@ -25,9 +25,8 @@ export class LoginComponent implements OnInit {
     this.perfilService.login(idusuario).subscribe(
 
       res => {
-        //let p: Perfil = {idusuario: idusuario};        
-        //this.perfilService.setPerfilLoggedIn(p);
-
+        let p: Perfil = {idusuario: idusuario, nombre:null, genero:null, fecha_nac:null, poblacion:null, idIntereses:null, descripcion:null};        
+        this.perfilService.setPerfilLoggedIn(p);
       },
       error => {
         console.error(error);
@@ -45,7 +44,7 @@ export class LoginComponent implements OnInit {
   }
 
   navigate() {
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/perfil-list');
   }
 
 }

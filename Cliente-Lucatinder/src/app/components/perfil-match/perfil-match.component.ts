@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PerfilService } from '../../service/perfil.service';
-import { Perfil } from 'app/models/perfil';
+import { Perfil } from '../../models/perfil';
 
 @Component({
   selector: 'app-perfil-match',
@@ -10,7 +10,7 @@ import { Perfil } from 'app/models/perfil';
 })
 export class PerfilMatchComponent implements OnInit {
 
-  @Input() perfilLogin: Perfil;
+  //@Input() perfilLogin: Perfil;
   matches: Array<any>;
 
   constructor(private perfilService: PerfilService) {}
@@ -18,13 +18,13 @@ export class PerfilMatchComponent implements OnInit {
   ngOnInit() {
     //Se implementa un patron Observer
     //El metodo getAll está definido en perfil.service.ts
-    /*this.perfilService.listarMatches(perfil).subscribe(
+    this.perfilService.listarMatches(this.perfilService.getPerfilLoggedIn()).subscribe(
       data => {
         this.matches = data;
         //Con lo anterior bastaría. 
         //   Ya se podrían ver los perfiles en el Front
       },
       error => console.log(error)
-    )*/
+    )
   }
 }
