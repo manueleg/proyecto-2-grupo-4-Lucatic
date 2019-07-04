@@ -12,4 +12,11 @@ export class PerfilDeleteComponent implements OnInit {
   ngOnInit() {
   }
 
+  deleteUser(Perfil: PerfilDeleteComponent): void {
+    this.deleteUser.apply(Perfil)
+      .subscribe( data => {
+        this.deleteUser = this.deleteUser.apply(u => u !== Perfil);
+      })
+  };
+
 }

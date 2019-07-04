@@ -31,6 +31,10 @@ export class PerfilService {
    return this.http.put<Perfil>(this.LUCATINDER_API, perfil);
   } 
 
+  public deletePerfil(perfil){
+    return this.http.put<Perfil>(this.LUCATINDER_API, perfil);
+   } 
+
   listarPerfiles(): Observable<any> {
     return this.http.get(this.LUCATINDER_API + "/readperfiles");
   }

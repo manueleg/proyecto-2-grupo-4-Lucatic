@@ -1,3 +1,11 @@
-
-<p>perfil-delete works!</p>
-
+<button type="button" 
+class="delete" 
+ ng-click="deletePeople(id)" 
+ ng-show="!inactive">Delete</button> 
+//The user view 
+<div class="people-view">
+<h2 class="name">{{perfill.nombre}}</h2>
+<h2 class="name">{{perfil.apellido}}</h2>
+<span class="title">{{perfil-title}}</span>
+<span class="date">{{perfil.fecha_nac}} </span> 
+</div> 
