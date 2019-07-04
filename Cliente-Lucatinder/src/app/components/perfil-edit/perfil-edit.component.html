@@ -28,7 +28,7 @@
             <td><label for="descripcion">Descripción</label></td>
             <td><input type="text" th:field="*{descripcion}"/></td>
           </tr>
-					<td><input type="submit" value="Guardar Cambios"></td>
+					<td><input type="submit" value="Guardar Cambios" [routerLink]='app-perfil-list'></td>
 				</tr>
 			</table>
     </form>
