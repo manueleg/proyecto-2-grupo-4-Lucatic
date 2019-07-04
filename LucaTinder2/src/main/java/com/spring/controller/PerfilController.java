@@ -1,5 +1,6 @@
 package com.spring.controller;
 
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import com.spring.services.PerfilService;
 
 
 @Controller
-public class PerfilController {
+public class PerfilController  {
 
 	@Autowired
 	private PerfilService perfilService;
