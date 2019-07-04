@@ -12,12 +12,14 @@ import { PerfilService } from '../../service/perfil.service';
 export class PerfilListComponent implements OnInit {
 
   perfiles: Perfil[];
+  perfilSesion: Perfil;//Variable para recojer el perfil que esta logueado
 
   constructor(private router: Router, private perfilService: PerfilService) {
 
   }
 
   ngOnInit() {
+    this.perfilSesion = this.perfilService.getPerfilLoggedIn();//Aquí recojo el usuario logueado para poder recoger luego su id
     this.perfilService.listarPerfiles().subscribe(
       (data) => this.perfiles = data,
       (error) => console.log(error)
@@ -35,11 +37,10 @@ export class PerfilListComponent implements OnInit {
   
   
    
-  /*addLike(id1:number, id2:number):void{
-    this.perfilService.login(id1)
-    .subscribe( data => {
-      alert("Like");
+  addLike(id1:number, id2:number):void{
+    this.perfilService.addLike(id1, id2).subscribe( data => {
+      alert("Has dado like");
     });
-  }*/
+  }
 
 }
