@@ -60,7 +60,10 @@ public class PerfilRestController {
 	 */
 	@GetMapping("/{id}")
 	Perfil readPerfil(@PathVariable int id) {
-		return this.service.get(id);
+		if(this.service.get(id)!=null) {
+			return this.service.get(id);
+		}
+		return null;
 	}
 
 	/**
@@ -86,7 +89,7 @@ public class PerfilRestController {
 	 * @param id
 	 */
 	@GetMapping(path = { "/{id1}/{id2}" })
-	public void add(@PathVariable("id1") int id1,@PathVariable("id2") int id2 ) {
+	public void addLike(@PathVariable("id1") int id1,@PathVariable("id2") int id2 ) {
 		this.service.like(id1, id2);
 	}
 	

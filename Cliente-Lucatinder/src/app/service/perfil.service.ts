@@ -20,23 +20,24 @@ export class PerfilService {
     this.isPerfilLoggedIn = false;
    }
 
-  private perfilUrl = 'http://localhost:8080/indexrest';
+  public API = 'http://localhost:8080';
+  public LUCATINDER_API = this.API + '/indexrest';
 
   public createPerfil(perfil) {
-    return this.http.post<Perfil>(this.perfilUrl, perfil);
+    return this.http.post<Perfil>(this.LUCATINDER_API, perfil);
   }
 
   public modificarPerfil(perfil){
-   return this.http.put<Perfil>(this.perfilUrl, perfil);
+   return this.http.put<Perfil>(this.LUCATINDER_API, perfil);
   } 
 
   listarPerfiles(): Observable<any> {
-    return this.http.get(this.perfilUrl + "/readperfiles");
+    return this.http.get(this.LUCATINDER_API + "/readperfiles");
   }
 
 
   listarMatches(perfil){
-    return this.http.get<Perfil>(this.perfilUrl+ '/listMatches/'+ perfil.idusuario);
+    return this.http.get<Perfil[]>(this.LUCATINDER_API+ '/listMatches/'+ perfil.idusuario);
   }
 
   setPerfilLoggedIn(perfil:Perfil) {
@@ -50,7 +51,7 @@ export class PerfilService {
   }
 
   login(idusuario:number){
-    return this.http.get<Perfil>(this.perfilUrl+ '/'+ idusuario);
+    return this.http.get<Perfil>(this.LUCATINDER_API+ '/'+ idusuario);
   }
   
 }
