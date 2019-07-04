@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  logIn(idusuario: number, event: Event) {
+  logIn(idusuario: number, event: Event): void {
     event.preventDefault(); // Avoid default action for the submit button of the login form
     
     // Calls service to login user to the api rest

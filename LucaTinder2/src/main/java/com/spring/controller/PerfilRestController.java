@@ -98,7 +98,7 @@ public class PerfilRestController {
 	 * @param int id1
 	 * @return list de objetos tipo Perfil
 	 */
-	@GetMapping("/listMatches/{id1}")
+	@GetMapping(path = { "/listMatches/{id1}" })
 	public Collection<Perfil> matches(@PathVariable("id1") int id1) {
 		logger.info("----Recogiendo listado de matches y enviando a matches.html");
 		return this.service.getPerfilesMatch(service.get(id1)) ;
