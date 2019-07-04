@@ -51,6 +51,10 @@ export class PerfilService {
     localStorage.setItem('currentPerfil', JSON.stringify(perfil));
   }
 
+  getPerfilintereses() {
+  	return JSON.parse(localStorage.getItem('listarintereses'));
+  }
+
   getPerfilLoggedIn() {
   	return JSON.parse(localStorage.getItem('currentPerfil'));
   }
