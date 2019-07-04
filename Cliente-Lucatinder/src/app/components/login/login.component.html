@@ -1,7 +1,10 @@
 <div class="box-index">
-        <form method="post" th:object="${perfil}" th:action="@{/acceso}">
-          <h1>Introduce tu ID:</h1><input type="number" th:field="*{idusuario}"><br>
+        <form>
+          <h1>Introduce tu ID:</h1><input type="number" [(ngModel)]="perfil.idusuario"><br>
           <input type="submit" value="Entrar">
-          <p class="mb-5">Si todavía no estás registrado, <a href="#">regístrate aquí.</a></p>
+          <p class="mb-5">Si todavía no estás registrado...
+         <button type="submit" (click)="logIn(perfil.idusuario, $event)" id="login-button">Regístrate aquí</button> 
+         <!--<a  [routerLink]="['/add'">regístrate aquí.</a>-->
+        </p>
       </form>
 </div>

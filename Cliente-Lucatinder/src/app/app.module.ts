@@ -13,7 +13,10 @@ import { PerfilListComponent } from './components/perfil-list/perfil-list.compon
 
 import { PerfilDeleteComponent } from './components/perfil-delete/perfil-delete.component';
 import { LoginComponent } from './components/login/login.component';
-
+//Nuevo
+import { PerfilService } from './service/perfil.service';
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -29,10 +32,15 @@ import { LoginComponent } from './components/login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+     //Nuevo
+     HttpClientModule,
+     FormsModule 
   ],
-  providers: [],
+   //Nuevo el provider
+  providers: [PerfilService],
   bootstrap: [AppComponent]
   })
 
 export class AppModule { }
+
