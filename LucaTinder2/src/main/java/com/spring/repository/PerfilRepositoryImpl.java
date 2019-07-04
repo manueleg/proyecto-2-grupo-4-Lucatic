@@ -134,7 +134,7 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 	      .setParameter(1, null)
 	      .setParameter(2, genero)
 	      .setParameter(3, edadMin)
-	      .setParameter(3, edadMax)
+	      .setParameter(4, edadMax)
 	      .executeUpdate();
 	}
 	
@@ -192,6 +192,19 @@ public class PerfilRepositoryImpl implements PerfilRepositoryCustom{
 			perfilesMatch.add((Perfil) m);
 		}
 		return perfilesMatch;
+	}
+	
+	@Override
+	public void update(Perfil perfil) {
+		entityManager.createNativeQuery("UPDATE lucatinder.usuarios u SET " +
+				", u.nombre=" + perfil.getNombre()+
+				", u.genero=" + perfil.getGenero()+
+				", u.fecha_nac=" + perfil.getFecha_nac()+
+				", u.poblacion=" + perfil.getPoblacion()+
+				",, u.idintereses=" + perfil.getIdintereses()+
+				", u.descripcion="+perfil.getDescripcion()+
+				" WHERE u.idusuario="+perfil.getIdusuario()+";");
+				
 	}
 
 }
