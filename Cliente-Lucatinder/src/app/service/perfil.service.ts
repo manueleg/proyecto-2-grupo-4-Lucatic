@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Perfil } from '../models/perfil';
 import { Observable } from 'rxjs';
+import { Identifiers } from '@angular/compiler';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -57,5 +58,9 @@ export class PerfilService {
   login(idusuario:number){
     return this.http.get<Perfil>(this.LUCATINDER_API+ '/'+ idusuario);
   }
+  
+  /*addLike(id1:number, id2:number){
+    return this.http.get(this.LUCATINDER_API + "/like?id1=" + id1 + "?id2=" + id2);
+  }*/
   
 }
