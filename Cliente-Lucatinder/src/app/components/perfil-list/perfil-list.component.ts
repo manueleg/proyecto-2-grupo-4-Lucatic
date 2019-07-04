@@ -39,8 +39,6 @@ export class PerfilListComponent implements OnInit {
   /*addDisike(id1:number, id2:number):void{
     this.perfilService.addDislike(id1, id2)
   }
- 
-  //No ha dado tiempo de implementarlo.
   listarIntereses() {
     this.perfilService.getPerfilIntereses(this.perfilService.getPerfilLoggedIn()).subscribe(
       data => {

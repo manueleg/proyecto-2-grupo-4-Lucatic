@@ -97,24 +97,12 @@ public class Perfil {
 	public String getGenero() {
 		return genero;
 	}
-	/*
-	public Genero getGenero() {
-		return genero;
-	}*/
-	
+
 	public void setGenero(String genero) {
 		this.genero=genero;
-		/*if(genero.equals('h')) {
-			this.genero = Genero.H;
-		}else {
-			this.genero = Genero.M;
-		}*/
+
 	}
-/*
-	public void setGenero(Genero genero) {
-	this.genero = genero;
-    }
-*/
+
 	public LocalDate getFecha_nac() {
 		return fecha_nac;
 	}

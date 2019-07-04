@@ -8,7 +8,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
 import java.util.List;
 
-import com.spring.model.Genero;
 import com.spring.model.Perfil;
 import com.spring.repository.PerfilRepository;
 import org.apache.logging.log4j.LogManager;
