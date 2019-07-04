@@ -1,5 +1,4 @@
 <h2>Lista de perfiles</h2>
-<p>perfil-list works!</p>
 
 <div class="row mb-2">
     <div *ngFor="let perfil of perfiles; let i = index" class="col-md-6">
@@ -11,7 +10,7 @@
           </h3>
           <div class="mb-1 text-muted">Nov {{i+13}}</div>
           <p class="card-text mb-auto">Género: {{perfil.genero}}, fecha nacimiento: {{perfil.fecha_nac}}</p>
-            <a [routerLink]="['/beer-edit', beer.id]">Enlace con routerLink</a>       
+            <!--<a [routerLink]="['/perfil-list', perfil.idusuario]">Enlace con routerLink</a> -->    
         </div>
       </div>
     </div>
