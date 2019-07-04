@@ -1,6 +1,8 @@
 <h2>Lista de perfiles</h2>
-<p>perfil-list works!</p>
-
+<nav>
+  <a routerLink="/perfil-list" routerLinkActive="active">Listado</a> | 
+  <a routerLink="/perfil-match">Mis matches</a> | 
+</nav>
 <div class="row mb-2">
     <div *ngFor="let perfil of perfiles; let i = index" class="col-md-6">
       <div class="card flex-md-row mb-4 box-shadow h-md-250">

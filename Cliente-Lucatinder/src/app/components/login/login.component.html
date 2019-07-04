@@ -1,9 +1,9 @@
 <div class="box-index">
         <form>
           <h1>Introduce tu ID:</h1><input type="number" [(ngModel)]="perfil.idusuario"><br>
-          <input type="submit" (click)="logIn(perfil.idusuario, $event)" value="Entrar">
+          <button type="submit" id="login-button" (click)="logIn(perfil.idusuario, $event)" >Acceder</button>
           <p class="mb-5">Si todavía no estás registrado...
-            <a  [routerLink]="['/add']"><button type="submit" id="login-button">Regístrate aquí</button></a>
+            <!--<a  [routerLink]="['/add']"><button type="submit" id="login-button">Regístrate aquí</button></a>-->
          <!--<a  [routerLink]="['/add'">regístrate aquí.</a>-->
         </p>
       </form>

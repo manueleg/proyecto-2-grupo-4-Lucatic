@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
   }
 
   navigate() {
-    this.router.navigateByUrl('/perfil-list');
+    this.router.navigateByUrl('/perfilList');
   }
 
 }
