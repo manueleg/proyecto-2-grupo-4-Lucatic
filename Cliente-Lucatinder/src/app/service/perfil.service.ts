@@ -51,10 +51,6 @@ export class PerfilService {
     localStorage.setItem('currentPerfil', JSON.stringify(perfil));
   }
 
-  getPerfilintereses() {
-  	return JSON.parse(localStorage.getItem('listarintereses'));
-  }
-
   getPerfilLoggedIn() {
   	return JSON.parse(localStorage.getItem('currentPerfil'));
   }
@@ -67,4 +63,7 @@ export class PerfilService {
     return this.http.get(this.LUCATINDER_API + "/" + id1 + "/" + id2);
   }
   
+  getPerfilintereses(perfil) {
+  	return this.http.get<Perfil[]>(this.LUCATINDER_API+ '/perfilesIntereses/', perfil);
+  }
 }

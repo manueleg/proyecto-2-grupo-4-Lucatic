@@ -27,23 +27,22 @@ export class PerfilListComponent implements OnInit {
       (data) => this.perfiles = data,
       (error) => console.log(error)
     );
-  }
-
-  
-  listarIntereses(): void {
-    this.listarIntereses.apply(this.perfiles)
-        .subscribe( data => {
-          alert("Intereses listados correctamente.");
-        });
-
-  };
-  
-  
+  } 
    
   addLike(id1:number, id2:number):void{
     this.perfilService.addLike(id1, id2).subscribe( data => {
       
     });
   }
+
+  //No ha dado tiempo de implementarlo.
+  /*listarIntereses() {
+    this.perfilService.getPerfilIntereses(this.perfilService.getPerfilLoggedIn()).subscribe(
+      data => {
+        this.perfiles = data;
+      },
+      error => console.log(error)
+    )
+  }*/
 
 }
