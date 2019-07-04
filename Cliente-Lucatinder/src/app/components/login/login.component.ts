@@ -13,17 +13,19 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private perfilService: PerfilService, private router: Router) { }
+
+  constructor(private perfilService: PerfilService, private router: Router) {
+   }
 
   ngOnInit() {
   }
 
   logIn(idusuario: number, event: Event) {
     event.preventDefault(); // Avoid default action for the submit button of the login form
-
+    
     // Calls service to login user to the api rest
     this.perfilService.login(idusuario).subscribe(
-
+      
       res => {
         let p: Perfil = {idusuario: idusuario, nombre:null, genero:null, fecha_nac:null, poblacion:null, idIntereses:null, descripcion:null};        
         this.perfilService.setPerfilLoggedIn(p);
@@ -44,7 +46,7 @@ export class LoginComponent implements OnInit {
   }
 
   navigate() {
-    this.router.navigateByUrl('/perfil-list');
+    this.router.navigateByUrl('/perfilList');
   }
 
 }

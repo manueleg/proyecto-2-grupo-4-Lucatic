@@ -1,10 +1,27 @@
 <div class="box-index">
-        <form>
+        <!--<form>
           <h1>Introduce tu ID:</h1><input type="number" [(ngModel)]="perfil.idusuario"><br>
-          <input type="submit" (click)="logIn(perfil.idusuario, $event)" value="Entrar">
+
+          <input type="submit" value="Entrar">
+          <p class="mb-5">Si todavía no estás registrado...
+         <button type="submit" (click)="logIn(perfil.idusuario, $event)" id="login-button">Regístrate aquí</button> 
+         <a  [routerLink]="['/add'">regístrate aquí.</a>-->
+
+          <!--<input [(ngModel)]="perfil.idusuario" [ngModelOptions]="{standalone: true}">
+      
+            <input type="text" name="idusuario" #idusuario="ngModel" [(ngModel)]="Perfil.idusuario" class="form-control" required />
+            <span *ngIf="!idusuario.valid && idusuario.touched"> El Id es obligatorio</span>
+       
+          <button type="submit" id="login-button" (click)="logIn(Perfil.idusuario, $event)" >Acceder</button>
           <p class="mb-5">Si todavía no estás registrado...
             <a  [routerLink]="['/add']"><button type="submit" id="login-button">Regístrate aquí</button></a>
-         <!--<a  [routerLink]="['/add'">regístrate aquí.</a>-->
+         <a  [routerLink]="['/add'">regístrate aquí.</a>
+
         </p>
+      </form>-->
+
+      <form class='form'>
+        <input type='text' #idusuario name='idusuario' placeholder='Id'>
+        <button type= 'submit' (click)='logIn(idusuario.value, $event)' id='login-button'>Acceder</button>
       </form>
 </div>

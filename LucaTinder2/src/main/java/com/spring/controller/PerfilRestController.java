@@ -22,6 +22,8 @@ import com.spring.services.PerfilService;
 import org.springframework.web.bind.annotation.PutMapping;
 import antlr.collections.List;
 
+//SI TENGO DUDAS CON EL REST MIRAR EN SERVICIOS DE ANGULAR (VISUAL STUDIO)
+
 @CrossOrigin(origins = "*", maxAge = 3600)//he puesto esta notacion porque cuando usemos angular es obligatoria
 @RestController
 @RequestMapping({"/indexrest"})
