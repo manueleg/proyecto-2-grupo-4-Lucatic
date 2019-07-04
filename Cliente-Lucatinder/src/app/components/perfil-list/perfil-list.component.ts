@@ -28,7 +28,7 @@ export class PerfilListComponent implements OnInit {
 
   
   listarIntereses(): void {
-    this.listarIntereses.apply(this.listarIntereses)
+    this.listarIntereses.apply(this.perfiles)
         .subscribe( data => {
           alert("Intereses listados correctamente.");
         });
