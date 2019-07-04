@@ -1,6 +1,9 @@
 package com.spring;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,10 +13,17 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
+import com.spring.model.Perfil;
 import com.spring.repository.PerfilRepository;
 
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
 class DislikePerfilTest {
 
 	private static Logger logger;
@@ -55,8 +65,21 @@ class DislikePerfilTest {
 	private PerfilRepository perfilRepo;
 	
 	@Test
-	void dislikeTest() {
+	public void dislikeTest() {
+		int cantidadInicial=0;
+		int cantidadFinal=0;
 		
+		//veo los dislikes que hay
+		Perfil perfil = new Perfil();
+		perfil.setIdusuario(2);
+		List<Perfil>perfiles = perfilRepo.getDislikes(perfil);
+		cantidadInicial = perfiles.size();
+		
+		//añado un dislike
+		Perfil p1 = new Perfil();
+		
+		
+		assertEquals(cantidadInicial, cantidadFinal-1);
 	}
 
 }
