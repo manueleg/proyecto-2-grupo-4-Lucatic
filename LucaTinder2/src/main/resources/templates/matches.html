@@ -101,23 +101,28 @@
 				<div class="col-md-12  text-center">
 					<div id="boxperfil">
 						<h2>
-						 <span th:text="${perfil.nombre}"></span>&nbsp;éstos son los perfiles con los que has tenido match, ¡Disfrútalo crack!
+						 <span th:text="${perfil.nombre}"></span>&nbsp;, éstos son los perfiles con los que has tenido match: 
 						</h2>
 						<hr>
 						<br>
+						
 						<table>
-							<tbody>
-								<tr th:each="perfiles : ${perfilList}">
-
-									<td><span th:text="${perfiles.nombre}"></span></td>
-									<td><span th:text="${perfiles.dameEdad()}"></span></td>
-                                  	<td><span th:text="${perfiles.genero}"></span></td>
-									<td><span th:text="${perfiles.poblacion}"></span></td>
-
-								</tr>
-								<br>
-							</tbody>
-						</table>
+							
+							<tr>
+								<th>&nbsp;&nbsp;&nbsp;Nombre&nbsp;&nbsp;&nbsp;</th>
+								<th>&nbsp;&nbsp;&nbsp;Edad&nbsp;&nbsp;&nbsp;</th>
+								<th>&nbsp;&nbsp;&nbsp;Género&nbsp;&nbsp;&nbsp;</th>
+								<th>&nbsp;&nbsp;&nbsp;Población&nbsp;&nbsp;&nbsp;</th>
+							</tr>
+							<tr th:each="perfiles : ${perfilList}">
+								<td><span th:text="${perfiles.nombre}"></span></td>
+								<td><span th:text="${perfiles.dameEdad()}"></span></td>
+                                 	<td><span th:text="${perfiles.genero}"></span></td>
+								<td><span th:text="${perfiles.poblacion}"></span></td>
+							</tr>
+							<br>
+							
+						</table> 
 					</div>
 				</div>
 			</div>
