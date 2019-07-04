@@ -13,7 +13,7 @@
           <h3 class="card-text mb-auto">
               <!--Aquí va el botón dislike-->
               Género: {{perfil.genero}}, fecha nacimiento: {{perfil.fecha_nac}} 
-              <!--<button type= 'submit' (click)='addLike()' id='login-button'>Like</button>-->
+            <button type= 'submit' (click)='addLike(perfilSesion.idusuario, perfil.idusuario)' id='login-button'>Like</button>
           </h3>
             <!--<a [routerLink]="['/perfil-list', perfil.idusuario]">Enlace con routerLink</a> -->    
           
