@@ -1,3 +1,34 @@
-<p>
-  perfil-edit works!
-</p>
+   
+    <h2>Modifica tu perfil</h2>
+    <hr>
+    <br>
+    <form method="put" th:object="${perfil}" th:action="@{/update}">
+      <table>
+				<tr>
+					<td><label for="nombre">Nombre</label></td>
+					<td><input type="text" th:field="*{nombre}"/></td>
+        </tr>
+        <tr>
+					<td><label for="genero">Genero</label></td>
+					<td>
+            <input type="radio" name="genero" value="h" th:field="*{genero}">Hombre
+            <input type="radio" name="genero" value="m" th:field="*{genero}">Mujer
+          </td>
+        </tr>
+        <tr>
+            <td><label for="fecha_nac">Fecha de nacimiento</label></td>
+            <td><input type="date" value="15/10/2016" id="fecha_nac" th:value="${#dates.format(fecha_nac,'dd/MM/yyyy')}" th:name="fecha_nac" /></td>
+          </tr>
+				<tr>
+          <tr>
+					<td><label for="poblacion">Población</label></td>
+					<td><input type="text" th:field="*{poblacion}"/></td>
+        </tr>
+        <tr>
+            <td><label for="descripcion">Descripción</label></td>
+            <td><input type="text" th:field="*{descripcion}"/></td>
+          </tr>
+					<td><input type="submit" value="Guardar Cambios"></td>
+				</tr>
+			</table>
+    </form>
