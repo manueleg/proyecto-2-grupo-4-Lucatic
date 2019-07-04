@@ -10,8 +10,13 @@
             <a class="text-dark" href="#">{{perfil.nombre}}</a>
           </h3>
           <div class="mb-1 text-muted">Nov {{i+13}}</div>
-          <p class="card-text mb-auto">Género: {{perfil.genero}}, fecha nacimiento: {{perfil.fecha_nac}}</p>
+          <h3 class="card-text mb-auto">
+              <!--Aquí va el botón dislike-->
+              Género: {{perfil.genero}}, fecha nacimiento: {{perfil.fecha_nac}} 
+              <!--<button type= 'submit' (click)='addLike()' id='login-button'>Like</button>-->
+          </h3>
             <!--<a [routerLink]="['/perfil-list', perfil.idusuario]">Enlace con routerLink</a> -->    
+          
         </div>
       </div>
     </div>

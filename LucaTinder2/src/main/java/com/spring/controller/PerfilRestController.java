@@ -17,10 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.model.Perfil;
-import com.spring.repository.PerfilRepository;
 import com.spring.services.PerfilService;
-import org.springframework.web.bind.annotation.PutMapping;
-import antlr.collections.List;
 
 //SI TENGO DUDAS CON EL REST MIRAR EN SERVICIOS DE ANGULAR (VISUAL STUDIO)
 
@@ -107,7 +104,7 @@ public class PerfilRestController {
 		return this.service.getPerfilesMatch(service.get(id1)) ;
 	}
 	
-	@PutMapping("/update")
+	@PutMapping
 	public void updatePerfil(@RequestBody Perfil perfil) {
 		this.service.update(perfil);
 	}

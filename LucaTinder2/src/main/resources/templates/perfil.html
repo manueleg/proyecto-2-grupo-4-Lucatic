@@ -1,81 +1,158 @@
 <!DOCTYPE html>
-<html  xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <title>LucaTinder</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900|Playfair+Display:400,700,900 " rel="stylesheet">
-    <link rel="stylesheet" href="/resources/fonts/icomoon/style.css">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>LucaTinder</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/resources/css/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="/resources/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="/resources/css/owl.theme.default.min.css">
+<link
+	href="https://fonts.googleapis.com/css?family=Roboto:300,400,900|Playfair+Display:400,700,900 "
+	rel="stylesheet">
+<link rel="stylesheet" href="/resources/fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="/resources/css/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="/resources/css/jquery-ui.css">
+<link rel="stylesheet" href="/resources/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/resources/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="/resources/css/owl.theme.default.min.css">
 
-    <link rel="stylesheet" href="/resources/css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="/resources/css/jquery.fancybox.min.css">
 
-    <link rel="stylesheet" href="/resources/fonts/flaticon/font/flaticon.css">
+<link rel="stylesheet" href="/resources/css/bootstrap-datepicker.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+	href="/resources/fonts/flaticon/font/flaticon.css">
 
-    <link rel="stylesheet" href="/resources/css/aos.css">
+<link
+	href="https://fonts.googleapis.com/css?family=Righteous&display=swap"
+	rel="stylesheet">
 
-    <link rel="stylesheet" href="/resources/css/style.css">
-    <link rel="stylesheet" href="/resources/css/grid.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
-    
-  </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" class="pagina-perfil">
-  
-        <div class="site-wrap">
+<link rel="stylesheet" href="/resources/css/aos.css">
 
-        <div class="site-mobile-menu site-navbar-target">
-            <div class="site-mobile-menu-header">
-            <div class="site-mobile-menu-close mt-3">
-                <span class="icon-close2 js-menu-toggle"></span>
-            </div>
-            </div>
-            <div class="site-mobile-menu-body"></div>
-        </div>
-        
-        
-        <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
-    
-            <div class="container">
-            <div class="row align-items-center">
-                
-                <div class="col-6 col-xl-2">
-                <h1 class="mb-0 site-logo m-0 p-0"><a th:href="@{/}" class="mb-0">LUCATINDER</a></h1>
-                </div>
-    
-                <div class="col-12 col-md-10 d-none d-xl-block">
-                <nav class="site-navigation position-relative text-right" role="navigation">
-    
-                    <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                    <li><a href="/" class="nav-link">Inicio</a></li>
-                    <li><a href="/#compromisos" class="nav-link">Nuestro compromiso</a></li>
-                    <li><a href="index.html#properties-section" class="nav-link">Casos Reales</a></li>
-                    <li><a href="index.html#contact-section" class="nav-link">Contacto</a></li>
-                    <li><a href="#" class="nav-link">Cerrar sesión</a></li>
-                    </ul>
-                </nav>
-                </div>
+<link rel="stylesheet" href="/resources/css/style.css">
+<link rel="stylesheet" href="/resources/css/grid.css">
+<script defer
+	src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
 
-                <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a></div>
-    
-            </div>
-            </div>
-            
-        </header>
-</div>
+</head>
+<body data-spy="scroll" data-target=".site-navbar-target"
+	data-offset="300" class="pagina-perfil">
 
-  
-    
-    <div class="site-blocks-cover overlay"  data-aos="fade">
+	<div class="site-wrap">
+
+		<div class="site-mobile-menu site-navbar-target">
+			<div class="site-mobile-menu-header">
+				<div class="site-mobile-menu-close mt-3">
+					<span class="icon-close2 js-menu-toggle"></span>
+				</div>
+			</div>
+			<div class="site-mobile-menu-body"></div>
+		</div>
+
+
+		<header class="site-navbar py-4 js-sticky-header site-navbar-target"
+			role="banner">
+
+			<div class="container">
+				<div class="row align-items-center">
+
+					<div class="col-6 col-xl-2">
+						<h1 class="mb-0 site-logo m-0 p-0">
+							<a th:href="@{/}" class="mb-0">LUCATINDER</a>
+						</h1>
+					</div>
+
+					<div class="col-12 col-md-10 d-none d-xl-block">
+						<nav class="site-navigation position-relative text-right"
+							role="navigation">
+
+							<ul
+								class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+								<li><a href="/" class="nav-link">Inicio</a></li>
+								<li><a href="/#compromisos" class="nav-link">Nuestro
+										compromiso</a></li>
+								<li><a href="index.html#properties-section"
+									class="nav-link">Casos Reales</a></li>
+								<li><a href="index.html#contact-section" class="nav-link">Contacto</a></li>
+								<li><a href="#" class="nav-link">Cerrar sesión</a></li>
+							</ul>
+						</nav>
+					</div>
+
+					<div class="col-6 d-inline-block d-xl-none ml-md-0 py-3">
+						<a href="#"
+							class="site-menu-toggle js-menu-toggle text-black float-right"><span
+							class="icon-menu h3"></span></a>
+					</div>
+
+				</div>
+			</div>
+
+		</header>
+	</div>
+
+	<div id="contenedor">
+		<form method="post" th:object="${PerfilController}"
+			th:action="@{/guardarintereses}">
+			<table>
+				 <tr><th>
+				<h2>Mi perfil</h2>
+				</th>
+				</tr>
+				
+				<tr>
+					<td><label for="nombre">Nombre</label></td>
+					<td><input type="text" th:field="*{nombre}" /></td>
+				</tr>
+				
+				<tr>
+					<td><label for="idusuario">Id Usuario</label></td>
+					<td><input type="number" th:field="*{idusuario}" /></td>
+				</tr>
+
+				<tr>
+					<td><label for="genero">Genero</label></td>
+					<td><input type="text" th:field="*{genero}" /></td>
+				</tr>
+
+			 <tr><th>
+				<h2>Mis intereses</h2>
+				</th>
+				</tr>
+
+				<tr>
+					<td><label for="idusuario">Id Usuario</label></td>
+					<td><input type="number" th:field="*{idusuario}" /></td>
+				</tr>
+
+				<tr>
+					<td><label for="genero">Genero</label></td>
+					<td><input type="text" th:field="*{genero}" /></td>
+				</tr>
+
+				<tr>
+					<td><label for="edadMin">Edad Minima</label></td>
+					<td><input type="number" th:field="*{edadMin}" /></td>
+				</tr>
+
+
+				<tr>
+					<td><label for="edadMax">Edad Maxima</label></td>
+					<td><input type="number" th:field="*{edadMax}" /></td>
+				</tr>
+
+			</table>
+			<br />
+			<p>
+				<input type="button" value="Guardar">
+			</p>
+		</form>
+	</div>
+
+
+
+	<!--  <div class="site-blocks-cover overlay"  data-aos="fade">
 
       <div class="container box">
         <div class="row align-items-center justify-content-center">
@@ -97,7 +174,7 @@
                                <input type="radio" name="genero" value="Mujer">Mujer</h4>
               <h4>Edad Mínima: <input type="number"></h4>
               <h4>Edad Máxima: <input type="number"></h4>
-              <h4>Materias: </h4><input type="checkbox" name="materia1" value="Java" class="checkbox">Java
+            <h4>Materias: </h4><input type="checkbox" name="materia1" value="Java" class="checkbox">Java
                                  <input type="checkbox" name="materia2" value="JavaScript">JavaScript
                                  <input type="checkbox" name="materia3" value="C">C
                                  <input type="checkbox" name="materia4" value="C#">C#
@@ -107,91 +184,104 @@
                                  <input type="checkbox" name="materia8" value="Angular">Angular
                                  <input type="checkbox" name="materia8" value="Thymeleaf">Thymeleaf
             <br><br>
-             <input type="button" value="Guardar">
+             <input type="button" value="Guardar"> 
           </div>
         </div>
       </div>
-    </div>  
+    </div>  -->
 
-    
-    <footer class="site-footer">
-        <div class="container">
-            <div class="row">
-            <div class="col-md-8">
-                <div class="row">
-                <div class="col-md-5">
-                    <h2 class="footer-heading mb-4">About Stated</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p>
-                </div>
-                <div class="col-md-6 ml-auto">
-                    <h2 class="footer-heading mb-4">Acceso rápido</h2>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html" class="nav-link">Inicio</a></li>
-                        <li><a href="#compromisos" class="nav-link">Nuestro compromiso</a></li>
-                        <li><a href="#properties-section" class="nav-link">Casos Reales</a></li>
-                        <li><a href="index.html#contact-section"class="nav-link">Contacto</a></li>
-                    </ul>
-                    </div>
-                
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="mb-4">
-                <h2 class="footer-heading mb-4">Suscríbete a nuestra newsletter</h2>
-                <form action="#" method="post" class="footer-subscribe">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Email" aria-label="Email" aria-describedby="button-addon2">
-                    <div class="input-group-append">
-                    <button class="btn btn-primary text-black" type="button" id="button-addon2">Enviar</button>
-                    </div>
-                </div>
-                </form>  
-                </div>
-                
-                <div class="">
-                <h2 class="footer-heading mb-4">Follow Us</h2>
-                    <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                    <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-                    <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                    <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
-                </div>
-    
-    
-            </div>
-            </div>
-            <div class="mt-5 text-center">
-            <div class="col-md-12">
-                <div class="border-top pt-5">
-                <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        </p>
-                </div>
-            </div>
-            
-            </div>
-        </div>
-        </footer>
 
-   <!-- .site-wrap -->
+	<footer class="site-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="row">
+						<div class="col-md-5">
+							<h2 class="footer-heading mb-4">About Stated</h2>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								Neque facere laudantium magnam voluptatum autem. Amet aliquid
+								nesciunt veritatis aliquam.</p>
+						</div>
+						<div class="col-md-6 ml-auto">
+							<h2 class="footer-heading mb-4">Acceso rápido</h2>
+							<ul class="list-unstyled">
+								<li><a href="index.html" class="nav-link">Inicio</a></li>
+								<li><a href="#compromisos" class="nav-link">Nuestro
+										compromiso</a></li>
+								<li><a href="#properties-section" class="nav-link">Casos
+										Reales</a></li>
+								<li><a href="index.html#contact-section" class="nav-link">Contacto</a></li>
+							</ul>
+						</div>
 
-  <script src="/resources/js/jquery-3.3.1.min.js"></script>
-  <script src="/resources/js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="/resources/js/jquery-ui.js"></script>
-  <script src="/resources/js/popper.min.js"></script>
-  <script src="/resources/js/bootstrap.min.js"></script>
-  <script src="/resources/js/owl.carousel.min.js"></script>
-  <script src="/resources/js/jquery.stellar.min.js"></script>
-  <script src="/resources/js/jquery.countdown.min.js"></script>
-  <script src="/resources/js/bootstrap-datepicker.min.js"></script>
-  <script src="/resources/js/jquery.easing.1.3.js"></script>
-  <script src="/resources/js/aos.js"></script>
-  <script src="/resources/js/jquery.fancybox.min.js"></script>
-  <script src="/resources/js/jquery.sticky.js"></script>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="mb-4">
+						<h2 class="footer-heading mb-4">Suscríbete a nuestra
+							newsletter</h2>
+						<form action="#" method="post" class="footer-subscribe">
+							<div class="input-group mb-3">
+								<input type="text"
+									class="form-control border-secondary text-white bg-transparent"
+									placeholder="Email" aria-label="Email"
+									aria-describedby="button-addon2">
+								<div class="input-group-append">
+									<button class="btn btn-primary text-black" type="button"
+										id="button-addon2">Enviar</button>
+								</div>
+							</div>
+						</form>
+					</div>
 
-  
-  <script src="/resources/js/main.js"></script>
-    
-  </body>
+					<div class="">
+						<h2 class="footer-heading mb-4">Follow Us</h2>
+						<a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+						<a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+						<a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+						<a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+					</div>
+
+
+				</div>
+			</div>
+			<div class="mt-5 text-center">
+				<div class="col-md-12">
+					<div class="border-top pt-5">
+						<p>
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							Copyright &copy;
+							<script>
+								document.write(new Date().getFullYear());
+							</script>
+							Todos los derechos reservados
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</footer>
+
+	<!-- .site-wrap -->
+
+	<script src="/resources/js/jquery-3.3.1.min.js"></script>
+	<script src="/resources/js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="/resources/js/jquery-ui.js"></script>
+	<script src="/resources/js/popper.min.js"></script>
+	<script src="/resources/js/bootstrap.min.js"></script>
+	<script src="/resources/js/owl.carousel.min.js"></script>
+	<script src="/resources/js/jquery.stellar.min.js"></script>
+	<script src="/resources/js/jquery.countdown.min.js"></script>
+	<script src="/resources/js/bootstrap-datepicker.min.js"></script>
+	<script src="/resources/js/jquery.easing.1.3.js"></script>
+	<script src="/resources/js/aos.js"></script>
+	<script src="/resources/js/jquery.fancybox.min.js"></script>
+	<script src="/resources/js/jquery.sticky.js"></script>
+
+
+	<script src="/resources/js/main.js"></script>
+
+</body>
 </html>
