@@ -59,8 +59,8 @@ export class PerfilService {
     return this.http.get<Perfil>(this.LUCATINDER_API+ '/'+ idusuario);
   }
   
-  /*addLike(id1:number, id2:number){
+  addLike(id1:number, id2:number){
     return this.http.get(this.LUCATINDER_API + "/like?id1=" + id1 + "?id2=" + id2);
-  }*/
+  }
   
 }
