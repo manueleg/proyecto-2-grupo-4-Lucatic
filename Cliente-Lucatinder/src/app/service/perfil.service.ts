@@ -37,7 +37,7 @@ export class PerfilService {
    } 
 
   listarPerfiles(): Observable<any> {
-    return this.http.get(this.LUCATINDER_API + "/readperfiles");//perfil para filtrar perfil logeado
+    return this.http.get(this.LUCATINDER_API + "/readperfiles");
   }
 
 
@@ -62,12 +62,8 @@ export class PerfilService {
   addLike(id1:number, id2:number){
     return this.http.get(this.LUCATINDER_API + "/" + id1 + "/" + id2);
   }
-
-  addDislike(id1:number, id2:number){
-    return this.http.get(this.LUCATINDER_API + "/" + id1 + "/" + id2);
-  }
   
-  getPerfilintereses(perfil) {
+  getPerfilIntereses(perfil) {
   	return this.http.get<Perfil[]>(this.LUCATINDER_API+ '/perfilesIntereses/', perfil);
   }
 }
