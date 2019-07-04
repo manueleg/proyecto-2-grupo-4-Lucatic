@@ -29,7 +29,7 @@ public class EliminarPerfilTest {
 	// Inicializo
 	static {
 		try {
-			logger = LogManager.getLogger(AgregarPerfilTest.class);
+			logger = LogManager.getLogger(EliminarPerfilTest.class);
 		} catch (Throwable e) {
 			System.out.println("Logger don't work");
 		}

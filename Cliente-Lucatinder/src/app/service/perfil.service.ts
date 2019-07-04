@@ -13,7 +13,12 @@ const httpOptions = {
 })
 export class PerfilService {
 
-  constructor(private http:HttpClient) { }
+  private isPerfilLoggedIn;
+  public perfilLogged:Perfil;
+
+  constructor(private http:HttpClient) {
+    this.isPerfilLoggedIn = false;
+   }
 
   private perfilUrl = 'http://localhost:8080/indexrest';
 
@@ -25,8 +30,22 @@ export class PerfilService {
    return this.http.put<Perfil>(this.perfilUrl, perfil);
   } 
 
-  public listarMatches(perfil){
+  listarMatches(perfil){
     return this.http.get<Perfil>(this.perfilUrl+ '/listMatches/'+ perfil.idusuario);
   }
 
+  setPerfilLoggedIn(perfil:Perfil) {
+    this.isPerfilLoggedIn = true;
+    this.perfilLogged = perfil;
+    localStorage.setItem('currentPerfil', JSON.stringify(perfil));
+  }
+
+  getPerfilLoggedIn() {
+  	return JSON.parse(localStorage.getItem('currentPerfil'));
+  }
+
+  login(idusuario:number){
+    return this.http.get<Perfil>(this.perfilUrl+ '/'+ idusuario);
+  }
+  
 }
