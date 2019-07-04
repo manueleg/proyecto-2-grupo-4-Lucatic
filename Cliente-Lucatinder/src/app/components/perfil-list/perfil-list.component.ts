@@ -23,5 +23,6 @@ export class PerfilListComponent implements OnInit {
       (error) => console.log(error)
     );
   }
+   
 
 }

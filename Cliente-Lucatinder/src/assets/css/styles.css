@@ -1,6 +1,7 @@
 
 body{
     background-image: url(../images/bgindexcoral-.jpg);
+    background-attachment: fixed;
     background-color: coral;
     background-repeat: no-repeat;
     margin: 0 auto;
@@ -43,4 +44,7 @@ input[type="submit"]{
 .box-index h1{
     color: white;
     font-weight: 500;
+}
+.listperfil{
+    text-align: center;
 }
