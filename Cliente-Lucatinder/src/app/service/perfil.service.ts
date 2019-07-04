@@ -37,7 +37,7 @@ export class PerfilService {
    } 
 
   listarPerfiles(): Observable<any> {
-    return this.http.get(this.LUCATINDER_API + "/readperfiles");
+    return this.http.get(this.LUCATINDER_API + "/readperfiles");//perfil para filtrar perfil logeado
   }
 
 
