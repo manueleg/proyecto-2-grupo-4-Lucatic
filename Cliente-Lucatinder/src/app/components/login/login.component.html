@@ -21,7 +21,10 @@
       </form>-->
 
       <form class='form'>
-        <input type='text' #idusuario name='idusuario' placeholder='Id' class="form-control" required >
-        <button type= 'submit' (click)='logIn(idusuario.value, $event)' id='login-button'>Acceder</button>
+          <h1>Introduce tu ID:</h1>
+        <input type='text' #idusuario name='idusuario' placeholder='Id' class="form-control" required ><br>
+        <input type= 'submit' (click)='logIn(idusuario.value, $event)' id='login-button'><br><br>
+        Si no estás registrado, puedes<a (click)="logIn(perfil.idusuario, $event)"  id="login-button">registrarte aquí</a> 
+         
       </form>
 </div>

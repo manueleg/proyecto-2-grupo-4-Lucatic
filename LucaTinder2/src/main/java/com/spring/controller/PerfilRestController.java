@@ -97,10 +97,10 @@ public class PerfilRestController {
 	 * @param id1
 	 * @param id2
 	 */
-	@GetMapping(path = { "/dislike/{id1}/{id2}" })
+	/*@GetMapping(path = { "/dislike/{id1}/{id2}" })
 	public void addDislike(@PathVariable("id1") int id1,@PathVariable("id2") int id2 ) {
 		this.service.dislike(id1, id2);
-	}
+	}*/
 	
 	/**
 	 * Recibe por parámetro el id del perfil que se ha logueado y devuelve un list de los perfiles con los que

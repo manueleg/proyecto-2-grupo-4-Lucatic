@@ -1,9 +1,11 @@
-   
+   <div id="box-edit">
+
+
     <h2>Modifica tu perfil</h2>
     <hr>
     <br>
     <form>
-      <table>
+      <table id="tabla-edit">
 				<tr>
 					<td><label for="nombre">Nombre</label></td>
 					<td><input type="text" [(ngModel)]="perfil.nombre" placeholder="Introduce tu nombre" name="nombre" id="nombre"/></td>
@@ -29,7 +31,8 @@
             <td><input type="text" [(ngModel)]="perfil.descripcion" placeholder="Introduce una breve descripción" name="descripcion" id="descripcion"/></td>
           </tr>
           <tr>
-					<td><button (click)="modificarPerfil()" routerLink="/perfilList">Guardar cambios</button></td>
+					<td><input type="button" (click)="modificarPerfil()" routerLink="/perfilList" value="Guardar cambios"></td>
 				</tr>
 			</table>
     </form>
+  </div>
