@@ -129,17 +129,18 @@ public class PerfilServiceImpl implements PerfilService {
 	}
 
 	@Override
-	public void update(Perfil user) {
+	public void update(Perfil perfil) {
 		// TODO Auto-generated method stub
 		logger.info("---Actualizar perfil");
-		perfilDAO.save(user);
+		perfilDAO.deleteById(perfil.getIdusuario());
+		perfilDAO.save(perfil);
 	}
 
 	@Override
-	public void add(Perfil user) {
+	public void add(Perfil perfil) {
 		// TODO Auto-generated method stub
 		logger.info("---Guardar perfiles");
-		perfilDAO.save(user);
+		perfilDAO.save(perfil);
 	}
 
 	@Override
