@@ -11,7 +11,7 @@ import { PerfilService } from '../../service/perfil.service';
 })
 export class PerfilEditComponent implements OnInit {
 
-  perfil: Perfil=new Perfil();
+  perfil: Perfil=new Perfil();6
   perfilList: Array<Perfil>;
 
   constructor(private router: Router, private perfilService: PerfilService) { }
