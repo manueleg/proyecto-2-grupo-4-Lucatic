@@ -113,7 +113,7 @@ public class PerfilRestController {
 	 * metodo para añadir los intereses del perfil
 	 * @param perfil
 	 */
-	@PostMapping
+	@PostMapping("/perfilesIntereses")
 	public void getPerfilesIntereses(@RequestBody Perfil perfil) {
 		this.service.getPerfilesIntereses(perfil);
 	}
