@@ -39,7 +39,7 @@ export class PerfilListComponent implements OnInit {
    
   addLike(id1:number, id2:number):void{
     this.perfilService.addLike(id1, id2).subscribe( data => {
-      alert("Has dado like");
+      
     });
   }
 
