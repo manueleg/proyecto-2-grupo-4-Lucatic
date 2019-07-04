@@ -105,6 +105,9 @@ public class PerfilRestController {
 		return this.service.getPerfilesMatch(service.get(id1)) ;
 	}
 	
-
+	@PutMapping("/update")
+	public void updatePerfil(@RequestBody Perfil perfil) {
+		this.service.update(perfil);
+	}
 
 }
