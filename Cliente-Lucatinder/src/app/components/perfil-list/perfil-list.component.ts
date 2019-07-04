@@ -23,6 +23,17 @@ export class PerfilListComponent implements OnInit {
       (error) => console.log(error)
     );
   }
+
+  
+  listarIntereses(): void {
+    this.listarIntereses.apply(this.listarIntereses)
+        .subscribe( data => {
+          alert("Intereses listados correctamente.");
+        });
+
+  };
+  
+  
    
 
 }
