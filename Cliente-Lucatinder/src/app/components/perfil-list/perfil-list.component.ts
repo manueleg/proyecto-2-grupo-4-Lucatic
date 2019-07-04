@@ -24,5 +24,11 @@ export class PerfilListComponent implements OnInit {
     );
   }
    
+  /*addLike(id1:number, id2:number):void{
+    this.perfilService.login(id1)
+    .subscribe( data => {
+      alert("Like");
+    });
+  }*/
 
 }
