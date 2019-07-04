@@ -23,6 +23,17 @@ export class PerfilListComponent implements OnInit {
       (error) => console.log(error)
     );
   }
+
+  
+  listarIntereses(): void {
+    this.listarIntereses.apply(this.listarIntereses)
+        .subscribe( data => {
+          alert("Intereses listados correctamente.");
+        });
+
+  };
+  
+  
    
   /*addLike(id1:number, id2:number):void{
     this.perfilService.login(id1)
