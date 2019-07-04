@@ -7,6 +7,13 @@ body{
     margin: 0 auto;
     font-family: 'Playfair Display', serif;
 }
+h2{
+    padding-top: 2em;
+}
+hr{
+    color: white;
+
+}
 a {
     margin:0;
     padding:0;
@@ -52,3 +59,43 @@ input[type="submit"]{
     padding: 0.7em;
     border-radius: 10px;
 }
+#menu{
+    text-align: center;
+}
+table{
+    background-color: white;
+}
+
+.th{
+    margin-right: 20px!important;
+}
+#text-id{
+    color: white;
+}
+td{
+    padding: 0.5em;
+}
+#box-match{
+    text-align: center;
+}
+#box-edit{
+    text-align: center;
+    margin: 0 auto;
+}
+#tabla-edit{
+   margin: 0 auto;
+   border-radius: 10px;
+}
+.tabla-add{
+    margin: 0 auto;
+    border-radius: 10px;
+    text-align: center;
+}
+#titleregistro{
+    text-align: center;
+    color: white;
+}
+.hr{
+    width: 70%;
+}
+

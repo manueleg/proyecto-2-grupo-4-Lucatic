@@ -3,12 +3,13 @@
     <a routerLink="perfilList">Listado de perfiles</a> | 
     <a routerLink="perfilMatch" routerLinkActive="active">Mis matches</a> | 
     <a routerLink="login">Cerrar sesión</a> | 
-
-<h2>Listado de matches</h2>
-<a routerLink="/perfil-match" routerLinkActive="active">Mis matches</a> | 
-<!----><a routerLink="/perfil-list">Volver a contactos</a> | 
-
-  <div *ngFor="let perfil of matches; let i = index" class="col-md-6">
+<div id="box-match">
+    <h2>Listado de matches</h2>
+    <a routerLink="/perfil-match" routerLinkActive="active">Mis matches</a> | 
+    <!----><a routerLink="/perfil-list">Volver a contactos</a> | 
     
-    <p>{{perfil.nombre}}&nbsp;{{perfil.fecha_nac}}&nbsp;{{perfil.genero}}</p>
-  </div>
+      <div *ngFor="let perfil of matches; let i = index" class="col-md-6">
+        
+        <p>{{perfil.nombre}}&nbsp;{{perfil.fecha_nac}}&nbsp;{{perfil.genero}}</p>
+      </div>
+</div>

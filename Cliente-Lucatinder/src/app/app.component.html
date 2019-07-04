@@ -1,14 +1,18 @@
-<h1 class="site-logo"><a href="../index.html" class="mb-0">LUCATINDER</a></h1>
+<div id="box-menu">
+
+
+
 
 <!--<app-login></app-login>-->
 
-<nav>
+<nav id="menu">
+  <h1 class="site-logo"><a href="../index.html" class="mb-0">LUCATINDER</a></h1>
     <a routerLink="login" routerLinkActive="active">Login</a> | 
     <a routerLink="add">Registro</a> | 
     <a routerLink="perfilEdit">Modificar perfil</a> | 
     <a routerLink="perfilList">Listado</a> | 
     <a routerLink="perfilMatch">Mis matches</a> | 
-  </nav>
+</nav>
 
 <!--
     <a routerLink="login" routerLinkActive="active"></a> 
@@ -18,3 +22,4 @@
     <a routerLink="perfilMatch"></a> 
 -->
 <router-outlet></router-outlet>
+</div>
