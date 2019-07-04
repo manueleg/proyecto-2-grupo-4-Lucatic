@@ -16,6 +16,7 @@ export class PerfilMatchComponent implements OnInit {
   constructor(private perfilService: PerfilService) {}
 
   ngOnInit() {
+    console.log(this.perfilService.login(this.perfilService.getPerfilLoggedIn()));
     //El metodo listarMatches está definido en perfil.service.ts
      //El metodo getPerfilLoggedIn() está definido en perfil.service.ts
     this.perfilService.listarMatches(this.perfilService.getPerfilLoggedIn()).subscribe(
